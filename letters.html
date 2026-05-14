@@ -80,9 +80,8 @@ footer{text-align:center;padding:2rem 1rem;border-top:1px solid rgba(247,251,255
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const STUDIO_PASS = 'splash2026';
-const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6ImpwZ2x3cml4dW10YWh2cmNsemp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyNDM3OTYsImV4cCI6MjA5MjgxOTc5Nn0.hfraH05QQ1PZ-SE2Y0g_nspmH0FMvVvztpJ355dvn9A'.replace('eyJpc3MiOiJIUzI1NiIs','eyJpc3MiOiJzdXBhYmFzZSIs');
-
+const SUPABASE_URL = 'https://cpqbukdclkaubkvylzzh.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwcWJ1a2RjbGthdWJrdnlsenpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3Mzg3NjcsImV4cCI6MjA5NDMxNDc2N30.DqEt3DK-ZLrz1S8jcWiGbxjesTpcXBHeuJaiMuAhOlE';
 const LETTERS_TABLE = 'reader_letters';
 const LETTER_IMAGE_BUCKET = 'letter-images';
 const SUPABASE_READY = SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.length > 40;
