@@ -1,0 +1,2 @@
+Writer mode: click the main hero title 5 times quickly. Password: splash2026
+Replace Supabase URL and anon key in index.html and letters.html before deployment.
