@@ -387,6 +387,49 @@ body::before{
   font-family:'Space Mono',monospace;
 }
 
+.ep-filter-bar{
+  max-width:680px;
+  margin:0 auto 1.2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.8rem;
+  padding:.85rem 1rem;
+  border:1px solid var(--border2);
+  background:rgba(240,244,255,.025);
+}
+.ep-filter-label{
+  font-family:'Space Mono',monospace;
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.ep-saga-select{
+  min-width:210px;
+  background:rgba(240,244,255,.05);
+  border:1px solid var(--border2);
+  color:var(--cream);
+  font-family:'Space Mono',monospace;
+  font-size:.74rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:.52rem .75rem;
+  outline:none;
+}
+.ep-saga-select:focus{border-color:var(--yellow)}
+.ep-saga-pill{
+  display:inline-block;
+  margin-top:.35rem;
+  font-family:'Space Mono',monospace;
+  font-size:.62rem;
+  letter-spacing:.1em;
+  color:var(--yellow);
+  opacity:.75;
+  text-transform:uppercase;
+}
+@media(max-width:620px){.ep-filter-bar{align-items:stretch;flex-direction:column}.ep-saga-select{width:100%}}
+
 /* ── CHARACTERS SECTION ── */
 .characters-section{
   background:var(--bg2);
@@ -678,6 +721,16 @@ footer a:hover{color:#fff}
     <h2>The Story So Far</h2>
     <p>Episodes · The Splash of Lives</p>
   </div>
+  <div class="ep-filter-bar">
+    <span class="ep-filter-label">Check episode section</span>
+    <select class="ep-saga-select" id="publicSagaFilter" onchange="renderPublic()">
+      <option value="all">All Sections</option>
+      <option value="splash">Splash Saga · Main Story</option>
+      <option value="k">K-Saga · Kanishk Stories</option>
+      <option value="j">J-Saga · Joseph Stories</option>
+      <option value="s">S-Saga · Somyonil Stories</option>
+    </select>
+  </div>
   <div class="ep-list" id="epList">
     <div class="ep-empty">No episodes published yet.</div>
   </div>
@@ -779,6 +832,13 @@ footer a:hover{color:#fff}
             <input class="s-input" type="text" id="epTitle" placeholder="e.g. Arrival"/>
           </div>
         </div>
+        <label class="s-label" style="margin-bottom:0.4rem">Episode Section</label>
+        <select class="s-input" id="epSaga" style="margin-bottom:0.8rem">
+          <option value="splash">Splash Saga · Main Story</option>
+          <option value="k">K-Saga · Kanishk Stories</option>
+          <option value="j">J-Saga · Joseph Stories</option>
+          <option value="s">S-Saga · Somyonil Stories</option>
+        </select>
         <label class="s-label" style="margin-bottom:0.4rem">Part / Subtitle (optional)</label>
         <input class="s-input" type="text" id="epPart" placeholder="e.g. Prologue — The Gate" style="margin-bottom:0.8rem"/>
         <div class="file-drop" id="fileDrop">
@@ -969,6 +1029,18 @@ const supabase = SUPABASE_READY ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) 
 const STORE_KEY = 'splash_of_lives_episodes';
 
 let episodes=[], characters=[], artworks=[], readerLetters=[];
+const SAGA_LABELS={
+  splash:'Splash Saga',
+  k:'K-Saga',
+  j:'J-Saga',
+  s:'S-Saga'
+};
+const SAGA_DESCRIPTIONS={
+  splash:'Main Story',
+  k:'Kanishk Stories',
+  j:'Joseph Stories',
+  s:'Somyonil Stories'
+};
 let currentPdfFile=null, currentCharacterImageFile=null, editingCharacterImagePath=null;
 let currentArtworkImageFile=null, editingArtworkImagePath=null;
 let currentReplyFile=null, currentCharacterLetterFile=null;
@@ -989,7 +1061,7 @@ async function loadEpisodes(){
 }
 
 async function loadEpisodesFromSupabase(){
-  const { data, error } = await supabase.from(EPISODES_TABLE).select('num,title,part,pdf_path').order('num',{ascending:true});
+  const { data, error } = await supabase.from(EPISODES_TABLE).select('id,num,title,part,pdf_path,saga').order('num',{ascending:true});
   if(error){ console.error(error); loadEpisodesFromLocalStorage(); return; }
   episodes = data || [];
 }
@@ -1013,20 +1085,38 @@ async function loadArtworkFromSupabase(){
 }
 
 // ── RENDER PUBLIC EPISODES ──
+function getSagaValue(ep){ return (ep&&ep.saga&&SAGA_LABELS[ep.saga]) ? ep.saga : 'splash'; }
+function getSagaLabel(ep){ const saga=getSagaValue(ep); return `${SAGA_LABELS[saga]} · ${SAGA_DESCRIPTIONS[saga]}`; }
 function renderPublic(){
   const list=document.getElementById('epList');
-  if(!episodes.length){ list.innerHTML='<div class="ep-empty">No episodes published yet.</div>'; return; }
-  const sorted=[...episodes].sort((a,b)=>a.num-b.num);
-  list.innerHTML=sorted.map(ep=>`
-    <div class="ep-item" onclick="openReader(${ep.num})">
+  if(!list) return;
+  const filterEl=document.getElementById('publicSagaFilter');
+  const selected=filterEl ? filterEl.value : 'all';
+  const visible=[...episodes].filter(ep=>selected==='all'||getSagaValue(ep)===selected).sort((a,b)=>{
+    const sagaA=getSagaValue(a), sagaB=getSagaValue(b);
+    if(selected==='all' && sagaA!==sagaB){
+      const order={splash:0,k:1,j:2,s:3};
+      return (order[sagaA]??9)-(order[sagaB]??9);
+    }
+    return Number(a.num)-Number(b.num);
+  });
+  if(!visible.length){
+    const label=selected==='all'?'episodes':`${SAGA_LABELS[selected]} episodes`;
+    list.innerHTML=`<div class="ep-empty">No ${label} published yet.</div>`;
+    return;
+  }
+  list.innerHTML=visible.map(ep=>`
+    <div class="ep-item" onclick="openReader('${escAttr(ep.id||ep.num)}')">
       <span class="ep-num">EP ${ep.num}</span>
       <div class="ep-meta">
         <div class="ep-title">${esc(ep.title)}</div>
+        <div class="ep-saga-pill">${esc(getSagaLabel(ep))}</div>
         ${ep.part?`<div class="ep-part">${esc(ep.part)}</div>`:''}
       </div>
       <span class="ep-arrow">→</span>
     </div>`).join('');
 }
+
 
 // ── RENDER CHARACTERS ──
 function getCharacterImageUrl(c){
@@ -1078,13 +1168,18 @@ function closeArtworkModal(){ document.getElementById('artworkModal').classList.
 function renderManage(){
   const list=document.getElementById('manageList'); if(!list) return;
   if(!episodes.length){ list.innerHTML='<p class="manage-empty">No episodes yet.</p>'; return; }
-  const sorted=[...episodes].sort((a,b)=>a.num-b.num);
+  const order={splash:0,k:1,j:2,s:3};
+  const sorted=[...episodes].sort((a,b)=>{
+    const diff=(order[getSagaValue(a)]??9)-(order[getSagaValue(b)]??9);
+    return diff || Number(a.num)-Number(b.num);
+  });
   list.innerHTML=sorted.map(ep=>`<div class="manage-item">
     <span class="manage-num">EP ${ep.num}</span>
-    <span class="manage-name">${esc(ep.title)}</span>
-    <button class="manage-del" onclick="deleteEpisode(${ep.num})">Delete</button>
+    <span class="manage-name">${esc(ep.title)} <span class="ep-saga-pill">${esc(getSagaLabel(ep))}</span></span>
+    <button class="manage-del" onclick="deleteEpisode('${escAttr(ep.id||ep.num)}')">Delete</button>
   </div>`).join('');
 }
+
 function renderCharacterManage(){
   const list=document.getElementById('characterManageList'); if(!list) return;
   if(!characters.length){ list.innerHTML='<p class="manage-empty">No characters yet.</p>'; return; }
@@ -1139,13 +1234,13 @@ async function getEpisodePdfSource(ep){
   if(ep.pdfData) return {data:dataUrlToUint8Array(ep.pdfData)};
   return null;
 }
-async function openReader(num){
-  const ep=episodes.find(e=>e.num===num);
+async function openReader(ref){
+  const ep=episodes.find(e=>String(e.id||'')===String(ref) || Number(e.num)===Number(ref));
   if(!ep){ alert('Episode not found.'); return; }
   if(!window.pdfjsLib){ alert('Reader could not load.'); return; }
   const source=await getEpisodePdfSource(ep);
   if(!source){ alert('PDF not found.'); return; }
-  document.getElementById('readerTitle').textContent=`EP ${ep.num} — ${ep.title}`;
+  document.getElementById('readerTitle').textContent=`${SAGA_LABELS[getSagaValue(ep)]} · EP ${ep.num} — ${ep.title}`;
   document.getElementById('readerOverlay').classList.add('open');
   document.body.style.overflow='hidden';
   const loading=document.getElementById('readerLoading');
@@ -1257,6 +1352,7 @@ async function saveEpisode(){
   const num=parseInt(document.getElementById('epNum').value);
   const title=document.getElementById('epTitle').value.trim();
   const part=document.getElementById('epPart').value.trim();
+  const saga=document.getElementById('epSaga')?.value || 'splash';
   const msg=document.getElementById('formMsg');
   if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Add your Supabase URL and anon key first.'; return; }
   if(!num||num<1){ msg.style.color='#FF5733'; msg.textContent='Enter a valid episode number.'; return; }
@@ -1264,34 +1360,39 @@ async function saveEpisode(){
   if(!currentPdfFile){ msg.style.color='#FF5733'; msg.textContent='Select a PDF file.'; return; }
   msg.style.color='#FFE03D'; msg.textContent='Uploading…';
   const safeName=currentPdfFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-  const pdfPath=`splash/episode-${String(num).padStart(2,'0')}-${Date.now()}-${safeName}`;
+  const pdfPath=`splash/${saga}/episode-${String(num).padStart(2,'0')}-${Date.now()}-${safeName}`;
   const { error: uploadError }=await supabase.storage.from(PDF_BUCKET).upload(pdfPath,currentPdfFile,{contentType:'application/pdf',upsert:true});
   if(uploadError){ console.error(uploadError); msg.style.color='#FF5733'; msg.textContent='Upload failed. Check bucket policy.'; return; }
-  const { error: dbError }=await supabase.from(EPISODES_TABLE).upsert({num,title,part,pdf_path:pdfPath},{onConflict:'num'});
+  const { error: dbError }=await supabase.from(EPISODES_TABLE).upsert({num,title,part,saga,pdf_path:pdfPath},{onConflict:'saga,num'});
   if(dbError){ console.error(dbError); msg.style.color='#FF5733'; msg.textContent='PDF uploaded but not saved to DB.'; return; }
-  msg.style.color='#FFE03D'; msg.textContent=`Episode ${num} uploaded.`;
+  msg.style.color='#FFE03D'; msg.textContent=`${SAGA_LABELS[saga]} Episode ${num} uploaded.`;
   await loadEpisodesFromSupabase(); renderPublic(); renderManage();
   ['epNum','epTitle','epPart'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('fileName').textContent=''; document.getElementById('pdfInput').value=''; currentPdfFile=null;
 }
 
 // ── DELETE EPISODE ──
-async function deleteEpisode(num){
-  const episodeNum=Number(num); if(!Number.isFinite(episodeNum)) return;
-  if(!confirm(`Delete Episode ${episodeNum}?`)) return;
+async function deleteEpisode(ref){
+  const ep=episodes.find(e=>String(e.id||'')===String(ref) || Number(e.num)===Number(ref));
+  if(!ep) return;
+  const label=`${SAGA_LABELS[getSagaValue(ep)]} Episode ${ep.num}`;
+  if(!confirm(`Delete ${label}?`)) return;
   const msg=document.getElementById('formMsg');
-  msg.style.color='#FFE03D'; msg.textContent=`Deleting Episode ${episodeNum}…`;
+  msg.style.color='#FFE03D'; msg.textContent=`Deleting ${label}…`;
   if(SUPABASE_READY){
-    const { data: rows, error }=await supabase.from(EPISODES_TABLE).delete().eq('num',episodeNum).select('num,pdf_path');
+    let query=supabase.from(EPISODES_TABLE).delete();
+    query=ep.id ? query.eq('id',ep.id) : query.eq('num',Number(ep.num)).eq('saga',getSagaValue(ep));
+    const { data: rows, error }=await query.select('id,num,pdf_path');
     if(error){ msg.style.color='#FF5733'; msg.textContent='Delete failed. Check Supabase DELETE policy.'; return; }
     if(!rows||!rows.length){ msg.style.color='#FF5733'; msg.textContent='No row deleted. Check RLS policy.'; await loadEpisodesFromSupabase(); renderPublic(); renderManage(); return; }
     const pdfPath=rows[0]?.pdf_path;
     if(pdfPath) await supabase.storage.from(PDF_BUCKET).remove([pdfPath]);
     await loadEpisodesFromSupabase();
-  } else { episodes=episodes.filter(e=>Number(e.num)!==episodeNum); localStorage.setItem(STORE_KEY,JSON.stringify(episodes)); }
+  } else { episodes=episodes.filter(e=>String(e.id||e.num)!==String(ref)); localStorage.setItem(STORE_KEY,JSON.stringify(episodes)); }
   renderPublic(); renderManage();
-  msg.style.color='#FFE03D'; msg.textContent=`Episode ${episodeNum} deleted.`;
+  msg.style.color='#FFE03D'; msg.textContent=`${label} deleted.`;
 }
+
 
 // ── SAVE CHARACTER ──
 async function saveCharacter(){
