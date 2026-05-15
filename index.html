@@ -612,8 +612,8 @@ body::before{
 .reader-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.06em;color:var(--cream);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .reader-close{background:none;border:1px solid rgba(240,244,255,.2);color:var(--yellow);padding:.35rem .85rem;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;letter-spacing:0.12em;text-transform:uppercase}
 .reader-close:hover{background:rgba(255,224,61,.1);border-color:var(--yellow)}
-.reader-stage{flex:1;overflow:auto;display:flex;flex-direction:column;align-items:center;padding:1.5rem 1rem;position:relative}
-.reader-paper{background:#fff;display:inline-block;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.reader-stage{flex:1;min-height:0;overflow-y:scroll;overflow-x:auto;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:1.5rem 1rem;position:relative;scrollbar-gutter:stable both-edges}
+.reader-paper{background:#fff;display:inline-block;flex-shrink:0;box-shadow:0 8px 40px rgba(0,0,0,.6)}
 .reader-paper canvas{display:block}
 .reader-loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dim);font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:0.1em;text-align:center;padding:1rem}
 .reader-hint-floating{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:rgba(10,12,20,.85);border:1px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:.72rem;padding:.4rem .9rem;pointer-events:none;letter-spacing:0.1em;transition:opacity .6s;backdrop-filter:blur(4px)}
@@ -621,6 +621,11 @@ body::before{
 .reader-btn{background:none;border:1px solid rgba(240,244,255,.18);color:var(--cream);padding:.38rem 1.2rem;font-family:'Space Mono',monospace;font-size:.78rem;cursor:pointer;letter-spacing:0.1em}
 .reader-btn:hover{background:rgba(255,224,61,.1);border-color:var(--yellow);color:var(--yellow)}
 .reader-page{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--dim);letter-spacing:0.08em}
+.reader-zoom-hint{font-family:'Space Mono',monospace;font-size:.68rem;color:rgba(240,244,255,.45);letter-spacing:.08em;text-transform:uppercase}
+.reader-stage::-webkit-scrollbar{width:12px;height:12px}
+.reader-stage::-webkit-scrollbar-track{background:rgba(240,244,255,.045);border-left:1px solid rgba(255,224,61,.10)}
+.reader-stage::-webkit-scrollbar-thumb{background:linear-gradient(180deg, rgba(255,224,61,.75), rgba(255,157,30,.65), rgba(22,215,199,.55));border:3px solid #070910;border-radius:999px}
+.reader-stage::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg, var(--yellow), var(--paint-orange), var(--paint-teal))}
 
 /* ── STUDIO GATE ── */
 .studio-overlay{display:none;position:fixed;inset:0;background:rgba(5,6,12,.98);z-index:700;align-items:center;justify-content:center}
@@ -1299,6 +1304,29 @@ select.s-input:focus{
 .character-grid::after{right:2%;top:-1.6rem;background:var(--paint-orange)}
 .artwork-grid::after{left:4%;bottom:-1.6rem;background:var(--paint-blue)}
 
+
+
+/* Reader usability patch: visible laptop scrollbar + keyboard zoom hint */
+.reader-stage{
+  min-height:0 !important;
+  overflow-y:scroll !important;
+  overflow-x:auto !important;
+  justify-content:flex-start !important;
+  scrollbar-gutter:stable both-edges;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,224,61,.75) rgba(240,244,255,.05);
+}
+.reader-paper{flex-shrink:0 !important;}
+.reader-zoom-hint{
+  font-family:'Space Mono',monospace;
+  font-size:.68rem;
+  color:rgba(240,244,255,.48);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media(max-width:620px){.reader-zoom-hint{display:none}.reader-controls{gap:.65rem}}
+
 </style>
 </head>
 <body>
@@ -1410,11 +1438,12 @@ select.s-input:focus{
       <canvas id="pdfCanvas"></canvas>
     </div>
     <div class="reader-loading" id="readerLoading">Opening the episode…</div>
-    <div class="reader-hint-floating" id="readerHintFloating">Swipe ← → · Arrow keys</div>
+    <div class="reader-hint-floating" id="readerHintFloating">Swipe ← → · ←/→ pages · ↑ zoom in · ↓ zoom out · scroll to read</div>
   </div>
   <div class="reader-controls">
     <button class="reader-btn" onclick="prevPdfPage()">← Prev</button>
     <span class="reader-page" id="readerPage"></span>
+    <span class="reader-zoom-hint">↑ Zoom in · ↓ Zoom out · scroll page</span>
     <button class="reader-btn" onclick="nextPdfPage()">Next →</button>
   </div>
 </div>
@@ -1885,7 +1914,7 @@ async function renderLettersManage(){
 }
 
 // ── PDF READER ──
-let pdfDoc=null, pdfPageNum=1, pdfRendering=false, pdfPendingPage=null, pdfScale=1;
+let pdfDoc=null, pdfPageNum=1, pdfRendering=false, pdfPendingPage=null, pdfScale=1, pdfBaseScale=1, pdfZoom=1;
 let touchStartX=0, touchStartY=0;
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
@@ -1908,10 +1937,10 @@ async function openReader(ref){
   loading.textContent='Opening the episode…'; loading.style.display='block';
   const hint=document.getElementById('readerHintFloating');
   if(hint){ hint.style.opacity='0.9'; clearTimeout(window.readerHintTimer); window.readerHintTimer=setTimeout(()=>{ hint.style.opacity='0'; },3500); }
-  try{ pdfDoc=await pdfjsLib.getDocument(source).promise; pdfPageNum=1; fitPdfToScreen(); }
+  try{ pdfDoc=await pdfjsLib.getDocument(source).promise; pdfPageNum=1; pdfZoom=1; fitPdfToScreen(); }
   catch(e){ console.error(e); loading.textContent='Could not open this PDF.'; }
 }
-function updatePageIndicator(){ const el=document.getElementById('readerPage'); if(el&&pdfDoc) el.textContent=`${pdfPageNum} / ${pdfDoc.numPages}`; }
+function updatePageIndicator(){ const el=document.getElementById('readerPage'); if(el&&pdfDoc) el.textContent=`${pdfPageNum} / ${pdfDoc.numPages} · ${Math.round(pdfZoom*100)}%`; }
 function renderPdfPage(num){
   if(!pdfDoc) return; pdfRendering=true;
   document.getElementById('readerLoading').style.display='block';
@@ -1937,13 +1966,23 @@ function renderPdfPage(num){
 function queuePdfPage(num){ if(pdfRendering){ pdfPendingPage=num; return; } renderPdfPage(num); }
 function prevPdfPage(){ if(!pdfDoc||pdfPageNum<=1) return; pdfPageNum--; queuePdfPage(pdfPageNum); }
 function nextPdfPage(){ if(!pdfDoc||pdfPageNum>=pdfDoc.numPages) return; pdfPageNum++; queuePdfPage(pdfPageNum); }
+function zoomPdf(delta){
+  if(!pdfDoc) return;
+  const stage=document.getElementById('readerStage');
+  const oldTop=stage.scrollTop;
+  pdfZoom=Math.max(0.65,Math.min(1.8,Number((pdfZoom+delta).toFixed(2))));
+  pdfScale=pdfBaseScale*pdfZoom;
+  queuePdfPage(pdfPageNum);
+  setTimeout(()=>{ stage.scrollTop=oldTop; },40);
+}
 function fitPdfToScreen(){
   if(!pdfDoc) return;
   pdfDoc.getPage(pdfPageNum).then(page=>{
     const stage=document.getElementById('readerStage');
     const baseVP=page.getViewport({scale:1});
     const aw=Math.min(stage.clientWidth*0.94,920);
-    pdfScale=Math.max(0.45,Math.min(2.2,aw/baseVP.width));
+    pdfBaseScale=Math.max(0.45,Math.min(2.2,aw/baseVP.width));
+    pdfScale=pdfBaseScale*pdfZoom;
     queuePdfPage(pdfPageNum);
   });
 }
@@ -1952,13 +1991,20 @@ function closeReader(){
   document.body.style.overflow='';
   const canvas=document.getElementById('pdfCanvas');
   canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
-  pdfDoc=null; pdfPageNum=1; pdfPendingPage=null;
+  pdfDoc=null; pdfPageNum=1; pdfPendingPage=null; pdfZoom=1; pdfBaseScale=1;
 }
 
 const readerStage=document.getElementById('readerStage');
 readerStage.addEventListener('touchstart',e=>{ if(!e.touches.length) return; touchStartX=e.touches[0].clientX; touchStartY=e.touches[0].clientY; },{passive:true});
 readerStage.addEventListener('touchend',e=>{ if(!e.changedTouches.length) return; const dx=e.changedTouches[0].clientX-touchStartX; const dy=e.changedTouches[0].clientY-touchStartY; if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4){ dx<0?nextPdfPage():prevPdfPage(); } },{passive:true});
-document.addEventListener('keydown',e=>{ if(!document.getElementById('readerOverlay').classList.contains('open')) return; if(e.key==='ArrowRight'){ e.preventDefault(); nextPdfPage(); } if(e.key==='ArrowLeft'){ e.preventDefault(); prevPdfPage(); } if(e.key==='Escape') closeReader(); });
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('readerOverlay').classList.contains('open')) return;
+  if(e.key==='ArrowRight'){ e.preventDefault(); nextPdfPage(); }
+  if(e.key==='ArrowLeft'){ e.preventDefault(); prevPdfPage(); }
+  if(e.key==='ArrowUp'){ e.preventDefault(); zoomPdf(0.1); }
+  if(e.key==='ArrowDown'){ e.preventDefault(); zoomPdf(-0.1); }
+  if(e.key==='Escape') closeReader();
+});
 window.addEventListener('resize',()=>{ if(document.getElementById('readerOverlay').classList.contains('open')) fitPdfToScreen(); });
 
 // ── STUDIO ──
