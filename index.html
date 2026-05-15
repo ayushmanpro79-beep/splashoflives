@@ -701,6 +701,604 @@ footer{
 }
 footer a{color:var(--yellow);text-decoration:none;margin:0 0.4rem}
 footer a:hover{color:#fff}
+
+
+/* ─────────────────────────────────────────────
+   SUMMER GLASS + PAINT SPILL DESIGN PATCH
+   Added without changing the site structure or Supabase logic
+───────────────────────────────────────────── */
+:root{
+  --sun:#FFD36A;
+  --sky:#5EB7FF;
+  --aqua:#54E6D6;
+  --paint-pink:#FF4FA3;
+  --glass:rgba(255,255,255,.075);
+  --glass-strong:rgba(255,255,255,.12);
+  --glass-border:rgba(255,255,255,.18);
+  --soft-shadow:0 18px 60px rgba(0,0,0,.28);
+  --sun-glow:0 0 42px rgba(255,211,106,.22);
+}
+body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,211,106,.20), transparent 24rem),
+    radial-gradient(circle at 88% 16%, rgba(94,183,255,.18), transparent 26rem),
+    radial-gradient(circle at 78% 72%, rgba(255,79,163,.11), transparent 24rem),
+    var(--bg);
+}
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,224,61,.18) 0 0.35rem, transparent .42rem),
+    radial-gradient(circle at 91% 24%, rgba(59,130,246,.18) 0 0.42rem, transparent .5rem),
+    radial-gradient(circle at 14% 72%, rgba(255,87,51,.14) 0 0.32rem, transparent .42rem),
+    radial-gradient(circle at 80% 86%, rgba(84,230,214,.13) 0 0.36rem, transparent .46rem);
+  opacity:.65;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:7%;
+  left:7%;
+  width:clamp(9rem,18vw,17rem);
+  aspect-ratio:1;
+  border-radius:42% 58% 63% 37% / 48% 39% 61% 52%;
+  background:radial-gradient(circle at 35% 35%, rgba(255,224,61,.55), rgba(255,87,51,.18) 48%, transparent 72%);
+  filter:blur(4px);
+  opacity:.38;
+  z-index:1;
+  pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  right:4%;
+  bottom:10%;
+  width:clamp(10rem,22vw,21rem);
+  aspect-ratio:1.15;
+  border-radius:64% 36% 48% 52% / 43% 60% 40% 57%;
+  background:
+    radial-gradient(circle at 55% 46%, rgba(59,130,246,.42), transparent 42%),
+    radial-gradient(circle at 38% 58%, rgba(84,230,214,.28), transparent 56%);
+  filter:blur(5px);
+  opacity:.34;
+  z-index:1;
+  pointer-events:none;
+}
+.hero-vignette{
+  background:
+    radial-gradient(circle at 16% 13%, rgba(255,224,61,.22), transparent 24%),
+    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(10,12,20,0.90) 0%, transparent 66%),
+    radial-gradient(ellipse 100% 35% at 50% 0%, rgba(10,12,20,0.32) 0%, transparent 72%),
+    linear-gradient(180deg, rgba(255,211,106,.08) 0%, transparent 38%, rgba(10,12,20,0.58) 100%);
+}
+.hero-content,
+.summary-card,
+.ep-filter-bar,
+.ep-item,
+.character-card,
+.artwork-card,
+.choice-card,
+.upload-form,
+.manage-item,
+.studio-card,
+.character-modal-card,
+.artwork-modal-card,
+.reader-topbar,
+.reader-controls,
+.studio-box{
+  border-radius:24px;
+}
+.hero-content{
+  padding:2rem clamp(1rem,3vw,2.4rem);
+  background:linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:0 20px 80px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(12px) saturate(1.25);
+  -webkit-backdrop-filter:blur(12px) saturate(1.25);
+}
+.hero-btn,
+.s-submit,
+.reader-btn,
+.reader-close,
+.character-modal-close,
+.artwork-modal-close,
+.studio-exit,
+.manage-edit,
+.manage-del,
+.mini-btn,
+.back-choice{
+  border-radius:999px;
+}
+.hero-btn.primary,
+.s-submit:hover{
+  box-shadow:0 10px 25px rgba(255,224,61,.18), 4px 4px 0 rgba(255,87,51,.55);
+}
+.hero-btn.secondary{
+  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.band{
+  border-radius:0 0 26px 26px;
+  box-shadow:0 15px 50px rgba(255,211,106,.12);
+}
+.summary-section,
+.episodes-section,
+.characters-section,
+.artwork-section{
+  position:relative;
+  overflow:hidden;
+}
+.summary-section::before,
+.episodes-section::before,
+.characters-section::before,
+.artwork-section::before{
+  content:'';
+  position:absolute;
+  width:20rem;
+  height:20rem;
+  border-radius:45% 55% 68% 32% / 38% 42% 58% 62%;
+  background:
+    radial-gradient(circle at 38% 35%, rgba(255,224,61,.22), transparent 38%),
+    radial-gradient(circle at 65% 58%, rgba(255,87,51,.14), transparent 44%),
+    radial-gradient(circle at 45% 70%, rgba(59,130,246,.14), transparent 48%);
+  filter:blur(2px);
+  opacity:.42;
+  pointer-events:none;
+  z-index:0;
+}
+.summary-section::before{left:-8rem;top:1rem;transform:rotate(-14deg)}
+.episodes-section::before{right:-8rem;top:2.5rem;transform:rotate(18deg)}
+.characters-section::before{left:-7rem;bottom:4rem;transform:rotate(28deg)}
+.artwork-section::before{right:-7rem;bottom:2rem;transform:rotate(-22deg)}
+.summary-card,
+.section-head,
+.ep-filter-bar,
+.ep-item,
+.character-card,
+.artwork-card,
+.upload-form,
+.choice-card,
+.manage-item,
+.studio-card{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+  border:1px solid var(--glass-border);
+  box-shadow:var(--soft-shadow), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter:blur(14px) saturate(1.22);
+  -webkit-backdrop-filter:blur(14px) saturate(1.22);
+}
+.summary-card{
+  border-radius:30px;
+  overflow:hidden;
+}
+.summary-card::after,
+.ep-filter-bar::after,
+.character-card::before,
+.artwork-card::before,
+.upload-form::after{
+  content:'';
+  position:absolute;
+  pointer-events:none;
+  border-radius:inherit;
+  opacity:.72;
+}
+.summary-card::after{
+  right:-3rem;
+  top:-2.5rem;
+  width:9rem;
+  height:9rem;
+  background:radial-gradient(circle at 42% 42%, rgba(255,224,61,.36), transparent 44%), radial-gradient(circle at 62% 62%, rgba(255,87,51,.22), transparent 54%);
+}
+.ep-filter-bar::after{
+  left:1.2rem;
+  bottom:-.45rem;
+  width:7rem;
+  height:.75rem;
+  background:linear-gradient(90deg, var(--yellow), var(--coral), var(--blue));
+  filter:blur(.2px);
+  transform:skewX(-18deg);
+}
+.section-head{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:2rem 1.4rem;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.ep-list{
+  gap:.75rem;
+}
+.ep-item{
+  border-bottom:none;
+  padding:1rem 1rem;
+  overflow:hidden;
+}
+.ep-item::before{
+  content:'';
+  position:absolute;
+  left:-2rem;
+  top:-2rem;
+  width:6rem;
+  height:6rem;
+  border-radius:45% 55% 35% 65%;
+  background:radial-gradient(circle, rgba(255,224,61,.18), transparent 65%);
+  opacity:0;
+  transition:opacity .22s ease;
+}
+.ep-item:hover{
+  background:linear-gradient(135deg, rgba(255,224,61,.105), rgba(59,130,246,.065));
+  border-color:rgba(255,224,61,.28);
+  padding-left:1.25rem;
+  transform:translateY(-2px);
+}
+.ep-item:hover::before{opacity:1}
+.ep-saga-select,
+select.s-input{
+  border-radius:999px;
+  background-color:rgba(14,17,32,.72);
+  border:1px solid rgba(255,224,61,.58);
+  color:var(--yellow);
+  box-shadow:0 12px 35px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.07), 3px 3px 0 rgba(255,87,51,.30);
+  backdrop-filter:blur(12px) saturate(1.25);
+  -webkit-backdrop-filter:blur(12px) saturate(1.25);
+}
+.ep-saga-select option,
+select.s-input option{
+  background:#101426;
+  color:#F0F4FF;
+}
+.ep-saga-pill{
+  padding:.18rem .52rem;
+  border:1px solid rgba(255,224,61,.24);
+  border-radius:999px;
+  background:rgba(255,224,61,.055);
+}
+.character-card,
+.artwork-card,
+.choice-card,
+.manage-item,
+.studio-card{
+  overflow:hidden;
+}
+.character-card::before,
+.artwork-card::before{
+  right:-2.2rem;
+  top:-2.2rem;
+  width:5.8rem;
+  height:5.8rem;
+  background:radial-gradient(circle at 45% 45%, rgba(94,183,255,.24), transparent 58%);
+}
+.character-thumb,
+.artwork-thumb,
+.character-modal-image,
+.artwork-modal-image,
+.reader-paper,
+.file-drop,
+.reply-file-drop{
+  border-radius:18px;
+  overflow:hidden;
+}
+.file-drop{
+  background:linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+  border-color:rgba(255,255,255,.16);
+}
+.file-drop:hover,.file-drop.drag{
+  box-shadow:var(--sun-glow);
+}
+.studio-panel,
+.reader-overlay,
+.character-modal,
+.artwork-modal{
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,224,61,.14), transparent 22rem),
+    radial-gradient(circle at 84% 18%, rgba(59,130,246,.12), transparent 24rem),
+    rgba(5,6,12,.96);
+}
+footer{
+  border-radius:28px 28px 0 0;
+  background:linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018)), var(--bg);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+@media(max-width:720px){
+  .hero-content{border-radius:26px;margin:0 1rem;padding:1.6rem 1rem}
+  .section-head{border-radius:24px}
+  .ep-filter-bar{border-radius:22px}
+  .ep-item{border-radius:20px}
+}
+
+
+/* ─────────────────────────────────────────────
+   BACKDROP VISIBLE + SOLID PAINT SPLASH PATCH
+   Makes the cover image clearer and replaces soft blobs with crisp paint spills
+───────────────────────────────────────────── */
+:root{
+  --splat-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 340'%3E%3Cpath fill='black' d='M215 40c42 4 73 24 88 58 13 28 8 57 30 70 20 12 56-3 68 18 13 23-24 43-52 50-25 7-35 18-30 44 6 28-3 55-27 62-25 8-46-18-58-42-11-23-27-25-50-12-28 16-66 18-88-8-19-23-8-54 7-79 12-20 4-34-19-39-29-7-70-25-65-52 5-27 49-29 78-23 25 5 39-5 42-31 3-31 30-59 76-56Z'/%3E%3Ccircle cx='95' cy='64' r='16' fill='black'/%3E%3Ccircle cx='355' cy='86' r='13' fill='black'/%3E%3Ccircle cx='378' cy='252' r='10' fill='black'/%3E%3Ccircle cx='65' cy='236' r='12' fill='black'/%3E%3Ccircle cx='280' cy='18' r='8' fill='black'/%3E%3Ccircle cx='136' cy='28' r='7' fill='black'/%3E%3Cpath fill='black' d='M148 92c-16-34-9-72 12-83 18-9 35 19 29 55-5 29-26 49-41 28ZM292 118c22-24 58-35 72-20 13 15-9 41-42 49-26 6-48-9-30-29ZM104 194c-32 11-72 5-79-16-7-22 30-34 65-22 29 10 37 31 14 38ZM244 282c12 32 7 65-14 72-20 7-36-24-31-55 5-28 34-43 45-17Z'/%3E%3C/svg%3E");
+}
+
+/* Make the main artwork/backdrop readable again */
+.hero-bg{
+  filter:brightness(.86) saturate(1.18) contrast(1.04) !important;
+  transform:scale(1.025) !important;
+  animation:slowzoom 32s ease-in-out infinite alternate !important;
+}
+.hero-vignette{
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 112%, rgba(10,12,20,.78) 0%, transparent 68%),
+    radial-gradient(ellipse 100% 28% at 50% 0%, rgba(10,12,20,.18) 0%, transparent 72%),
+    linear-gradient(180deg, rgba(255,211,106,.05) 0%, transparent 48%, rgba(10,12,20,.42) 100%) !important;
+}
+.hero-content{
+  background:linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.012)) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  box-shadow:0 18px 65px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.06) !important;
+  backdrop-filter:blur(4px) saturate(1.08) !important;
+  -webkit-backdrop-filter:blur(4px) saturate(1.08) !important;
+}
+.hero::before,
+.hero::after{
+  filter:none !important;
+  opacity:.58 !important;
+  -webkit-mask:var(--splat-mask) center/contain no-repeat;
+  mask:var(--splat-mask) center/contain no-repeat;
+}
+.hero::before{
+  width:clamp(6.5rem,12vw,11rem) !important;
+  background:linear-gradient(135deg,#ff2f91,#ff6b35) !important;
+  top:10% !important;
+  left:4% !important;
+  transform:rotate(-18deg) !important;
+}
+.hero::after{
+  width:clamp(7.5rem,14vw,13rem) !important;
+  background:linear-gradient(135deg,#2367ff,#9a20ff) !important;
+  right:3% !important;
+  bottom:18% !important;
+  transform:rotate(16deg) !important;
+}
+
+/* Replace the soft section blobs with solid paint splash patterns */
+.summary-section::before,
+.episodes-section::before,
+.characters-section::before,
+.artwork-section::before,
+.summary-section::after,
+.episodes-section::after,
+.characters-section::after,
+.artwork-section::after{
+  content:'';
+  position:absolute;
+  width:clamp(7.5rem,14vw,13rem);
+  aspect-ratio:1.2/1;
+  height:auto;
+  border-radius:0 !important;
+  filter:none !important;
+  opacity:.68 !important;
+  pointer-events:none;
+  z-index:0;
+  -webkit-mask:var(--splat-mask) center/contain no-repeat;
+  mask:var(--splat-mask) center/contain no-repeat;
+}
+.summary-section::before{left:-2.8rem;top:1.2rem;background:linear-gradient(135deg,#ff2e9b,#ff6b55) !important;transform:rotate(-18deg) !important;}
+.summary-section::after{right:5%;bottom:.6rem;background:linear-gradient(135deg,#ffd33d,#ff9d00) !important;transform:rotate(12deg) scale(.72) !important;}
+.episodes-section::before{right:-2.6rem;top:3.2rem;background:linear-gradient(135deg,#246bff,#11d9ff) !important;transform:rotate(18deg) !important;}
+.episodes-section::after{left:6%;bottom:1.2rem;background:linear-gradient(135deg,#7bf036,#12bd45) !important;transform:rotate(-10deg) scale(.7) !important;}
+.characters-section::before{left:-2.4rem;bottom:3rem;background:linear-gradient(135deg,#ab38ff,#2367ff) !important;transform:rotate(25deg) !important;}
+.characters-section::after{right:7%;top:2.4rem;background:linear-gradient(135deg,#ff3d55,#c80a52) !important;transform:rotate(-12deg) scale(.72) !important;}
+.artwork-section::before{right:-2.4rem;bottom:2rem;background:linear-gradient(135deg,#ffcf3a,#ff8f1f) !important;transform:rotate(-24deg) !important;}
+.artwork-section::after{left:7%;top:2.5rem;background:linear-gradient(135deg,#ff2e9b,#2367ff) !important;transform:rotate(14deg) scale(.72) !important;}
+
+/* Keep glass panels light enough so the page still feels sunny, not covered */
+.summary-card,
+.section-head,
+.ep-filter-bar,
+.ep-item,
+.character-card,
+.artwork-card,
+.upload-form,
+.choice-card,
+.manage-item,
+.studio-card{
+  background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.026)) !important;
+  border-color:rgba(255,255,255,.16) !important;
+  backdrop-filter:blur(9px) saturate(1.14) !important;
+  -webkit-backdrop-filter:blur(9px) saturate(1.14) !important;
+}
+.ep-saga-select,
+select.s-input{
+  background-color:rgba(10,12,20,.88) !important;
+  color:var(--cream) !important;
+  border:1px solid rgba(255,224,61,.78) !important;
+  box-shadow:3px 3px 0 rgba(255,87,51,.45), 0 0 24px rgba(255,224,61,.08) !important;
+}
+.ep-saga-select:hover,
+.ep-saga-select:focus,
+select.s-input:hover,
+select.s-input:focus{
+  color:var(--yellow) !important;
+}
+
+
+
+/* ─────────────────────────────────────────────
+   RANDOM SOLID PAINT SPLATS + CLEAR HERO PNG PATCH
+   Uses the hero backdrop PNG clearly and keeps splats in yellow/orange/blue/teal
+───────────────────────────────────────────── */
+:root{
+  --paint-yellow:#FFE03D;
+  --paint-orange:#FF9D1E;
+  --paint-blue:#2474FF;
+  --paint-teal:#16D7C7;
+  --paint-deep-blue:#0B48FF;
+
+  --splat-a:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 360'%3E%3Cpath fill='black' d='M216 38c39 7 70 28 79 62 8 30-6 52 15 70 22 19 71 7 82 31 12 27-34 43-66 48-28 5-37 20-30 48 8 33-8 57-35 61-28 4-42-29-55-52-12-21-30-19-55-5-32 19-72 15-90-13-18-29 4-56 19-78 14-20 5-36-21-43-31-9-66-31-56-56 10-25 52-20 79-12 27 8 41-3 43-32 3-34 36-58 91-49Z'/%3E%3Ccircle cx='96' cy='58' r='13' fill='black'/%3E%3Ccircle cx='351' cy='82' r='16' fill='black'/%3E%3Ccircle cx='392' cy='241' r='10' fill='black'/%3E%3Ccircle cx='62' cy='252' r='15' fill='black'/%3E%3Ccircle cx='289' cy='20' r='7' fill='black'/%3E%3Cpath fill='black' d='M148 86c-21-33-18-70 1-80 20-10 40 22 33 57-6 30-21 41-34 23ZM305 123c28-24 67-30 77-11 10 18-24 40-57 43-27 3-39-15-20-32ZM92 184c-35 5-70-8-72-30-2-24 43-25 74-10 27 13 24 36-2 40ZM234 291c17 33 9 65-14 68-23 3-34-34-25-63 8-27 26-30 39-5Z'/%3E%3C/svg%3E");
+  --splat-b:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Cpath fill='black' d='M196 51c34-8 66 8 79 39 15 37-4 68 24 82 25 13 73-15 91 7 20 25-16 61-50 74-31 12-43 20-34 52 9 34-6 65-35 68-30 4-44-31-58-59-12-25-28-26-53-10-34 21-77 16-91-15-14-31 14-58 35-77 19-18 15-35-10-46-31-14-66-42-55-71 12-30 59-19 86-8 25 10 39-2 42-29 3-26 12-54 29-57Z'/%3E%3Ccircle cx='62' cy='62' r='10' fill='black'/%3E%3Ccircle cx='329' cy='53' r='12' fill='black'/%3E%3Ccircle cx='381' cy='140' r='8' fill='black'/%3E%3Ccircle cx='47' cy='282' r='15' fill='black'/%3E%3Ccircle cx='281' cy='385' r='11' fill='black'/%3E%3Cpath fill='black' d='M166 69c-5-39 11-66 31-61 22 5 20 48 3 75-15 24-31 14-34-14ZM287 153c40-11 70 2 70 24 0 25-46 30-75 16-23-11-20-33 5-40ZM111 205c-35 23-71 22-78 1-8-25 33-45 69-42 28 3 31 26 9 41ZM213 322c2 40-18 67-39 57-22-10-13-53 6-78 16-21 31-7 33 21Z'/%3E%3C/svg%3E");
+  --splat-c:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 360'%3E%3Cpath fill='black' d='M250 44c49 0 76 22 89 53 12 29-4 55 23 72 30 19 88-1 101 26 14 29-43 53-82 56-35 3-45 15-41 45 5 34-17 58-49 54-29-3-35-33-50-56-14-22-35-21-66 0-38 25-82 20-100-10-17-28 9-52 35-75 23-20 16-41-15-48-38-8-82-28-76-58 6-29 59-31 94-19 33 11 50-2 57-33 7-34 38-57 80-57Z'/%3E%3Ccircle cx='86' cy='42' r='11' fill='black'/%3E%3Ccircle cx='410' cy='73' r='17' fill='black'/%3E%3Ccircle cx='458' cy='285' r='12' fill='black'/%3E%3Ccircle cx='55' cy='236' r='9' fill='black'/%3E%3Ccircle cx='315' cy='23' r='8' fill='black'/%3E%3Cpath fill='black' d='M172 104c-35-24-46-59-27-73 19-14 49 16 51 52 2 29-5 39-24 21ZM329 126c31-30 74-41 87-20 13 21-29 45-64 47-27 2-42-11-23-27ZM130 190c-43 8-87-4-91-28-5-29 49-31 86-16 31 12 32 37 5 44ZM266 282c7 42-10 78-35 76-26-2-29-49-14-79 13-27 44-27 49 3Z'/%3E%3C/svg%3E");
+}
+
+/* Force the uploaded hero PNG/backdrop to stay visible and readable */
+.hero-bg{
+  background-image:url('cover.png') !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  filter:brightness(.95) saturate(1.22) contrast(1.05) !important;
+  transform:scale(1.012) !important;
+}
+.hero-vignette{
+  background:
+    radial-gradient(ellipse 85% 48% at 50% 113%, rgba(10,12,20,.68) 0%, transparent 70%),
+    radial-gradient(ellipse 96% 22% at 50% 0%, rgba(10,12,20,.10) 0%, transparent 74%),
+    linear-gradient(180deg, rgba(255,224,61,.035) 0%, transparent 55%, rgba(10,12,20,.34) 100%) !important;
+}
+.hero-content{
+  background:linear-gradient(135deg, rgba(10,12,20,.22), rgba(255,255,255,.025)) !important;
+  backdrop-filter:blur(2px) saturate(1.04) !important;
+  -webkit-backdrop-filter:blur(2px) saturate(1.04) !important;
+}
+
+/* Hero splats: random silhouettes, mostly tucked away from the main title/backdrop */
+.hero::before{
+  -webkit-mask:var(--splat-b) center/contain no-repeat !important;
+  mask:var(--splat-b) center/contain no-repeat !important;
+  width:clamp(5.2rem,9vw,9rem) !important;
+  aspect-ratio:1.15/1 !important;
+  background:linear-gradient(135deg,var(--paint-yellow),var(--paint-orange)) !important;
+  top:8% !important;
+  left:3.2% !important;
+  opacity:.66 !important;
+  transform:rotate(-26deg) scale(.9) !important;
+  mix-blend-mode:screen;
+}
+.hero::after{
+  -webkit-mask:var(--splat-c) center/contain no-repeat !important;
+  mask:var(--splat-c) center/contain no-repeat !important;
+  width:clamp(6rem,11vw,10.5rem) !important;
+  aspect-ratio:1.35/1 !important;
+  background:linear-gradient(135deg,var(--paint-blue),var(--paint-teal)) !important;
+  right:2.5% !important;
+  bottom:15% !important;
+  opacity:.60 !important;
+  transform:rotate(18deg) scale(1.05) !important;
+  mix-blend-mode:screen;
+}
+
+/* Section splats: varied shape, size and rotation, limited to yellow/orange/blue/teal */
+.summary-section::before,
+.episodes-section::before,
+.characters-section::before,
+.artwork-section::before,
+.summary-section::after,
+.episodes-section::after,
+.characters-section::after,
+.artwork-section::after{
+  filter:none !important;
+  opacity:.64 !important;
+}
+.summary-section::before{
+  width:clamp(5.8rem,10vw,9rem) !important;
+  aspect-ratio:1.05/1 !important;
+  -webkit-mask:var(--splat-a) center/contain no-repeat !important;
+  mask:var(--splat-a) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-yellow),var(--paint-orange)) !important;
+  left:-1.6rem !important; top:1.1rem !important;
+  transform:rotate(-31deg) scale(.82) !important;
+}
+.summary-section::after{
+  width:clamp(4.8rem,8vw,7rem) !important;
+  aspect-ratio:1.25/1 !important;
+  -webkit-mask:var(--splat-c) center/contain no-repeat !important;
+  mask:var(--splat-c) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-teal),var(--paint-blue)) !important;
+  right:7% !important; bottom:.4rem !important;
+  transform:rotate(19deg) scale(.7) !important;
+}
+.episodes-section::before{
+  width:clamp(7.4rem,13vw,12rem) !important;
+  aspect-ratio:1.28/1 !important;
+  -webkit-mask:var(--splat-b) center/contain no-repeat !important;
+  mask:var(--splat-b) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-blue),var(--paint-teal)) !important;
+  right:-2.8rem !important; top:2.4rem !important;
+  transform:rotate(13deg) scale(1) !important;
+}
+.episodes-section::after{
+  width:clamp(4.6rem,7.5vw,6.7rem) !important;
+  aspect-ratio:1.05/1 !important;
+  -webkit-mask:var(--splat-a) center/contain no-repeat !important;
+  mask:var(--splat-a) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-yellow),var(--paint-orange)) !important;
+  left:5% !important; bottom:1.1rem !important;
+  transform:rotate(-9deg) scale(.62) !important;
+}
+.characters-section::before{
+  width:clamp(6.5rem,11vw,10rem) !important;
+  aspect-ratio:1.35/1 !important;
+  -webkit-mask:var(--splat-c) center/contain no-repeat !important;
+  mask:var(--splat-c) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-teal),var(--paint-blue)) !important;
+  left:-2.1rem !important; bottom:2.8rem !important;
+  transform:rotate(28deg) scale(.9) !important;
+}
+.characters-section::after{
+  width:clamp(4.2rem,7vw,6rem) !important;
+  aspect-ratio:1/1 !important;
+  -webkit-mask:var(--splat-b) center/contain no-repeat !important;
+  mask:var(--splat-b) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-orange),var(--paint-yellow)) !important;
+  right:8% !important; top:2rem !important;
+  transform:rotate(-22deg) scale(.58) !important;
+}
+.artwork-section::before{
+  width:clamp(6.8rem,12vw,11rem) !important;
+  aspect-ratio:1.18/1 !important;
+  -webkit-mask:var(--splat-a) center/contain no-repeat !important;
+  mask:var(--splat-a) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-yellow),var(--paint-orange)) !important;
+  right:-2.2rem !important; bottom:1.8rem !important;
+  transform:rotate(-25deg) scale(.92) !important;
+}
+.artwork-section::after{
+  width:clamp(5rem,8.5vw,7.8rem) !important;
+  aspect-ratio:1.4/1 !important;
+  -webkit-mask:var(--splat-c) center/contain no-repeat !important;
+  mask:var(--splat-c) center/contain no-repeat !important;
+  background:linear-gradient(135deg,var(--paint-blue),var(--paint-teal)) !important;
+  left:7% !important; top:2.2rem !important;
+  transform:rotate(11deg) scale(.72) !important;
+}
+
+/* Extra small droplets for an organic paint-splash feel, without covering content */
+.summary-card::after,
+.ep-filter-bar::after,
+.character-grid::after,
+.artwork-grid::after{
+  content:'';
+  position:absolute;
+  pointer-events:none;
+  z-index:-1;
+  width:.62rem;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--paint-teal);
+  box-shadow:
+    1.1rem -.75rem 0 -.08rem var(--paint-yellow),
+    2.3rem .32rem 0 -.16rem var(--paint-orange),
+    -1rem .82rem 0 -.1rem var(--paint-blue);
+  opacity:.55;
+}
+.summary-card::after{right:1.2rem;top:-1.1rem}
+.ep-filter-bar::after{left:1rem;bottom:-1.3rem;background:var(--paint-yellow)}
+.character-grid,.artwork-grid{position:relative}
+.character-grid::after{right:2%;top:-1.6rem;background:var(--paint-orange)}
+.artwork-grid::after{left:4%;bottom:-1.6rem;background:var(--paint-blue)}
+
 </style>
 </head>
 <body>
@@ -1056,8 +1654,8 @@ footer a:hover{color:#fff}
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const STUDIO_PASS = 'splash2026';
-const SUPABASE_URL = 'https://cpqbukdclkaubkvylzzh.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwcWJ1a2RjbGthdWJrdnlsenpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3Mzg3NjcsImV4cCI6MjA5NDMxNDc2N30.DqEt3DK-ZLrz1S8jcWiGbxjesTpcXBHeuJaiMuAhOlE';
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
 const PDF_BUCKET = 'novel-pdfs';
 const EPISODES_TABLE = 'episodes';
 const CHARACTERS_TABLE = 'characters';
