@@ -394,30 +394,69 @@ body::before{
   align-items:center;
   justify-content:space-between;
   gap:.8rem;
-  padding:.85rem 1rem;
-  border:1px solid var(--border2);
-  background:rgba(240,244,255,.025);
+  padding:.95rem 1rem;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg, rgba(255,224,61,.035), rgba(59,130,246,.045)), rgba(10,12,20,.82);
+  box-shadow:0 12px 45px rgba(0,0,0,.18), inset 0 0 0 1px rgba(240,244,255,.025);
 }
 .ep-filter-label{
   font-family:'Space Mono',monospace;
   font-size:.7rem;
-  letter-spacing:.14em;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--dim);
+  color:rgba(240,244,255,.58);
 }
 .ep-saga-select{
-  min-width:210px;
-  background:rgba(240,244,255,.05);
-  border:1px solid var(--border2);
+  min-width:270px;
+  appearance:none;
+  -webkit-appearance:none;
+  background-color:#0e1120;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--yellow) 50%),
+    linear-gradient(135deg, var(--yellow) 50%, transparent 50%),
+    linear-gradient(135deg, rgba(255,224,61,.12), rgba(59,130,246,.09));
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%,
+    0 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    100% 100%;
+  background-repeat:no-repeat;
+  border:1px solid var(--yellow);
   color:var(--cream);
   font-family:'Space Mono',monospace;
-  font-size:.74rem;
-  letter-spacing:.06em;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.08em;
   text-transform:uppercase;
-  padding:.52rem .75rem;
+  padding:.68rem 2.4rem .68rem .9rem;
   outline:none;
+  cursor:pointer;
+  box-shadow:3px 3px 0 rgba(255,87,51,.34), 0 0 28px rgba(255,224,61,.05);
+  transition:all .18s ease;
 }
-.ep-saga-select:focus{border-color:var(--yellow)}
+.ep-saga-select:hover{
+  color:var(--yellow);
+  background-color:#111626;
+  box-shadow:5px 5px 0 rgba(255,87,51,.45), 0 0 35px rgba(255,224,61,.08);
+  transform:translate(-1px,-1px);
+}
+.ep-saga-select:focus{
+  color:var(--yellow);
+  border-color:var(--yellow);
+  box-shadow:0 0 0 2px rgba(255,224,61,.16),5px 5px 0 rgba(255,87,51,.45);
+}
+.ep-saga-select option{
+  background:#0e1120;
+  color:var(--cream);
+  font-family:'Space Mono',monospace;
+}
+.studio-saga-select{
+  width:100%;
+  margin-bottom:.8rem!important;
+}
 .ep-saga-pill{
   display:inline-block;
   margin-top:.35rem;
@@ -428,7 +467,7 @@ body::before{
   opacity:.75;
   text-transform:uppercase;
 }
-@media(max-width:620px){.ep-filter-bar{align-items:stretch;flex-direction:column}.ep-saga-select{width:100%}}
+@media(max-width:620px){.ep-filter-bar{align-items:stretch;flex-direction:column}.ep-saga-select{width:100%;min-width:0}}
 
 /* ── CHARACTERS SECTION ── */
 .characters-section{
@@ -611,6 +650,9 @@ body::before{
 .s-label{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;display:block}
 .s-input{width:100%;background:rgba(240,244,255,.05);border:1px solid var(--border2);color:var(--cream);font-family:'Nunito',sans-serif;font-size:1rem;padding:.5rem .8rem;outline:none;transition:border-color .2s}
 .s-input:focus{border-color:var(--yellow)}
+select.s-input{appearance:none;-webkit-appearance:none;background:linear-gradient(135deg,rgba(255,224,61,.1),rgba(59,130,246,.07)),rgba(10,12,20,.9);border-color:var(--border);color:var(--yellow);font-family:'Space Mono',monospace;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:.6rem 2.2rem .6rem .8rem;box-shadow:3px 3px 0 rgba(255,87,51,.2);background-image:linear-gradient(45deg,transparent 50%,var(--yellow) 50%),linear-gradient(135deg,var(--yellow) 50%,transparent 50%),linear-gradient(135deg,rgba(255,224,61,.1),rgba(59,130,246,.07));background-position:calc(100% - 17px) 50%,calc(100% - 11px) 50%,0 0;background-size:6px 6px,6px 6px,100% 100%;background-repeat:no-repeat}
+select.s-input:hover{border-color:var(--yellow);background-color:rgba(255,224,61,.06)}
+select.s-input option{background:#0e1120;color:var(--cream)}
 .file-drop{border:2px dashed rgba(59,130,246,.3);padding:1.5rem;text-align:center;cursor:pointer;margin-bottom:.8rem;transition:all .2s;position:relative}
 .file-drop:hover,.file-drop.drag{background:rgba(255,224,61,.05);border-color:var(--yellow)}
 .file-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
@@ -723,7 +765,7 @@ footer a:hover{color:#fff}
   </div>
   <div class="ep-filter-bar">
     <span class="ep-filter-label">Check episode section</span>
-    <select class="ep-saga-select" id="publicSagaFilter" onchange="renderPublic()">
+    <select class="ep-saga-select" id="publicSagaFilter">
       <option value="all">All Sections</option>
       <option value="splash">Splash Saga · Main Story</option>
       <option value="k">K-Saga · Kanishk Stories</option>
@@ -833,7 +875,7 @@ footer a:hover{color:#fff}
           </div>
         </div>
         <label class="s-label" style="margin-bottom:0.4rem">Episode Section</label>
-        <select class="s-input" id="epSaga" style="margin-bottom:0.8rem">
+        <select class="s-input ep-saga-select studio-saga-select" id="epSaga" style="margin-bottom:0.8rem">
           <option value="splash">Splash Saga · Main Story</option>
           <option value="k">K-Saga · Kanishk Stories</option>
           <option value="j">J-Saga · Joseph Stories</option>
@@ -1014,8 +1056,8 @@ footer a:hover{color:#fff}
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const STUDIO_PASS = 'splash2026';
-const SUPABASE_URL = 'https://cpqbukdclkaubkvylzzh.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwcWJ1a2RjbGthdWJrdnlsenpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3Mzg3NjcsImV4cCI6MjA5NDMxNDc2N30.DqEt3DK-ZLrz1S8jcWiGbxjesTpcXBHeuJaiMuAhOlE';
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
 const PDF_BUCKET = 'novel-pdfs';
 const EPISODES_TABLE = 'episodes';
 const CHARACTERS_TABLE = 'characters';
@@ -1055,13 +1097,13 @@ async function loadEpisodes(){
     loadEpisodesFromLocalStorage();
     showSetupNotice();
   }
-  renderPublic(); renderManage();
+  bindSagaFilter(); renderPublic(); renderManage();
   renderCharactersPublic(); renderCharacterManage();
   renderArtworkPublic(); renderArtworkManage();
 }
 
 async function loadEpisodesFromSupabase(){
-  const { data, error } = await supabase.from(EPISODES_TABLE).select('id,num,title,part,pdf_path,saga').order('num',{ascending:true});
+  const { data, error } = await supabase.from(EPISODES_TABLE).select('id,num,title,part,pdf_path,saga,created_at').order('created_at',{ascending:true});
   if(error){ console.error(error); loadEpisodesFromLocalStorage(); return; }
   episodes = data || [];
 }
@@ -1085,23 +1127,37 @@ async function loadArtworkFromSupabase(){
 }
 
 // ── RENDER PUBLIC EPISODES ──
-function getSagaValue(ep){ return (ep&&ep.saga&&SAGA_LABELS[ep.saga]) ? ep.saga : 'splash'; }
+function normalizeSaga(value){
+  const raw=String(value||'').trim().toLowerCase();
+  if(['k','k-saga','ksaga','kanishk','kanishk stories'].includes(raw)) return 'k';
+  if(['j','j-saga','jsaga','joseph','joseph stories'].includes(raw)) return 'j';
+  if(['s','s-saga','ssaga','somyonil','somyonil stories'].includes(raw)) return 's';
+  if(['splash','splash-saga','splash saga','main','main story'].includes(raw)) return 'splash';
+  return 'splash';
+}
+function getSagaValue(ep){ return normalizeSaga(ep?.saga); }
 function getSagaLabel(ep){ const saga=getSagaValue(ep); return `${SAGA_LABELS[saga]} · ${SAGA_DESCRIPTIONS[saga]}`; }
+function episodeTime(ep){
+  const value=ep?.created_at || ep?.createdAt || ep?.uploaded_at || ep?.uploadedAt || '';
+  const time=Date.parse(value);
+  return Number.isFinite(time) ? time : 0;
+}
 function renderPublic(){
   const list=document.getElementById('epList');
   if(!list) return;
   const filterEl=document.getElementById('publicSagaFilter');
-  const selected=filterEl ? filterEl.value : 'all';
-  const visible=[...episodes].filter(ep=>selected==='all'||getSagaValue(ep)===selected).sort((a,b)=>{
-    const sagaA=getSagaValue(a), sagaB=getSagaValue(b);
-    if(selected==='all' && sagaA!==sagaB){
-      const order={splash:0,k:1,j:2,s:3};
-      return (order[sagaA]??9)-(order[sagaB]??9);
+  const selected=normalizeSaga(filterEl ? filterEl.value : 'all');
+  const rawSelected=filterEl ? filterEl.value : 'all';
+  const visible=[...episodes].filter(ep=>rawSelected==='all'||getSagaValue(ep)===selected).sort((a,b)=>{
+    if(rawSelected==='all'){
+      const ta=episodeTime(a), tb=episodeTime(b);
+      if(ta!==tb) return ta-tb;
+      return Number(a.num)-Number(b.num);
     }
-    return Number(a.num)-Number(b.num);
+    return Number(a.num)-Number(b.num) || episodeTime(a)-episodeTime(b);
   });
   if(!visible.length){
-    const label=selected==='all'?'episodes':`${SAGA_LABELS[selected]} episodes`;
+    const label=rawSelected==='all'?'episodes':`${SAGA_LABELS[selected]} episodes`;
     list.innerHTML=`<div class="ep-empty">No ${label} published yet.</div>`;
     return;
   }
@@ -1117,6 +1173,13 @@ function renderPublic(){
     </div>`).join('');
 }
 
+function bindSagaFilter(){
+  const filterEl=document.getElementById('publicSagaFilter');
+  if(filterEl && !filterEl.dataset.bound){
+    filterEl.addEventListener('change', renderPublic);
+    filterEl.dataset.bound='true';
+  }
+}
 
 // ── RENDER CHARACTERS ──
 function getCharacterImageUrl(c){
@@ -1626,7 +1689,7 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 function escAttr(s){ return esc(s).replace(/'/g,'&#39;'); }
 
 Object.assign(window,{
-  scrollToEpisodes,scrollToCharacters,openArtworkPage,openLettersPage,
+  scrollToEpisodes,scrollToCharacters,openArtworkPage,openLettersPage,renderPublic,
   openReader,closeReader,prevPdfPage,nextPdfPage,
   openGate,closeGate,checkPw,openStudio,exitStudio,
   showStudioTab,backToStudioChoice,
