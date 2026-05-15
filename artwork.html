@@ -4,42 +4,116 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Artwork – The Splash of Lives</title>
-<meta name="description" content="Artwork gallery for The Splash of Lives, a warm Indian campus coming-of-age web novel set in India.">
-<meta name="theme-color" content="#050914">
+<meta name="description" content="Artwork gallery for The Splash of Lives — scenes, covers, and moments from St. Cross College of Technology.">
+<meta name="theme-color" content="#0a0c14">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Caveat:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#091425;--amber:#146BFF;--amber-light:#FFD34E;--cream:#F7FBFF;--shadow:rgba(20,10,0,0.55)}
-body{font-family:'Crimson Text',Georgia,serif;background:#050914;color:var(--cream);min-height:100vh;overflow-x:hidden}
-.page-hero{padding:4rem clamp(1.2rem,6vw,5rem) 2.8rem;text-align:center;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(20,107,255,.14),transparent 70%),#050914;border-bottom:1px solid rgba(20,107,255,.14)}
-.back-link{display:inline-block;color:rgba(255,211,78,.78);text-decoration:none;border:1px solid rgba(20,107,255,.3);padding:.45rem 1rem;margin-bottom:2rem;font-family:'Caveat',cursive;font-size:1.05rem}.back-link:hover{background:rgba(20,107,255,.12);color:#fff}
-h1{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(3rem,8vw,6rem);line-height:1;color:var(--cream);text-shadow:0 4px 30px rgba(0,0,0,.5)}
-.sub{font-size:.9rem;color:rgba(247,251,255,.44);letter-spacing:.16em;text-transform:uppercase;margin-top:.9rem}
-.artwork-section{padding:3rem clamp(1.2rem,6vw,5rem) 5rem;background:#050914}.artwork-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}.artwork-card{background:rgba(247,251,255,0.035);border:1px solid rgba(20,107,255,0.16);padding:0.75rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s;min-width:0}.artwork-card:hover{transform:translateY(-3px);background:rgba(20,107,255,0.055);border-color:rgba(20,107,255,0.32)}.artwork-thumb{aspect-ratio:1/1.35;border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:0.7rem;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1rem;text-align:center;padding:0.55rem}.artwork-thumb img{width:100%;height:100%;object-fit:contain;display:block}.artwork-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.1;margin-bottom:0.22rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.artwork-tag{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(20,107,255,0.72);margin-bottom:0.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.artwork-preview{font-size:0.82rem;line-height:1.35;color:rgba(247,251,255,0.48);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.ep-empty{text-align:center;padding:3rem 1rem;color:rgba(247,251,255,0.25);font-style:italic;font-size:1rem;grid-column:1/-1}
-.artwork-modal{display:none;position:fixed;inset:0;background:rgba(8,4,1,0.97);z-index:560;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}.artwork-modal.open{display:flex}.artwork-modal-card{width:min(1020px,96vw);max-height:92vh;overflow:auto;background:#07101f;border:1px solid rgba(20,107,255,0.28);box-shadow:0 25px 90px rgba(0,0,0,.5);padding:1.1rem}.artwork-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid rgba(20,107,255,0.16);padding-bottom:0.8rem;margin-bottom:1rem}.artwork-modal-top h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(1.5rem,4vw,2.2rem)}.artwork-modal-close{background:none;border:1px solid rgba(20,107,255,0.35);color:var(--amber-light);padding:0.35rem 0.8rem;font-family:'Caveat',cursive;font-size:1rem;cursor:pointer}.artwork-modal-body{display:grid;grid-template-columns:minmax(240px,430px) 1fr;gap:1.3rem;align-items:start}.artwork-modal-image{border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);min-height:320px;display:flex;align-items:center;justify-content:center;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1.1rem;text-align:center;padding:0.8rem}.artwork-modal-image img{max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;display:block}.artwork-modal-text{white-space:pre-wrap;font-size:1.05rem;line-height:1.75;color:rgba(247,251,255,0.72)}
-footer{text-align:center;padding:2rem 1rem;border-top:1px solid rgba(247,251,255,0.07);color:rgba(247,251,255,0.2);font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;background:#050914}footer a{color:rgba(255,211,78,0.6);text-decoration:none;margin:0 0.35rem}footer a:hover{color:var(--amber-light)}
+:root{--bg:#0a0c14;--bg2:#0e1120;--yellow:#FFE03D;--coral:#FF5733;--blue:#3B82F6;--cream:#F0F4FF;--dim:rgba(240,244,255,0.5);--border:rgba(255,224,61,0.18);--border2:rgba(59,130,246,0.2)}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--cream);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:0.5}
+
+/* HERO */
+.page-hero{position:relative;min-height:40vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:5rem clamp(1.2rem,6vw,5rem) 3rem;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('cover.png') center/cover no-repeat;filter:brightness(.38) saturate(1.1);transform:scale(1.04)}
+.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 110%,rgba(10,12,20,.95),transparent 68%),linear-gradient(180deg,rgba(10,12,20,.4),transparent)}
+.page-hero-content{position:relative;z-index:2}
+.back-link{display:inline-block;color:var(--yellow);text-decoration:none;border:1px solid var(--border);padding:.4rem 1rem;margin-bottom:1.4rem;font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+.back-link:hover{background:rgba(255,224,61,.1);color:#fff}
+.page-kicker{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);opacity:.85;margin-bottom:.7rem}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,6.5rem);line-height:.9;letter-spacing:.05em;color:var(--cream);text-shadow:4px 4px 0 rgba(255,87,51,.3)}
+.page-sub{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:.9rem}
+
+/* BAND */
+.band{background:var(--yellow);padding:.5rem 0;overflow:hidden;white-space:nowrap;border-top:3px solid var(--coral);border-bottom:3px solid var(--coral)}
+.band-inner{display:inline-flex;gap:0;animation:ticker 22s linear infinite}
+.band-item{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#0a0c14;letter-spacing:.08em;padding:0 2rem}
+.band-dot{color:var(--coral);font-size:1.2rem;line-height:1.1rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ARTWORK GRID */
+.artwork-section{padding:4rem clamp(1.2rem,6vw,5rem) 6rem;background:var(--bg)}
+.section-head{text-align:center;padding-bottom:2.5rem;border-bottom:2px solid var(--border);margin-bottom:2.5rem}
+.section-head h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em;color:var(--cream)}
+.section-head p{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem}
+.artwork-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
+.artwork-card{background:rgba(240,244,255,.03);border:1px solid var(--border2);padding:.85rem;cursor:pointer;transition:all .2s ease;min-width:0;position:relative;overflow:hidden}
+.artwork-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--yellow),var(--coral));transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.artwork-card:hover{background:rgba(255,224,61,.04);border-color:rgba(255,224,61,.3);transform:translateY(-3px)}
+.artwork-card:hover::after{transform:scaleX(1)}
+.artwork-thumb{aspect-ratio:1/1.35;border:1px solid var(--border2);background:rgba(240,244,255,.04);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:.75rem;color:var(--dim);font-family:'Space Mono',monospace;font-size:.78rem;text-align:center;padding:.55rem}
+.artwork-thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.artwork-title{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.04em;color:var(--cream);line-height:1.1;margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.artwork-tag{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);opacity:.75;margin-bottom:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.artwork-preview{font-size:.82rem;line-height:1.4;color:var(--dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ep-empty{text-align:center;padding:3rem 1rem;color:var(--dim);font-style:italic;font-family:'Space Mono',monospace;font-size:.85rem;grid-column:1/-1}
+
+/* MODAL */
+.artwork-modal{display:none;position:fixed;inset:0;background:rgba(5,6,12,.97);z-index:560;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+.artwork-modal.open{display:flex}
+.artwork-modal-card{width:min(1020px,96vw);max-height:92vh;overflow:auto;background:var(--bg2);border:1px solid var(--border);box-shadow:0 30px 100px rgba(0,0,0,.7);padding:1.25rem}
+.artwork-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid var(--border);padding-bottom:.9rem;margin-bottom:1rem}
+.artwork-modal-top h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:.05em}
+.artwork-modal-close{background:none;border:1px solid rgba(240,244,255,.2);color:var(--yellow);padding:.35rem .9rem;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;letter-spacing:.1em;text-transform:uppercase}
+.artwork-modal-close:hover{background:rgba(255,224,61,.1);border-color:var(--yellow)}
+.artwork-modal-body{display:grid;grid-template-columns:minmax(240px,430px) 1fr;gap:1.3rem;align-items:start}
+.artwork-modal-image{border:1px solid var(--border2);background:rgba(240,244,255,.04);min-height:320px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:1rem;text-align:center;padding:.8rem}
+.artwork-modal-image img{max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;display:block}
+.artwork-modal-tag{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);opacity:.8;margin-bottom:.6rem}
+.artwork-modal-text{white-space:pre-wrap;font-size:1.03rem;line-height:1.8;color:rgba(240,244,255,.8)}
 @media(max-width:1000px){.artwork-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}}
-@media(max-width:720px){.artwork-modal-body{grid-template-columns:1fr}.artwork-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}.artwork-card{padding:.65rem}.artwork-title{font-size:1rem}.artwork-preview{font-size:.78rem}.artwork-modal-image{min-height:240px}.page-hero{padding-top:2.5rem}}
-@media(max-width:460px){.artwork-grid{grid-template-columns:1fr;max-width:280px}}
+@media(max-width:720px){.artwork-modal-body{grid-template-columns:1fr}.artwork-modal-image{min-height:240px}.artwork-grid{gap:.85rem}.page-hero{padding-top:3rem}}
+@media(max-width:460px){.artwork-grid{grid-template-columns:1fr;max-width:280px;margin:0 auto}}
+
+footer{text-align:center;padding:2rem 1rem;border-top:2px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--bg)}
+footer a{color:var(--yellow);text-decoration:none;margin:0 .4rem}
+footer a:hover{color:#fff}
 </style>
 </head>
 <body>
+
 <header class="page-hero">
-  <a href="index.html" class="back-link">← Back to Splash</a>
-  <h1>Artwork</h1>
-  <p class="sub">Scenes · Covers · Café Moments</p>
+  <div class="page-hero-content">
+    <a href="index.html" class="back-link">← Back to Splash</a>
+    <div class="page-kicker">Scenes · Covers · Campus Moments</div>
+    <h1 class="page-title">Artwork</h1>
+    <p class="page-sub">The Splash of Lives · Gallery</p>
+  </div>
 </header>
+
+<div class="band">
+  <div class="band-inner" aria-hidden="true">
+    <span class="band-item">EPISODE ART</span><span class="band-dot">✦</span>
+    <span class="band-item">COVER ILLUSTRATIONS</span><span class="band-dot">✦</span>
+    <span class="band-item">HOSTEL MOMENTS</span><span class="band-dot">✦</span>
+    <span class="band-item">CAMPUS SCENES</span><span class="band-dot">✦</span>
+    <span class="band-item">CLICK TO EXPAND</span><span class="band-dot">✦</span>
+    <span class="band-item">EPISODE ART</span><span class="band-dot">✦</span>
+    <span class="band-item">COVER ILLUSTRATIONS</span><span class="band-dot">✦</span>
+    <span class="band-item">HOSTEL MOMENTS</span><span class="band-dot">✦</span>
+    <span class="band-item">CAMPUS SCENES</span><span class="band-dot">✦</span>
+    <span class="band-item">CLICK TO EXPAND</span><span class="band-dot">✦</span>
+  </div>
+</div>
+
 <section class="artwork-section">
-  <div class="artwork-grid" id="artworkGrid"><div class="ep-empty">Loading artwork…</div></div>
+  <div class="section-head">
+    <h2>The Gallery</h2>
+    <p>Scenes · Covers · Campus Moments</p>
+  </div>
+  <div class="artwork-grid" id="artworkGrid">
+    <div class="ep-empty">Loading artwork…</div>
+  </div>
 </section>
+
 <div class="artwork-modal" id="artworkModal">
   <div class="artwork-modal-card">
     <div class="artwork-modal-top">
       <div>
         <h2 id="artworkModalTitle">Artwork</h2>
-        <div class="artwork-tag" id="artworkModalTag"></div>
+        <div class="artwork-modal-tag" id="artworkModalTag"></div>
       </div>
       <button class="artwork-modal-close" onclick="closeArtworkModal()">✕ Close</button>
     </div>
@@ -49,61 +123,78 @@ footer{text-align:center;padding:2rem 1rem;border-top:1px solid rgba(247,251,255
     </div>
   </div>
 </div>
+
 <footer>
-  <span>Splash &nbsp;·&nbsp; The Splash of Lives</span><br>
-  <a href="index.html">Home</a><span>&nbsp;·&nbsp;</span><a href="characters.html">Characters</a>
+  <span>The Splash of Lives · SOUL Productions</span><br><br>
+  <a href="index.html">Home</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="characters.html">Characters</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="about.html">About</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="letters.html">Dormitory Mail</a>
 </footer>
+
 <script type="module">
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-const SUPABASE_URL = 'https://cpqbukdclkaubkvylzzh.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwcWJ1a2RjbGthdWJrdnlsenpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3Mzg3NjcsImV4cCI6MjA5NDMxNDc2N30.DqEt3DK-ZLrz1S8jcWiGbxjesTpcXBHeuJaiMuAhOlE';
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
 const ARTWORKS_TABLE = 'artworks';
 const ARTWORK_BUCKET = 'artwork-gallery';
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const SUPABASE_READY = SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.length > 40;
+const supabase = SUPABASE_READY ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 let artworks = [];
+
 async function loadArtwork(){
-  const { data, error } = await supabase
-    .from(ARTWORKS_TABLE)
-    .select('id,title,description,episode_label,image_path,sort_order,is_visible,created_at')
-    .eq('is_visible', true)
-    .order('sort_order', { ascending:true })
-    .order('created_at', { ascending:true });
-  if(error){console.error(error);document.getElementById('artworkGrid').innerHTML='<div class="ep-empty">Could not load artwork. Check Supabase table and policies.</div>';return;}
+  const grid = document.getElementById('artworkGrid');
+  if(!SUPABASE_READY){ grid.innerHTML='<div class="ep-empty">Supabase not configured. Add your URL and anon key.</div>'; return; }
+  const { data, error } = await supabase.from(ARTWORKS_TABLE).select('id,title,description,episode_label,image_path,sort_order,is_visible,created_at').eq('is_visible',true).order('sort_order',{ascending:true}).order('created_at',{ascending:true});
+  if(error){ console.error(error); grid.innerHTML='<div class="ep-empty">Could not load artwork. Check Supabase policies.</div>'; return; }
   artworks = data || [];
   renderArtwork();
 }
+
 function getArtworkImageUrl(art){
-  if(!art || !art.image_path) return '';
+  if(!art||!art.image_path) return '';
   const { data } = supabase.storage.from(ARTWORK_BUCKET).getPublicUrl(art.image_path);
   return data.publicUrl;
 }
+
 function renderArtwork(){
   const grid = document.getElementById('artworkGrid');
-  if(!artworks.length){grid.innerHTML='<div class="ep-empty">No artwork published yet.</div>';return;}
+  if(!artworks.length){ grid.innerHTML='<div class="ep-empty">No artwork published yet.</div>'; return; }
   grid.innerHTML = artworks.map(art=>{
     const imgUrl = getArtworkImageUrl(art);
     return `<div class="artwork-card" onclick="openArtworkModal('${escAttr(art.id)}')">
-      <div class="artwork-thumb">${imgUrl ? `<img src="${escAttr(imgUrl)}" alt="${escAttr(art.title || 'Splash artwork')}">` : 'Image not available'}</div>
-      <h3 class="artwork-title">${esc(art.title || 'Untitled Artwork')}</h3>
-      ${art.episode_label ? `<div class="artwork-tag">${esc(art.episode_label)}</div>` : ''}
-      <p class="artwork-preview">${art.description ? esc(art.description) : 'Tap to view artwork.'}</p>
+      <div class="artwork-thumb">${imgUrl?`<img src="${escAttr(imgUrl)}" alt="${escAttr(art.title||'Artwork')}">`:''}</div>
+      <h3 class="artwork-title">${esc(art.title||'Untitled')}</h3>
+      ${art.episode_label?`<div class="artwork-tag">${esc(art.episode_label)}</div>`:''}
+      <p class="artwork-preview">${art.description?esc(art.description):'Tap to view.'}</p>
     </div>`;
   }).join('');
 }
+
 function openArtworkModal(id){
   const art = artworks.find(x=>x.id===id); if(!art) return;
   const imgUrl = getArtworkImageUrl(art);
-  document.getElementById('artworkModalTitle').textContent = art.title || 'Untitled Artwork';
-  document.getElementById('artworkModalTag').textContent = art.episode_label || '';
-  document.getElementById('artworkModalImage').innerHTML = imgUrl ? `<img src="${escAttr(imgUrl)}" alt="${escAttr(art.title || 'Splash artwork')}">` : 'Image not available';
-  document.getElementById('artworkModalText').textContent = art.description && art.description.trim() ? art.description : 'No description written.';
+  document.getElementById('artworkModalTitle').textContent = art.title||'Untitled';
+  document.getElementById('artworkModalTag').textContent = art.episode_label||'';
+  document.getElementById('artworkModalImage').innerHTML = imgUrl?`<img src="${escAttr(imgUrl)}" alt="${escAttr(art.title||'Artwork')}">`:'';;
+  document.getElementById('artworkModalText').textContent = (art.description&&art.description.trim())?art.description:'No description.';
   document.getElementById('artworkModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeArtworkModal(){document.getElementById('artworkModal').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape') closeArtworkModal();});
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function escAttr(s){return esc(s).replace(/'/g,'&#39;');}
+
+function closeArtworkModal(){
+  document.getElementById('artworkModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeArtworkModal(); });
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escAttr(s){ return esc(s).replace(/'/g,'&#39;'); }
+
 window.openArtworkModal = openArtworkModal;
 window.closeArtworkModal = closeArtworkModal;
 loadArtwork();

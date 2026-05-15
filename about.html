@@ -3,105 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>About – The Splash of Lives | Campus Web Novel</title>
-<meta name="description" content="About The Splash of Lives – a slice of life web novel set in India. Written by Ayushman Gouda under SOUL Productions.">
-<meta name="keywords" content="web novel, slice of life, Splash Cafe, Ayushman Gouda, SOUL Productions">
+<meta name="description" content="About The Splash of Lives – a chaotic slice of life campus web novel following Kanishk, Joseph, and Somyonil at St. Cross College of Technology. Written by Ayushman Gouda under SOUL Productions.">
+<meta name="keywords" content="web novel, slice of life, Splash of Lives, Ayushman Gouda, SOUL Productions, Kanishk, Joseph, Somyonil, St Cross College">
 <meta name="author" content="Ayushman Gouda">
-
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
-body{
-  margin:0;
-  font-family:Georgia, serif;
-  background:#050914;
-  color:#F7FBFF;
-  line-height:1.7;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:2rem 1.5rem 4rem;
-}
-
-.hero-img{
-  width:100%;
-  border-radius:12px;
-  margin-bottom:2rem;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
-}
-
-h1{
-  font-size:2.5rem;
-  font-weight:300;
-  margin-bottom:1rem;
-}
-
-p{
-  margin-bottom:1.2rem;
-  font-size:1.05rem;
-  color:rgba(247,251,255,0.85);
-}
-
-.author{
-  margin-top:2rem;
-  font-size:1rem;
-  color:rgba(255,211,78,0.9);
-}
-
-.watermark{
-  margin-top:3rem;
-  text-align:center;
-  opacity:0.15;
-}
-
-.watermark img{
-  max-width:200px;
-}
-
-.back{
-  display:inline-block;
-  margin-bottom:1.5rem;
-  color:#FFD34E;
-  text-decoration:none;
-  font-size:0.95rem;
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0c14;--bg2:#0e1120;--yellow:#FFE03D;--coral:#FF5733;--blue:#3B82F6;--cream:#F0F4FF;--dim:rgba(240,244,255,0.55);--border:rgba(255,224,61,0.18);--border2:rgba(59,130,246,0.2)}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--cream);min-height:100vh;line-height:1.75}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:0.55}
+.page-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;padding:6rem clamp(1.5rem,6vw,5rem) 3.5rem;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('cover.png') center/cover no-repeat;filter:brightness(.38) saturate(1.1);transform:scale(1.04)}
+.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 110%,rgba(10,12,20,.97),transparent 65%),linear-gradient(180deg,rgba(10,12,20,.55),transparent 50%)}
+.hero-inner{position:relative;z-index:2;max-width:860px}
+.back{display:inline-block;margin-bottom:1.4rem;color:var(--yellow);text-decoration:none;font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--border);padding:.4rem .9rem;background:rgba(10,12,20,.4);transition:all .18s}
+.back:hover{background:rgba(255,224,61,.1);color:#fff}
+.hero-kicker{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);opacity:.85;margin-bottom:.8rem}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,7rem);line-height:.9;letter-spacing:.04em;color:var(--cream);text-shadow:4px 4px 0 rgba(255,87,51,.3)}
+.hero-title .accent{color:var(--yellow)}
+.hero-sub{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:1rem}
+.band{background:var(--yellow);padding:.55rem 0;overflow:hidden;white-space:nowrap;border-top:3px solid var(--coral);border-bottom:3px solid var(--coral)}
+.band-inner{display:inline-flex;gap:0;animation:ticker 26s linear infinite}
+.band-item{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:#0a0c14;letter-spacing:.08em;padding:0 2rem}
+.band-dot{color:var(--coral);font-size:1.3rem;line-height:1.15rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.container{max-width:860px;margin:0 auto;padding:4rem 1.5rem 6rem}
+.cover-wrap{position:relative;margin-bottom:3.5rem;border:2px solid var(--border);overflow:hidden}
+.cover-wrap img{width:100%;display:block;filter:saturate(1.05)}
+.cover-wrap::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:40%;background:linear-gradient(180deg,transparent,rgba(10,12,20,.7))}
+.section-label{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);opacity:.85;margin-bottom:.7rem;display:flex;align-items:center;gap:.7rem}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em;color:var(--cream);line-height:1;margin-bottom:1.2rem}
+p{color:var(--dim);font-size:1.05rem;line-height:1.85;margin-bottom:1.4rem}
+p strong{color:var(--cream)}
+em{color:rgba(240,244,255,.85);font-style:italic}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:2.5rem 0 3.5rem}
+.trio-card{border:1px solid var(--border2);background:rgba(240,244,255,.03);padding:1.4rem;position:relative;overflow:hidden;transition:all .2s ease}
+.trio-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--yellow),var(--coral));transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.trio-card:hover{background:rgba(255,224,61,.04);border-color:rgba(255,224,61,.3);transform:translateY(-2px)}
+.trio-card:hover::before{transform:scaleX(1)}
+.trio-card-name{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.05em;color:var(--cream);line-height:1;margin-bottom:.2rem}
+.trio-card-origin{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);opacity:.8;margin-bottom:.75rem}
+.trio-card-desc{font-size:.92rem;line-height:1.65;color:var(--dim);margin:0}
+.divider{display:flex;align-items:center;gap:1rem;margin:3rem 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.divider-mark{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:var(--yellow);opacity:.5}
+.prologue-arc{background:rgba(255,224,61,.03);border:1px solid var(--border);border-left:4px solid var(--yellow);padding:1.8rem;margin:2.5rem 0}
+.prologue-arc p{margin-bottom:.8rem}
+.prologue-arc p:last-child{margin-bottom:0}
+.author-block{margin-top:4rem;padding:2rem;border:1px solid var(--border2);background:rgba(240,244,255,.025);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.author-icon{width:56px;height:56px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#0a0c14;letter-spacing:.05em;flex-shrink:0}
+.author-text .name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.05em;color:var(--cream)}
+.author-text .label{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);opacity:.8}
+footer{text-align:center;padding:2rem 1rem;border-top:2px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--bg)}
+footer a{color:var(--yellow);text-decoration:none;margin:0 .4rem}
+footer a:hover{color:#fff}
+@media(max-width:600px){.author-block{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
 
+<div class="page-hero">
+  <div class="hero-inner">
+    <a href="index.html" class="back">← Back to Home</a>
+    <div class="hero-kicker">St. Cross College of Technology · Maharashtra · Prologue Arc</div>
+    <h1 class="hero-title">THE <span class="accent">SPLASH</span><br>OF LIVES</h1>
+    <p class="hero-sub">A serialised campus novel · SOUL Productions</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-inner" aria-hidden="true">
+    <span class="band-item">KANISHK RANJAN</span><span class="band-dot">✦</span>
+    <span class="band-item">JOSEPH PINTO</span><span class="band-dot">✦</span>
+    <span class="band-item">SOMYONIL ROY</span><span class="band-dot">✦</span>
+    <span class="band-item">THREE STRANGERS</span><span class="band-dot">✦</span>
+    <span class="band-item">ONE COLLISION</span><span class="band-dot">✦</span>
+    <span class="band-item">ZERO SURVIVORS</span><span class="band-dot">✦</span>
+    <span class="band-item">KANISHK RANJAN</span><span class="band-dot">✦</span>
+    <span class="band-item">JOSEPH PINTO</span><span class="band-dot">✦</span>
+    <span class="band-item">SOMYONIL ROY</span><span class="band-dot">✦</span>
+    <span class="band-item">THREE STRANGERS</span><span class="band-dot">✦</span>
+    <span class="band-item">ONE COLLISION</span><span class="band-dot">✦</span>
+    <span class="band-item">ZERO SURVIVORS</span><span class="band-dot">✦</span>
+  </div>
+</div>
+
 <div class="container">
 
-<a href="index.html" class="back">← Back to Home</a>
+  <div class="cover-wrap">
+    <img src="cover.png" alt="The Splash of Lives — three freshers walking through the gates of St. Cross College">
+  </div>
 
-<img src="cover.png" class="hero-img" alt="The Splash of Lives cover">
+  <div class="section-label">The Story</div>
+  <h2>Three Lives. One Gate. No Plan.</h2>
 
-<h1>The Splash of Lives</h1>
+  <p>
+    <em>The Splash of Lives</em> begins on a sweltering summer morning at the iron gates of <strong>St. Cross College of Technology</strong> in Maharashtra — the kind of morning where the air smells like ambition, cheap instant noodles, and the low-grade dread of having absolutely no idea what you're doing.
+  </p>
+  <p>
+    Three boys arrive. Separately. With very different problems already in motion. They don't know each other yet. They're about to.
+  </p>
 
-<p><em>The Splash of Lives</em> begins at the gate of St. Cross College of Technology on a burning-bright summer morning, when three freshers arrive with bags, doubts, excitement, and the strange feeling that life is about to become louder.</p>
+  <div class="divider"><span class="divider-mark">✦✦✦</span></div>
 
-<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What he finds at Splash is not just good filter coffee served in a steel tumbler the old Indiai way, but a table of regulars in their sixties who argue about road trips, quote things that stay with you, and listen the way people rarely do anymore. There is Ramachandra sir, loud and certain and completely joyful about it. There is Mrs. Sen, who speaks once an evening and lands with the precision of a grandmaster. There is Venkat sir himself — the room's quiet centre of gravity — who named the café after his wife, whose handwriting is on the poster by the door, and who waters the plant at a fresher's usual table a little more on the days he comes.
-</p>
+  <div class="section-label">Hostel Block C · The Residents</div>
+  <h2>Meet the Crew</h2>
 
-<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Around this café, a life accumulates — a colleague brought in from a bad evening, a father's mistaken fury in a dark lane, a week at work that asked too much and gave too little, a dabba of rasam rice left on a kitchen counter by someone's mother who simply decided he needed feeding. None of it is dramatic. All of it is real.
-</p>
+  <div class="trio">
+    <div class="trio-card">
+      <div class="trio-card-name">Kanishk Ranjan</div>
+      <div class="trio-card-origin">Madhya Pradesh · Dorm 204</div>
+      <p class="trio-card-desc">
+        Charismatic, chronically broke, and equipped with a silver tongue that has no business being that persuasive. Kanishk can talk his way into a meal, out of a due assignment, and onto a guest list he was never invited to. The problem is he's always scheming and the schemes always involve spending money he doesn't have.
+      </p>
+    </div>
+    <div class="trio-card">
+      <div class="trio-card-name">Joseph Pinto</div>
+      <div class="trio-card-origin">Madras · Dorm 205</div>
+      <p class="trio-card-desc">
+        All Joseph wants is to study. That's genuinely, sincerely it. But he is highly observant and too decent to walk away when something's clearly going wrong. He can see every disaster coming from three steps away. He gets involved anyway. Every single time.
+      </p>
+    </div>
+    <div class="trio-card">
+      <div class="trio-card-name">Somyonil Roy</div>
+      <div class="trio-card-origin">Bengal · Dorm 206</div>
+      <p class="trio-card-desc">
+        Loyal to a fault, built like an athlete, and completely non-functional around girls. Somyonil will sprint across campus for you without a second thought but freeze solid if someone he likes says hello. His communication system works with everyone except the people he most wants to impress.
+      </p>
+    </div>
+  </div>
 
-<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At its heart, <em>The Splash of Lives</em> is a story about a young man learning that belonging does not always announce itself, that the best things in a life are often found on a wrong turn, and that some rooms — once you have sat in them, ordered a second coffee, stayed until the lane outside turns amber — change the shape of everything outside them.
-</p>
+  <div class="divider"><span class="divider-mark">✦✦✦</span></div>
 
-<div class="author">
-Written by <strong>Ayushman Gouda</strong><br>
-Under <strong>SOUL Productions</strong>
+  <div class="section-label">The Prologue Arc</div>
+  <h2>How It's Structured</h2>
+
+  <p>
+    The story opens with three separate arcs running in parallel — three boys, three different problems, three dormitory rooms in the same block, none of them aware the others exist. The prologue follows each of them individually as they settle into St. Cross and each stumble headfirst into a problem entirely their own.
+  </p>
+
+  <div class="prologue-arc">
+    <p><strong>Kanishk's arc</strong> involves money — or the spectacular lack of it — and the ill-advised plan he's already cooking to fix that. His silver tongue is an asset. His judgment is a liability.</p>
+    <p><strong>Joseph's arc</strong> involves trying to study and somehow ending up in a situation that has nothing to do with his textbooks. He didn't ask for this. He just noticed something. He couldn't let it go.</p>
+    <p><strong>Somyonil's arc</strong> involves the athletics track, a loyalty that runs deeper than sense, and the increasingly humiliating consequences of being physically capable of everything except a normal conversation with the girl he can't stop thinking about.</p>
+  </div>
+
+  <p>
+    These three arcs build independently. Then they collide — in chaos, in the way all the best things happen — and out of that collision comes a friendship that is loud, messy, and completely irreplaceable.
+  </p>
+  <p>
+    That collision is where the story really begins.
+  </p>
+
+  <div class="divider"><span class="divider-mark">✦✦✦</span></div>
+
+  <div class="section-label">What This Is</div>
+  <h2>The Vibe, Honestly</h2>
+
+  <p>
+    <em>The Splash of Lives</em> is a slice of life story that commits fully to being a bit of a mess — the same way college is a bit of a mess, the same way the friendships you make in those years are. It's unhinged, occasionally ridiculous, and punctuated with moments where the comedy suddenly drops out and something real is sitting there instead.
+  </p>
+  <p>
+    There's no grand prophecy. No chosen one. Just three boys at a college gate on a summer morning, each dragging a suitcase and a problem, about to walk into the same building and change each other's lives without meaning to.
+  </p>
+
+  <div class="author-block">
+    <div class="author-icon">AG</div>
+    <div class="author-text">
+      <div class="name">Ayushman Gouda</div>
+      <div class="label">SOUL Productions · Writer</div>
+    </div>
+  </div>
+
 </div>
 
-<div class="watermark">
-<img src="soul-logo.png" alt="SOUL Productions Logo">
-</div>
-
-</div>
+<footer>
+  <span>The Splash of Lives · SOUL Productions</span><br><br>
+  <a href="index.html">Home</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="characters.html">Characters</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="artwork.html">Artwork</a>
+  <span>&nbsp;·&nbsp;</span>
+  <a href="letters.html">Dormitory Mail</a>
+</footer>
 
 </body>
 </html>

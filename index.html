@@ -4,67 +4,71 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>The Splash of Lives – Indian Campus Web Novel</title>
-<meta name="description" content="Read The Splash of Lives, a vibrant Indian campus web novel about freshers entering St. Cross College of Technology, friendship, chaos, hostel life, and growing up.">
-<meta name="keywords" content="web novel, reader, online novel reader, Splash, The Splash of Lives, slice of life, Indian web novel, India story, The Splash of Lives, Ayushman Gouda, SOUL Productions">
+<meta name="description" content="Read The Splash of Lives, a chaotic Indian campus web novel about three freshers — Kanishk, Joseph, and Somyonil — crashing into each other's lives at St. Cross College of Technology.">
+<meta name="keywords" content="web novel, Splash of Lives, Ayushman Gouda, SOUL Productions, college story, Indian campus, Kanishk, Joseph, Somyonil, St Cross">
 <meta name="author" content="Ayushman Gouda">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#050914">
-<link rel="canonical" href="https://splashcafecom.vercel.app/">
+<meta name="theme-color" content="#0a0c14">
 
 <meta property="og:title" content="The Splash of Lives – A Campus Web Novel">
-<meta property="og:description" content="A quiet India web novel about coffee, conversations, wrong turns, and finding somewhere you belong.">
+<meta property="og:description" content="Three guys. One campus. Zero preparation. The chaos starts now.">
 <meta property="og:image" content="https://splashcafecom.vercel.app/cover.png">
 <meta property="og:url" content="https://splashcafecom.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="The Splash of Lives">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Splash of Lives – Campus Web Novel Reader">
-<meta name="twitter:description" content="Read The Splash of Lives, a warm Indian campus coming-of-age web novel set in India.">
-<meta name="twitter:image" content="https://splashcafecom.vercel.app/cover.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "name": "The Splash of Lives",
-  "alternateName": "The Splash of Lives",
-  "description": "A quiet Indian campus coming-of-age web novel set in India, following three freshers as he discovers Splash, a small WiFi-free café where coffee, conversations, and belonging slowly change his life.",
-  "genre": ["Campus life", "Web novel", "Indian fiction"],
-  "author": {
-    "@type": "Person",
-    "name": "Ayushman Gouda"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "SOUL Productions"
-  },
+  "description": "A chaotic Indian campus coming-of-age web novel following three freshers at St. Cross College of Technology in Maharashtra.",
+  "genre": ["Campus life", "Web novel", "Indian fiction", "Slice of life"],
+  "author": {"@type":"Person","name":"Ayushman Gouda"},
+  "publisher": {"@type":"Organization","name":"SOUL Productions"},
   "url": "https://splashcafecom.vercel.app/",
   "image": "https://splashcafecom.vercel.app/cover.png",
   "inLanguage": "en"
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Caveat:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 
 :root{
-  --ink:#091425;
-  --amber:#146BFF;
-  --amber-light:#FFD34E;
-  --cream:#F7FBFF;
-  --shadow:rgba(20,10,0,0.55);
+  --bg:#0a0c14;
+  --bg2:#0e1120;
+  --yellow:#FFE03D;
+  --coral:#FF5733;
+  --blue:#3B82F6;
+  --cream:#F0F4FF;
+  --dim:rgba(240,244,255,0.5);
+  --border:rgba(255,224,61,0.18);
+  --border2:rgba(59,130,246,0.2);
 }
 
 body{
-  font-family:'Crimson Text',Georgia,serif;
-  background:#050914;
+  font-family:'Nunito',sans-serif;
+  background:var(--bg);
   color:var(--cream);
   min-height:100vh;
   overflow-x:hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:999;
+  opacity:0.6;
 }
 
 /* ── HERO ── */
@@ -83,24 +87,40 @@ body{
   position:absolute;
   inset:0;
   background:url('cover.png') center/cover no-repeat;
-  filter:brightness(0.72);
-  transform:scale(1.03);
-  animation:slowzoom 22s ease-in-out infinite alternate;
+  filter:brightness(0.55) saturate(1.1);
+  transform:scale(1.04);
+  animation:slowzoom 25s ease-in-out infinite alternate;
 }
 
 @keyframes slowzoom{
-  from{transform:scale(1.03)}
-  to{transform:scale(1.09)}
+  from{transform:scale(1.04)}
+  to{transform:scale(1.1)}
 }
 
-/* warm vignette that feels like the painting itself */
 .hero-vignette{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(10,5,0,0.82) 0%, transparent 70%),
-    radial-gradient(ellipse 100% 40% at 50% 0%,   rgba(10,5,0,0.45) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(10,12,20,0.96) 0%, transparent 65%),
+    radial-gradient(ellipse 100% 35% at 50% 0%, rgba(10,12,20,0.5) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 40%, rgba(10,12,20,0.7) 100%);
   pointer-events:none;
+}
+
+/* Diagonal accent line */
+.hero-accent{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-accent::after{
+  content:'';
+  position:absolute;
+  bottom:0; left:-10%;
+  width:120%; height:4px;
+  background:linear-gradient(90deg, transparent, var(--yellow), var(--coral), transparent);
+  opacity:0.6;
 }
 
 .hero-content{
@@ -111,129 +131,190 @@ body{
 }
 
 .tagline{
-  font-family:'Caveat',cursive;
-  font-size:clamp(1rem,2.5vw,1.3rem);
-  color:var(--amber-light);
-  letter-spacing:0.08em;
-  margin-bottom:1rem;
+  font-family:'Space Mono',monospace;
+  font-size:clamp(0.7rem,1.5vw,0.9rem);
+  color:var(--yellow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
   opacity:0;
-  animation:fadeup 0.9s 0.3s ease forwards;
+  animation:fadeup 0.7s 0.2s ease forwards;
 }
 
 .site-title{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-weight:300;
-  font-size:clamp(3.5rem,9vw,7rem);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,14vw,11rem);
   color:var(--cream);
-  line-height:1;
-  letter-spacing:0.02em;
+  line-height:0.88;
+  letter-spacing:0.03em;
   opacity:0;
-  animation:fadeup 0.9s 0.55s ease forwards;
-  text-shadow:0 4px 32px rgba(0,0,0,0.6);
+  animation:fadeup 0.8s 0.4s ease forwards;
+  text-shadow: 4px 4px 0 rgba(255,87,51,0.35), 0 0 60px rgba(255,224,61,0.15);
+  cursor:pointer;
+  user-select:none;
+}
+
+.site-title .splash-accent{
+  color:var(--yellow);
+  -webkit-text-stroke:2px var(--yellow);
+  text-shadow: 4px 4px 0 rgba(10,12,20,0.8), 0 0 40px rgba(255,224,61,0.4);
 }
 
 .site-sub{
-  font-family:'Crimson Text',Georgia,serif;
-  font-size:clamp(0.9rem,2vw,1.1rem);
-  color:rgba(247,251,255,0.65);
-  letter-spacing:0.18em;
+  font-family:'Space Mono',monospace;
+  font-size:clamp(0.65rem,1.4vw,0.82rem);
+  color:var(--dim);
+  letter-spacing:0.2em;
   text-transform:uppercase;
-  margin-top:0.7rem;
+  margin-top:0.9rem;
   opacity:0;
-  animation:fadeup 0.9s 0.75s ease forwards;
+  animation:fadeup 0.7s 0.65s ease forwards;
 }
 
-.hero-cta{
-  display:inline-block;
-  margin-top:2.5rem;
-  padding:0.75rem 2.5rem;
-  border:1px solid rgba(20,107,255,0.6);
-  color:var(--amber-light);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-size:1.15rem;
-  letter-spacing:0.06em;
-  text-decoration:none;
-  background:rgba(0,0,0,0.25);
-  backdrop-filter:blur(4px);
-  cursor:pointer;
-  transition:background 0.25s,border-color 0.25s,color 0.25s;
+.hero-actions{
+  display:flex;
+  gap:0.7rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:2rem;
   opacity:0;
-  animation:fadeup 0.9s 1s ease forwards;
+  animation:fadeup 0.7s 0.85s ease forwards;
 }
-.hero-cta:hover{
-  background:rgba(20,107,255,0.18);
-  border-color:var(--amber-light);
-  color:#fff;
+
+.hero-btn{
+  display:inline-block;
+  padding:0.6rem 1.6rem;
+  font-family:'Space Mono',monospace;
+  font-size:0.78rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  cursor:pointer;
+  border:none;
+  transition:all 0.18s ease;
+}
+.hero-btn.primary{
+  background:var(--yellow);
+  color:#0a0c14;
+  font-weight:700;
+  box-shadow:3px 3px 0 var(--coral);
+}
+.hero-btn.primary:hover{
+  transform:translate(-2px,-2px);
+  box-shadow:5px 5px 0 var(--coral);
+}
+.hero-btn.secondary{
+  background:transparent;
+  color:var(--cream);
+  border:1px solid rgba(240,244,255,0.3);
+}
+.hero-btn.secondary:hover{
+  border-color:var(--yellow);
+  color:var(--yellow);
 }
 
 @keyframes fadeup{
-  from{opacity:0;transform:translateY(14px)}
+  from{opacity:0;transform:translateY(18px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* ── POSTER QUOTE ── */
-.poster{
-  text-align:center;
-  padding:3.5rem 1.5rem 3rem;
-  background:#050914;
+/* ── TAGLINE BAND ── */
+.band{
+  background:var(--yellow);
+  padding:0.7rem 0;
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:3px solid var(--coral);
+  border-bottom:3px solid var(--coral);
+}
+.band-inner{
+  display:inline-flex;
+  gap:0;
+  animation:ticker 28s linear infinite;
+}
+.band-item{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.25rem;
+  color:#0a0c14;
+  letter-spacing:0.08em;
+  padding:0 2.5rem;
+}
+.band-dot{
+  color:var(--coral);
+  font-size:1.4rem;
+  line-height:1.25rem;
+}
+@keyframes ticker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ── SEO / SUMMARY CARD ── */
+.summary-section{
+  background:var(--bg);
+  padding:3rem clamp(1.2rem,6vw,5rem) 0;
+}
+.summary-card{
+  max-width:800px;
+  margin:0 auto;
+  padding:2rem;
+  border:1px solid var(--border);
+  background:rgba(255,224,61,0.03);
   position:relative;
 }
-.poster::before{
+.summary-card::before{
   content:'';
-  display:block;
-  width:1px;
-  height:40px;
-  background:rgba(20,107,255,0.3);
-  margin:0 auto 2rem;
+  position:absolute;
+  top:0; left:0;
+  width:4px; height:100%;
+  background:linear-gradient(180deg, var(--yellow), var(--coral));
 }
-.poster-text{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-size:clamp(1.1rem,2.5vw,1.5rem);
-  color:rgba(247,251,255,0.55);
-  max-width:520px;
-  margin:0 auto;
-  line-height:1.7;
+.summary-card h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:0.05em;
+  color:var(--cream);
+  margin-bottom:0.75rem;
 }
-.poster-attr{
-  font-family:'Caveat',cursive;
-  font-size:0.95rem;
-  color:rgba(20,107,255,0.55);
-  margin-top:1rem;
+.summary-card p{
+  color:var(--dim);
+  font-size:1rem;
+  line-height:1.75;
 }
+.summary-card a{
+  color:var(--yellow);
+  text-decoration:none;
+  font-weight:700;
+}
+.summary-card a:hover{text-decoration:underline}
 
 /* ── EPISODES SECTION ── */
 .episodes-section{
-  background:#050914;
-  padding:0 clamp(1.2rem,6vw,5rem) 5rem;
+  background:var(--bg);
+  padding:4rem clamp(1.2rem,6vw,5rem) 5rem;
 }
 
 .section-head{
   text-align:center;
   padding-bottom:2.5rem;
-  border-bottom:1px solid rgba(20,107,255,0.15);
+  border-bottom:2px solid var(--border);
   margin-bottom:2.5rem;
 }
-
 .section-head h2{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-weight:300;
-  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  letter-spacing:0.06em;
   color:var(--cream);
-  letter-spacing:0.04em;
 }
-
 .section-head p{
-  font-size:0.92rem;
-  color:rgba(247,251,255,0.4);
-  letter-spacing:0.1em;
+  font-family:'Space Mono',monospace;
+  font-size:0.75rem;
+  color:var(--dim);
+  letter-spacing:0.18em;
   text-transform:uppercase;
   margin-top:0.4rem;
 }
 
-/* episode list — simple lines, no grid */
 .ep-list{
   max-width:680px;
   margin:0 auto;
@@ -244,634 +325,354 @@ body{
 
 .ep-item{
   display:flex;
-  align-items:baseline;
+  align-items:center;
   gap:1.5rem;
-  padding:1.1rem 0;
-  border-bottom:1px solid rgba(247,251,255,0.07);
+  padding:1rem 0.75rem;
+  border-bottom:1px solid rgba(240,244,255,0.07);
   cursor:pointer;
-  transition:background 0.2s;
-  border-radius:2px;
+  transition:all 0.18s ease;
 }
 .ep-item:hover{
-  background:rgba(20,107,255,0.05);
-  padding-left:0.5rem;
-  padding-right:0.5rem;
+  background:rgba(255,224,61,0.05);
+  border-bottom-color:rgba(255,224,61,0.2);
+  padding-left:1.2rem;
 }
 
 .ep-num{
-  font-family:'Caveat',cursive;
-  font-size:1rem;
-  color:var(--amber);
-  min-width:2.8rem;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem;
+  letter-spacing:0.08em;
+  color:var(--yellow);
+  min-width:3.5rem;
   flex-shrink:0;
 }
 
-.ep-meta{
-  flex:1;
-  min-width:0;
-}
+.ep-meta{flex:1;min-width:0}
 
 .ep-title{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:1.18rem;
-  font-weight:400;
+  font-family:'Nunito',sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
   color:var(--cream);
   line-height:1.3;
 }
 
 .ep-part{
-  font-size:0.82rem;
-  color:rgba(247,251,255,0.38);
+  font-family:'Space Mono',monospace;
+  font-size:0.72rem;
+  color:var(--dim);
   letter-spacing:0.06em;
   margin-top:0.2rem;
 }
 
 .ep-arrow{
-  color:rgba(20,107,255,0.4);
-  font-size:1rem;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem;
+  color:rgba(255,224,61,0.35);
   flex-shrink:0;
-  transition:transform 0.2s,color 0.2s;
+  transition:all 0.18s;
+  letter-spacing:0;
 }
 .ep-item:hover .ep-arrow{
   transform:translateX(4px);
-  color:var(--amber);
+  color:var(--yellow);
 }
 
-/* empty state */
 .ep-empty{
   text-align:center;
   padding:3rem 1rem;
-  color:rgba(247,251,255,0.25);
+  color:var(--dim);
   font-style:italic;
-  font-size:1rem;
+  font-size:0.95rem;
+  font-family:'Space Mono',monospace;
 }
 
-
-
 /* ── CHARACTERS SECTION ── */
-.hero-actions{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;align-items:center}
-.hero-cta.secondary{background:rgba(247,251,255,0.06);border-color:rgba(247,251,255,0.22);color:rgba(247,251,255,0.78)}
-.hero-cta.secondary:hover{background:rgba(20,107,255,0.12);border-color:var(--amber-light);color:#fff}
-.characters-section{background:#050914;padding:0 clamp(1.2rem,6vw,5rem) 5rem}
-.character-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
-.character-card{background:rgba(247,251,255,0.035);border:1px solid rgba(20,107,255,0.16);padding:1rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
-.character-card:hover{transform:translateY(-3px);background:rgba(20,107,255,0.055);border-color:rgba(20,107,255,0.32)}
-.character-thumb{aspect-ratio:1/1;border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:0.9rem;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1.05rem;text-align:center;padding:1rem}
+.characters-section{
+  background:var(--bg2);
+  padding:4rem clamp(1.2rem,6vw,5rem) 5rem;
+}
+
+.character-grid{
+  max-width:980px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:1rem;
+}
+
+.character-card{
+  background:rgba(240,244,255,0.03);
+  border:1px solid var(--border2);
+  padding:0.9rem;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  position:relative;
+  overflow:hidden;
+}
+.character-card::after{
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:100%; height:3px;
+  background:linear-gradient(90deg,var(--yellow),var(--coral));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.22s ease;
+}
+.character-card:hover{
+  background:rgba(255,224,61,0.04);
+  border-color:rgba(255,224,61,0.35);
+  transform:translateY(-3px);
+}
+.character-card:hover::after{transform:scaleX(1)}
+
+.character-thumb{
+  aspect-ratio:1/1;
+  border:1px solid var(--border2);
+  background:rgba(240,244,255,0.04);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  margin-bottom:0.8rem;
+  color:var(--dim);
+  font-size:0.85rem;
+  text-align:center;
+  padding:0.7rem;
+}
 .character-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.character-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.1;margin-bottom:0.25rem}
-.character-role{font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(20,107,255,0.72);margin-bottom:0.55rem}
-.character-preview{font-size:0.95rem;line-height:1.5;color:rgba(247,251,255,0.48);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.character-modal{display:none;position:fixed;inset:0;background:rgba(8,4,1,0.96);z-index:550;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+
+.character-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.4rem;
+  letter-spacing:0.05em;
+  color:var(--cream);
+  line-height:1.1;
+  margin-bottom:0.25rem;
+}
+.character-role{
+  font-family:'Space Mono',monospace;
+  font-size:0.68rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  margin-bottom:0.5rem;
+  opacity:0.75;
+}
+.character-preview{
+  font-size:0.9rem;
+  line-height:1.55;
+  color:var(--dim);
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* Character Modal */
+.character-modal{display:none;position:fixed;inset:0;background:rgba(5,6,12,0.97);z-index:550;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
 .character-modal.open{display:flex}
-.character-modal-card{width:min(940px,96vw);max-height:92vh;overflow:auto;background:#07101f;border:1px solid rgba(20,107,255,0.28);box-shadow:0 25px 90px rgba(0,0,0,.5);padding:1.1rem}
-.character-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid rgba(20,107,255,0.16);padding-bottom:0.8rem;margin-bottom:1rem}
-.character-modal-top h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(1.5rem,4vw,2.2rem)}
-.character-modal-close{background:none;border:1px solid rgba(20,107,255,0.35);color:var(--amber-light);padding:0.35rem 0.8rem;font-family:'Caveat',cursive;font-size:1rem;cursor:pointer}
+.character-modal-card{width:min(940px,96vw);max-height:92vh;overflow:auto;background:var(--bg2);border:1px solid var(--border);box-shadow:0 30px 100px rgba(0,0,0,.7);padding:1.25rem}
+.character-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid var(--border);padding-bottom:0.9rem;margin-bottom:1rem}
+.character-modal-top h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,5vw,3rem);letter-spacing:0.05em;color:var(--cream)}
+.character-modal-close{background:none;border:1px solid rgba(240,244,255,0.2);color:var(--yellow);padding:0.35rem 0.9rem;font-family:'Space Mono',monospace;font-size:0.78rem;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase}
+.character-modal-close:hover{background:rgba(255,224,61,0.1);border-color:var(--yellow)}
 .character-modal-body{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:1.3rem;align-items:start}
-.character-modal-image{border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);min-height:260px;display:flex;align-items:center;justify-content:center;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1.1rem;text-align:center;padding:1rem}
+.character-modal-image{border:1px solid var(--border2);background:rgba(240,244,255,0.04);min-height:260px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:1rem;text-align:center;padding:1rem}
 .character-modal-image img{width:100%;height:auto;display:block}
-.character-modal-text{white-space:pre-wrap;font-size:1.05rem;line-height:1.75;color:rgba(247,251,255,0.72)}
-@media(max-width:720px){.character-modal-body{grid-template-columns:1fr}.hero-actions{flex-direction:column}.hero-cta{width:min(280px,92vw)}}
+.character-modal-role{font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);opacity:0.8;margin-bottom:0.8rem}
+.character-modal-text{white-space:pre-wrap;font-size:1.03rem;line-height:1.8;color:rgba(240,244,255,0.8)}
+@media(max-width:720px){.character-modal-body{grid-template-columns:1fr}.hero-actions{flex-direction:column}.hero-btn{width:min(260px,90vw)}}
 
-
-
-/* ── ARTWORK PAGE / CARDS ── */
-.artwork-section{background:#050914;padding:0 clamp(1.2rem,6vw,5rem) 5rem}
-.artwork-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.1rem}
-.artwork-card{background:rgba(247,251,255,0.035);border:1px solid rgba(20,107,255,0.16);padding:0.85rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
-.artwork-card:hover{transform:translateY(-3px);background:rgba(20,107,255,0.055);border-color:rgba(20,107,255,0.32)}
-.artwork-thumb{aspect-ratio:1/1.35;border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:0.8rem;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1.05rem;text-align:center;padding:0.65rem}
+/* ── ARTWORK ── */
+.artwork-section{background:var(--bg);padding:4rem clamp(1.2rem,6vw,5rem) 5rem}
+.artwork-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
+.artwork-card{background:rgba(240,244,255,0.03);border:1px solid var(--border2);padding:0.85rem;cursor:pointer;transition:all 0.2s ease}
+.artwork-card:hover{background:rgba(255,224,61,0.04);border-color:rgba(255,224,61,0.3);transform:translateY(-3px)}
+.artwork-thumb{aspect-ratio:1/1.35;border:1px solid var(--border2);background:rgba(240,244,255,0.04);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:0.8rem;color:var(--dim);font-size:0.9rem;text-align:center;padding:0.65rem}
 .artwork-thumb img{width:100%;height:100%;object-fit:contain;display:block}
-.artwork-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.22rem;font-weight:300;color:var(--cream);font-style:italic;line-height:1.1;margin-bottom:0.25rem}
-.artwork-tag{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(20,107,255,0.72);margin-bottom:0.45rem}
-.artwork-preview{font-size:0.9rem;line-height:1.45;color:rgba(247,251,255,0.48);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.artwork-modal{display:none;position:fixed;inset:0;background:rgba(8,4,1,0.97);z-index:560;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+.artwork-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;color:var(--cream);line-height:1.1;margin-bottom:0.25rem}
+.artwork-tag{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);opacity:0.7;margin-bottom:0.45rem}
+.artwork-preview{font-size:0.88rem;line-height:1.45;color:var(--dim);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.artwork-modal{display:none;position:fixed;inset:0;background:rgba(5,6,12,0.97);z-index:560;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
 .artwork-modal.open{display:flex}
-.artwork-modal-card{width:min(1020px,96vw);max-height:92vh;overflow:auto;background:#07101f;border:1px solid rgba(20,107,255,0.28);box-shadow:0 25px 90px rgba(0,0,0,.5);padding:1.1rem}
-.artwork-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid rgba(20,107,255,0.16);padding-bottom:0.8rem;margin-bottom:1rem}
-.artwork-modal-top h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(1.5rem,4vw,2.2rem)}
-.artwork-modal-close{background:none;border:1px solid rgba(20,107,255,0.35);color:var(--amber-light);padding:0.35rem 0.8rem;font-family:'Caveat',cursive;font-size:1rem;cursor:pointer}
+.artwork-modal-card{width:min(1020px,96vw);max-height:92vh;overflow:auto;background:var(--bg2);border:1px solid var(--border);box-shadow:0 30px 100px rgba(0,0,0,.7);padding:1.25rem}
+.artwork-modal-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid var(--border);padding-bottom:0.9rem;margin-bottom:1rem}
+.artwork-modal-top h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:0.05em}
+.artwork-modal-close{background:none;border:1px solid rgba(240,244,255,0.2);color:var(--yellow);padding:0.35rem 0.9rem;font-family:'Space Mono',monospace;font-size:0.78rem;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase}
+.artwork-modal-close:hover{background:rgba(255,224,61,0.1);border-color:var(--yellow)}
 .artwork-modal-body{display:grid;grid-template-columns:minmax(240px,430px) 1fr;gap:1.3rem;align-items:start}
-.artwork-modal-image{border:1px solid rgba(20,107,255,0.18);background:rgba(247,251,255,0.04);min-height:320px;display:flex;align-items:center;justify-content:center;color:rgba(247,251,255,0.32);font-family:'Caveat',cursive;font-size:1.1rem;text-align:center;padding:0.8rem}
+.artwork-modal-image{border:1px solid var(--border2);background:rgba(240,244,255,0.04);min-height:320px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:1rem;text-align:center;padding:0.8rem}
 .artwork-modal-image img{max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;display:block}
-.artwork-modal-text{white-space:pre-wrap;font-size:1.05rem;line-height:1.75;color:rgba(247,251,255,0.72)}
+.artwork-modal-text{white-space:pre-wrap;font-size:1.03rem;line-height:1.8;color:rgba(240,244,255,0.8)}
 @media(max-width:720px){.artwork-modal-body{grid-template-columns:1fr}.artwork-grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}.artwork-modal-image{min-height:240px}}
 
-/* ══ STUDIO CHOICE + CHARACTER MANAGEMENT ══ */
-.studio-choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-bottom:2rem}
-.choice-card{background:rgba(247,251,255,0.035);border:1px solid rgba(20,107,255,0.18);padding:1.5rem;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;text-align:left;color:var(--cream)}
-.choice-card:hover{background:rgba(20,107,255,0.07);border-color:rgba(20,107,255,0.42);transform:translateY(-2px)}
-.choice-card h2{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:1.5rem;margin-bottom:.35rem}
-.choice-card p{font-size:.9rem;color:rgba(247,251,255,.4);line-height:1.45}
+/* ── STUDIO ── */
+.studio-choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.choice-card{background:rgba(240,244,255,0.03);border:1px solid var(--border2);padding:1.5rem;cursor:pointer;transition:all 0.2s;text-align:left;color:var(--cream);border-top:3px solid transparent}
+.choice-card:hover{background:rgba(255,224,61,0.06);border-color:rgba(255,224,61,0.3);border-top-color:var(--yellow);transform:translateY(-2px)}
+.choice-card h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;margin-bottom:.35rem}
+.choice-card p{font-size:.88rem;color:var(--dim);line-height:1.5}
 .studio-tab{display:none}.studio-tab.active{display:block}
-.back-choice{background:none;border:none;color:rgba(247,251,255,.35);font-family:'Crimson Text',Georgia,serif;font-size:.95rem;cursor:pointer;margin-bottom:1rem}.back-choice:hover{color:var(--amber-light)}
-.s-textarea{width:100%;min-height:150px;resize:vertical;background:rgba(247,251,255,0.05);border:1px solid rgba(20,107,255,0.2);color:var(--cream);font-family:'Crimson Text',Georgia,serif;font-size:1rem;padding:.7rem .8rem;outline:none;transition:border-color .2s}.s-textarea:focus{border-color:var(--amber)}
-.studio-actions{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}.s-submit.ghost{background:transparent;color:rgba(247,251,255,.42);border-color:rgba(247,251,255,.14)}.s-submit.ghost:hover{background:rgba(247,251,255,.06);color:var(--cream)}
-.manage-actions{display:flex;gap:.45rem;flex-shrink:0}.manage-edit{background:none;border:1px solid rgba(20,107,255,.28);color:rgba(255,211,78,.85);font-size:.78rem;padding:.2rem .6rem;cursor:pointer;font-family:'Crimson Text',serif}.manage-edit:hover{background:rgba(20,107,255,.12);color:#fff}
+.back-choice{background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:.78rem;cursor:pointer;margin-bottom:1rem;letter-spacing:0.1em;text-transform:uppercase}.back-choice:hover{color:var(--yellow)}
+.s-textarea{width:100%;min-height:150px;resize:vertical;background:rgba(240,244,255,0.04);border:1px solid var(--border2);color:var(--cream);font-family:'Nunito',sans-serif;font-size:1rem;padding:.7rem .8rem;outline:none;transition:border-color .2s}.s-textarea:focus{border-color:var(--yellow)}
+.studio-actions{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center}
+.s-submit.ghost{background:transparent;color:var(--dim);border-color:rgba(240,244,255,.14)}.s-submit.ghost:hover{background:rgba(240,244,255,.06);color:var(--cream)}
+.manage-actions{display:flex;gap:.45rem;flex-shrink:0}
+.manage-edit{background:none;border:1px solid rgba(59,130,246,.28);color:rgba(255,224,61,.85);font-size:.78rem;padding:.2rem .6rem;cursor:pointer;font-family:'Space Mono',monospace}.manage-edit:hover{background:rgba(59,130,246,.12);color:#fff}
 @media(max-width:600px){.studio-choice{grid-template-columns:1fr}.manage-item{align-items:flex-start;flex-wrap:wrap}.manage-actions{width:100%;justify-content:flex-end}}
+
+/* ── PDF READER ── */
+.reader-overlay{display:none;position:fixed;inset:0;background:#070910;z-index:500;flex-direction:column;height:100dvh;overflow:hidden}
+.reader-overlay.open{display:flex}
+.reader-topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.2rem;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0}
+.reader-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.06em;color:var(--cream);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.reader-close{background:none;border:1px solid rgba(240,244,255,.2);color:var(--yellow);padding:.35rem .85rem;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;letter-spacing:0.12em;text-transform:uppercase}
+.reader-close:hover{background:rgba(255,224,61,.1);border-color:var(--yellow)}
+.reader-stage{flex:1;overflow:auto;display:flex;flex-direction:column;align-items:center;padding:1.5rem 1rem;position:relative}
+.reader-paper{background:#fff;display:inline-block;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.reader-paper canvas{display:block}
+.reader-loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dim);font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:0.1em;text-align:center;padding:1rem}
+.reader-hint-floating{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:rgba(10,12,20,.85);border:1px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:.72rem;padding:.4rem .9rem;pointer-events:none;letter-spacing:0.1em;transition:opacity .6s;backdrop-filter:blur(4px)}
+.reader-controls{display:flex;align-items:center;gap:1rem;padding:.6rem 1.2rem;border-top:1px solid var(--border);background:var(--bg2);flex-shrink:0;justify-content:center}
+.reader-btn{background:none;border:1px solid rgba(240,244,255,.18);color:var(--cream);padding:.38rem 1.2rem;font-family:'Space Mono',monospace;font-size:.78rem;cursor:pointer;letter-spacing:0.1em}
+.reader-btn:hover{background:rgba(255,224,61,.1);border-color:var(--yellow);color:var(--yellow)}
+.reader-page{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--dim);letter-spacing:0.08em}
+
+/* ── STUDIO GATE ── */
+.studio-overlay{display:none;position:fixed;inset:0;background:rgba(5,6,12,.98);z-index:700;align-items:center;justify-content:center}
+.studio-overlay.open{display:flex}
+.studio-box{width:min(420px,92vw);background:var(--bg2);border:1px solid var(--border);padding:2rem}
+.studio-box h2{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:0.06em;margin-bottom:.25rem}
+.studio-box p{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.4rem}
+.studio-err{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--coral);margin-top:.5rem;min-height:1.2rem}
+.studio-field{width:100%;background:rgba(240,244,255,.05);border:1px solid var(--border2);color:var(--cream);font-family:'Space Mono',monospace;font-size:1rem;padding:.7rem .85rem;margin-bottom:.8rem;outline:none}
+.studio-field:focus{border-color:var(--yellow)}
+.studio-btn{width:100%;background:var(--yellow);border:none;color:#0a0c14;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.08em;padding:.65rem;cursor:pointer;transition:opacity .2s}
+.studio-btn:hover{opacity:.85}
+.studio-cancel{display:block;width:100%;margin-top:1rem;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:.75rem;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase}
+
+/* ── STUDIO PANEL ── */
+.studio-panel{display:none;position:fixed;inset:0;background:var(--bg);z-index:700;overflow:auto}
+.studio-panel.open{display:block}
+.studio-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.4rem;border-bottom:2px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:2}
+.studio-header h1{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em}
+.studio-exit{background:none;border:1px solid rgba(240,244,255,.2);color:var(--yellow);padding:.38rem .9rem;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase}
+.studio-exit:hover{background:rgba(255,224,61,.1);border-color:var(--yellow)}
+.studio-body{max-width:960px;margin:0 auto;padding:1.5rem}
+.studio-section-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--yellow);margin-bottom:1.2rem}
+.upload-form{background:rgba(240,244,255,.03);border:1px solid var(--border2);padding:1.8rem;margin-bottom:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr 2fr;gap:.8rem;margin-bottom:.8rem}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.s-label{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;display:block}
+.s-input{width:100%;background:rgba(240,244,255,.05);border:1px solid var(--border2);color:var(--cream);font-family:'Nunito',sans-serif;font-size:1rem;padding:.5rem .8rem;outline:none;transition:border-color .2s}
+.s-input:focus{border-color:var(--yellow)}
+.file-drop{border:2px dashed rgba(59,130,246,.3);padding:1.5rem;text-align:center;cursor:pointer;margin-bottom:.8rem;transition:all .2s;position:relative}
+.file-drop:hover,.file-drop.drag{background:rgba(255,224,61,.05);border-color:var(--yellow)}
+.file-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.file-drop-text{font-family:'Space Mono',monospace;font-size:.82rem;color:var(--dim);pointer-events:none;letter-spacing:0.05em}
+.file-name{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--yellow);margin-top:.4rem;min-height:1.1rem}
+.s-submit{background:rgba(255,224,61,.12);border:1px solid rgba(255,224,61,.4);color:var(--yellow);font-family:'Bebas Neue',sans-serif;letter-spacing:0.08em;font-size:1.1rem;padding:.6rem 2rem;cursor:pointer;transition:all .2s}
+.s-submit:hover{background:var(--yellow);color:#0a0c14}
+.form-msg{font-family:'Space Mono',monospace;font-size:.78rem;margin-top:.7rem;min-height:1.1rem;color:var(--yellow);letter-spacing:0.06em}
+.manage-list{display:flex;flex-direction:column;gap:.5rem}
+.manage-item{display:flex;align-items:center;gap:1rem;padding:.8rem 1rem;background:rgba(240,244,255,.03);border:1px solid var(--border2)}
+.manage-num{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.06em;color:var(--yellow);min-width:3rem}
+.manage-name{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:600;color:var(--cream);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.manage-del{background:none;border:1px solid rgba(180,70,50,.3);color:rgba(200,100,80,.7);font-family:'Space Mono',monospace;font-size:.72rem;padding:.2rem .6rem;cursor:pointer;transition:all .2s;flex-shrink:0}
+.manage-del:hover{background:rgba(180,70,50,.12);color:#e08070}
+.manage-empty{color:var(--dim);font-style:italic;font-size:.9rem;padding:1rem 0;font-family:'Space Mono',monospace}
+
+/* Letters studio */
+.studio-card{border:1px solid var(--border2);background:rgba(240,244,255,.03);padding:1rem;margin-bottom:.85rem}
+.studio-meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.55rem;color:var(--dim);font-family:'Space Mono',monospace;font-size:.78rem}
+.studio-letter{white-space:pre-wrap;line-height:1.6;color:rgba(240,244,255,.7);margin:.6rem 0;font-size:.96rem}
+.reply-row{display:grid;grid-template-columns:220px 1fr;gap:.6rem;margin-top:.7rem}
+.reply-area{grid-column:1/-1}
+.mini-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+.mini-btn{background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.34);color:var(--yellow);padding:.38rem .75rem;font-family:'Space Mono',monospace;font-size:.72rem;cursor:pointer;letter-spacing:0.06em}
+.mini-btn.danger{border-color:rgba(180,70,50,.35);color:rgba(230,125,105,.8);background:rgba(180,70,50,.08)}
+.reply-file-drop{grid-column:1/-1;border:1px dashed rgba(59,130,246,.28);padding:.8rem;text-align:center;position:relative;background:rgba(240,244,255,.025);margin-top:.2rem}
+.reply-file-drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.reply-file-drop p{font-family:'Space Mono',monospace;color:var(--dim);font-size:.8rem}
+.reply-file-name{font-family:'Space Mono',monospace;font-size:.76rem;color:var(--yellow);margin-top:.3rem;min-height:1rem}
+.attachment-link{display:inline-block;margin-top:.65rem;border:1px solid var(--border2);padding:.42rem .7rem;color:var(--yellow);text-decoration:none;background:rgba(59,130,246,.07);font-family:'Space Mono',monospace;font-size:.82rem}
+.attachment-link:hover{background:rgba(59,130,246,.14);color:#fff}
+.reply-image{margin-top:.7rem;border:1px solid var(--border2);display:inline-flex;max-width:100%;background:rgba(240,244,255,.025);overflow:hidden}
+.reply-image img{display:block;max-width:100%;max-height:300px;object-fit:contain}
 
 /* ── FOOTER ── */
 footer{
   text-align:center;
   padding:2rem 1rem;
-  border-top:1px solid rgba(247,251,255,0.07);
-  color:rgba(247,251,255,0.2);
-  font-size:0.8rem;
-  letter-spacing:0.12em;
+  border-top:2px solid var(--border);
+  color:var(--dim);
+  font-family:'Space Mono',monospace;
+  font-size:0.72rem;
+  letter-spacing:0.14em;
   text-transform:uppercase;
-  background:#050914;
+  background:var(--bg);
 }
-footer a{
-  color:rgba(255,211,78,0.6);
-  text-decoration:none;
-  margin:0 0.35rem;
-}
-footer a:hover{color:var(--amber-light)}
-
-.seo-story-summary{
-  background:#050914;
-  padding:0 clamp(1.2rem,6vw,5rem) 4rem;
-}
-.seo-story-card{
-  max-width:760px;
-  margin:0 auto;
-  padding:1.8rem;
-  border:1px solid rgba(20,107,255,0.14);
-  background:rgba(247,251,255,0.025);
-}
-.seo-story-card h2{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-weight:300;
-  font-style:italic;
-  font-size:clamp(1.5rem,3vw,2rem);
-  margin-bottom:0.65rem;
-  color:var(--cream);
-}
-.seo-story-card p{
-  color:rgba(247,251,255,0.52);
-  font-size:1rem;
-  line-height:1.7;
-}
-.seo-story-card a{
-  color:var(--amber-light);
-  text-decoration:none;
-}
-.seo-story-card a:hover{text-decoration:underline}
-
-/* ══ PDF READER OVERLAY ══ */
-.reader-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(20,107,255,0.13), transparent 60%),
-    linear-gradient(180deg, rgba(13,8,5,0.98), rgba(8,4,1,0.98));
-  z-index:500;
-  flex-direction:column;
-  height:100dvh;
-  overflow:hidden;
-}
-.reader-overlay.open{display:flex}
-
-.reader-topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  padding:0.75rem clamp(0.8rem,3vw,1.5rem);
-  border-bottom:1px solid rgba(20,107,255,0.2);
-  background:rgba(13,8,5,0.86);
-  backdrop-filter:blur(10px);
-  flex-shrink:0;
-}
-
-.reader-title{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-size:clamp(1rem,4vw,1.25rem);
-  color:var(--cream);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.reader-close{
-  background:rgba(20,107,255,0.08);
-  border:1px solid rgba(20,107,255,0.35);
-  color:var(--amber-light);
-  font-family:'Caveat',cursive;
-  font-size:1rem;
-  padding:0.45rem 0.75rem;
-  cursor:pointer;
-  transition:background 0.2s,border-color 0.2s,color 0.2s;
-  border-radius:999px;
-  min-height:38px;
-  flex-shrink:0;
-}
-.reader-close:hover{background:rgba(20,107,255,0.18);border-color:var(--amber-light);color:#fff}
-
-.reader-stage{
-  position:relative;
-  flex:1;
-  overflow:auto;
-  -webkit-overflow-scrolling:touch;
-  padding:1.2rem 0 3.2rem;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-.reader-paper{
-  width:min(94vw,920px);
-  min-height:55vh;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-#pdfCanvas{
-  display:block;
-  max-width:100%;
-  height:auto;
-  background:#f8f1e8;
-  box-shadow:0 20px 70px rgba(0,0,0,0.55),0 0 0 1px rgba(20,107,255,0.18);
-  border-radius:10px;
-}
-
-.reader-loading{
-  position:absolute;
-  inset:auto 1rem 50%;
-  transform:translateY(50%);
-  text-align:center;
-  color:rgba(247,251,255,0.55);
-  font-family:'Caveat',cursive;
-  font-size:1.15rem;
-  pointer-events:none;
-}
-
-.reader-hint-floating{
-  position:absolute;
-  bottom:14px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:0.75rem;
-  color:rgba(247,251,255,0.32);
-  letter-spacing:0.08em;
-  font-family:'Crimson Text',Georgia,serif;
-  pointer-events:none;
-  user-select:none;
-  opacity:0.9;
-  transition:opacity 1s ease;
-  text-align:center;
-  width:max-content;
-  max-width:92vw;
-}
-
-@media(max-width:640px){
-  .reader-topbar{padding:0.65rem 0.75rem}
-  .reader-stage{padding:0.8rem 0 3.4rem}
-  .reader-paper{width:96vw}
-  #pdfCanvas{border-radius:6px}
-}
-
-/* ══ STUDIO PASSWORD GATE ══ */
-.studio-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(8,4,1,0.97);
-  z-index:600;
-  align-items:center;
-  justify-content:center;
-}
-.studio-overlay.open{display:flex}
-
-.studio-box{
-  background:#07101f;
-  border:1px solid rgba(20,107,255,0.25);
-  padding:2.5rem 2.5rem 2rem;
-  width:min(420px,92vw);
-}
-
-.studio-box h2{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-weight:300;
-  font-size:1.8rem;
-  color:var(--cream);
-  margin-bottom:0.3rem;
-}
-
-.studio-box p{
-  font-size:0.85rem;
-  color:rgba(247,251,255,0.35);
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  margin-bottom:2rem;
-}
-
-.studio-field{
-  width:100%;
-  background:rgba(247,251,255,0.05);
-  border:1px solid rgba(20,107,255,0.25);
-  color:var(--cream);
-  font-family:'Crimson Text',Georgia,serif;
-  font-size:1.05rem;
-  padding:0.65rem 1rem;
-  outline:none;
-  margin-bottom:1rem;
-  transition:border-color 0.2s;
-}
-.studio-field:focus{border-color:var(--amber)}
-
-.studio-btn{
-  width:100%;
-  background:rgba(20,107,255,0.18);
-  border:1px solid rgba(20,107,255,0.5);
-  color:var(--amber-light);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-size:1.1rem;
-  padding:0.65rem;
-  cursor:pointer;
-  transition:background 0.2s;
-}
-.studio-btn:hover{background:rgba(20,107,255,0.32)}
-
-.studio-err{
-  font-size:0.85rem;
-  color:#c0614a;
-  margin-top:0.6rem;
-  min-height:1.2rem;
-}
-
-.studio-cancel{
-  background:none;
-  border:none;
-  color:rgba(247,251,255,0.25);
-  font-family:'Crimson Text',Georgia,serif;
-  font-size:0.9rem;
-  cursor:pointer;
-  margin-top:1.2rem;
-  display:block;
-  text-align:center;
-  width:100%;
-  transition:color 0.2s;
-}
-.studio-cancel:hover{color:rgba(247,251,255,0.55)}
-
-/* ══ STUDIO PANEL ══ */
-.studio-panel{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#050914;
-  z-index:600;
-  overflow-y:auto;
-  flex-direction:column;
-}
-.studio-panel.open{display:flex}
-
-.studio-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:1rem 1.5rem;
-  border-bottom:1px solid rgba(20,107,255,0.2);
-  flex-shrink:0;
-}
-
-.studio-header h1{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-weight:300;
-  font-size:1.5rem;
-  color:var(--cream);
-}
-
-.studio-exit{
-  background:none;
-  border:1px solid rgba(20,107,255,0.3);
-  color:var(--amber-light);
-  font-family:'Caveat',cursive;
-  font-size:0.95rem;
-  padding:0.3rem 1rem;
-  cursor:pointer;
-  transition:background 0.2s;
-}
-.studio-exit:hover{background:rgba(20,107,255,0.12)}
-
-.studio-body{
-  padding:2rem clamp(1rem,5vw,3rem);
-  max-width:700px;
-  width:100%;
-  margin:0 auto;
-  flex:1;
-}
-
-.studio-section-title{
-  font-family:'Caveat',cursive;
-  font-size:1.05rem;
-  color:var(--amber);
-  margin-bottom:1.2rem;
-  letter-spacing:0.04em;
-}
-
-/* Upload form */
-.upload-form{
-  background:rgba(247,251,255,0.03);
-  border:1px solid rgba(20,107,255,0.18);
-  padding:1.8rem;
-  margin-bottom:2.5rem;
-}
-
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:0.8rem;
-  margin-bottom:0.8rem;
-}
-
-@media(max-width:500px){.form-row{grid-template-columns:1fr}}
-
-.s-label{
-  font-size:0.78rem;
-  color:rgba(247,251,255,0.4);
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  margin-bottom:0.3rem;
-  display:block;
-}
-
-.s-input{
-  width:100%;
-  background:rgba(247,251,255,0.05);
-  border:1px solid rgba(20,107,255,0.2);
-  color:var(--cream);
-  font-family:'Crimson Text',Georgia,serif;
-  font-size:1rem;
-  padding:0.5rem 0.8rem;
-  outline:none;
-  transition:border-color 0.2s;
-}
-.s-input:focus{border-color:var(--amber)}
-
-.file-drop{
-  border:1px dashed rgba(20,107,255,0.3);
-  padding:1.5rem;
-  text-align:center;
-  cursor:pointer;
-  margin-bottom:0.8rem;
-  transition:background 0.2s,border-color 0.2s;
-  position:relative;
-}
-.file-drop:hover,.file-drop.drag{
-  background:rgba(20,107,255,0.06);
-  border-color:var(--amber);
-}
-.file-drop input[type=file]{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  cursor:pointer;
-  width:100%;
-  height:100%;
-}
-.file-drop-text{
-  font-family:'Caveat',cursive;
-  font-size:1.05rem;
-  color:rgba(247,251,255,0.4);
-  pointer-events:none;
-}
-.file-name{
-  font-size:0.85rem;
-  color:var(--amber);
-  margin-top:0.4rem;
-  min-height:1.1rem;
-}
-
-.s-submit{
-  background:rgba(20,107,255,0.18);
-  border:1px solid rgba(20,107,255,0.4);
-  color:var(--amber-light);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-style:italic;
-  font-size:1.05rem;
-  padding:0.6rem 2rem;
-  cursor:pointer;
-  transition:background 0.2s;
-}
-.s-submit:hover{background:rgba(20,107,255,0.3)}
-
-.form-msg{
-  font-size:0.85rem;
-  margin-top:0.7rem;
-  min-height:1.1rem;
-  color:var(--amber-light);
-}
-
-/* Manage episodes list */
-.manage-list{
-  display:flex;
-  flex-direction:column;
-  gap:0.5rem;
-}
-
-.manage-item{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  padding:0.8rem 1rem;
-  background:rgba(247,251,255,0.03);
-  border:1px solid rgba(20,107,255,0.12);
-}
-
-.manage-num{
-  font-family:'Caveat',cursive;
-  font-size:1rem;
-  color:var(--amber);
-  min-width:2.5rem;
-}
-
-.manage-name{
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:1.05rem;
-  color:var(--cream);
-  flex:1;
-  min-width:0;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.manage-del{
-  background:none;
-  border:1px solid rgba(180,70,50,0.3);
-  color:rgba(200,100,80,0.7);
-  font-size:0.78rem;
-  padding:0.2rem 0.6rem;
-  cursor:pointer;
-  font-family:'Crimson Text',serif;
-  transition:background 0.2s,color 0.2s;
-  flex-shrink:0;
-}
-.manage-del:hover{background:rgba(180,70,50,0.12);color:#e08070}
-
-.manage-empty{
-  color:rgba(247,251,255,0.2);
-  font-style:italic;
-  font-size:0.95rem;
-  padding:1rem 0;
-}
-
-/* hidden studio trigger (click logo 5x) */
-
-.splash-logo{font-family:Impact, Haettenschweiler, 'Arial Black', sans-serif !important;font-style:normal !important;text-transform:none;letter-spacing:.01em;line-height:.82;text-shadow:0 8px 0 rgba(0,0,0,.25),0 0 28px rgba(20,107,255,.55),0 0 48px rgba(255,211,78,.28);transform:rotate(-2deg)}
-.splash-logo span{color:#146BFF;font-size:1.12em;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.45))}
-.splash-logo small{display:block;font-family:'Caveat',cursive;font-size:.28em;color:#07101f;background:#FFD34E;width:max-content;margin:.06em auto;padding:.02em .35em;border-radius:999px;transform:rotate(5deg)}
-.hero-bg{filter:saturate(1.18) contrast(1.08) brightness(.68)}
-.hero-vignette{background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(3,5,11,.86) 0%,transparent 70%),radial-gradient(ellipse 100% 40% at 50% 0%,rgba(3,5,11,.18) 0%,transparent 70%)}
+footer a{color:var(--yellow);text-decoration:none;margin:0 0.4rem}
+footer a:hover{color:#fff}
 </style>
 </head>
 <body>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-vignette"></div>
+  <div class="hero-accent"></div>
   <div class="hero-content">
-    <span class="tagline">coffee · conversations · comfort</span>
-    <h1 class="site-title splash-logo">The <span>Splash!</span><small>of</small> Lives</h1>
-    <p class="site-sub">A serialised novel from India</p>
+    <p class="tagline">St. Cross College of Technology · Maharashtra · Prologue</p>
+    <h1 class="site-title" id="logoClick">THE <span class="splash-accent">SPLASH</span><br>OF LIVES</h1>
+    <p class="site-sub">A serialised campus novel · SOUL Productions · Ayushman Gouda</p>
     <div class="hero-actions">
-      <button class="hero-cta" onclick="scrollToEpisodes()">Read the Story ↓</button>
-      <button class="hero-cta secondary" onclick="scrollToCharacters()">Meet the Characters →</button>
-      <button class="hero-cta secondary" onclick="openArtworkPage()">View Artwork →</button>
-      <button class="hero-cta secondary" onclick="openLettersPage()">Letters to Splash →</button>
+      <button class="hero-btn primary" onclick="scrollToEpisodes()">Read the Story ↓</button>
+      <button class="hero-btn secondary" onclick="scrollToCharacters()">Meet the Crew →</button>
+      <button class="hero-btn secondary" onclick="openArtworkPage()">Artwork →</button>
+      <button class="hero-btn secondary" onclick="openLettersPage()">Dormitory Mail →</button>
     </div>
   </div>
 </section>
 
-<!-- ── POSTER QUOTE ── -->
-<div class="poster">
-  <p class="poster-text">"If you want internet, stay at home.<br>If you want a good cup of coffee and stories, welcome."</p>
-  <p class="poster-attr">— the chalkboard outside Splash</p>
+<!-- TICKER BAND -->
+<div class="band">
+  <div class="band-inner" aria-hidden="true">
+    <span class="band-item">THREE GUYS</span><span class="band-dot">✦</span>
+    <span class="band-item">ONE CAMPUS</span><span class="band-dot">✦</span>
+    <span class="band-item">ZERO PREPARATION</span><span class="band-dot">✦</span>
+    <span class="band-item">KANISHK · JOSEPH · SOMYONIL</span><span class="band-dot">✦</span>
+    <span class="band-item">ST. CROSS COLLEGE OF TECHNOLOGY</span><span class="band-dot">✦</span>
+    <span class="band-item">THE CHAOS STARTS NOW</span><span class="band-dot">✦</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="band-item">THREE GUYS</span><span class="band-dot">✦</span>
+    <span class="band-item">ONE CAMPUS</span><span class="band-dot">✦</span>
+    <span class="band-item">ZERO PREPARATION</span><span class="band-dot">✦</span>
+    <span class="band-item">KANISHK · JOSEPH · SOMYONIL</span><span class="band-dot">✦</span>
+    <span class="band-item">ST. CROSS COLLEGE OF TECHNOLOGY</span><span class="band-dot">✦</span>
+    <span class="band-item">THE CHAOS STARTS NOW</span><span class="band-dot">✦</span>
+  </div>
 </div>
 
-<!-- ── SEO STORY SUMMARY ── -->
-<section class="seo-story-summary" aria-label="About The Splash of Lives web novel">
-  <div class="seo-story-card">
-    <h2>The Splash of Lives — an Indian campus coming-of-age web novel</h2>
+<!-- SUMMARY -->
+<section class="summary-section" aria-label="About The Splash of Lives">
+  <div class="summary-card">
+    <h2>The Splash of Lives — An Indian Campus Web Novel</h2>
     <p>
-      <strong>The Splash of Lives</strong> is a warm online web novel reader experience set in India.
-      Follow three freshers as a wrong GPS turn leads him to Splash, a small WiFi-free café filled with filter coffee, quiet conversations, older regulars, and the slow feeling of belonging.
-      Read the story episodes online and meet the characters through this immersive reader by Ayushman Gouda under SOUL Productions.
+      Three freshers. One college. Absolutely no idea what they're doing.<br><br>
+      <strong>Kanishk Ranjan</strong> from Madhya Pradesh — silver-tongued, chronically broke, and dangerously persuasive.
+      <strong>Joseph Pinto</strong> from Madras — genuinely wants to study but keeps ending up in situations.
+      <strong>Somyonil Roy</strong> from Bengal — athletic, fiercely loyal, and completely useless around girls.<br><br>
+      They arrive at St. Cross College of Technology in Maharashtra with separate lives, separate problems, and no idea they're on a collision course. This is the prologue. This is where it all begins.
     </p>
-    <p><a href="about.html">Read more about the story →</a></p>
+    <p style="margin-top:1rem"><a href="about.html">Read more about the story →</a></p>
   </div>
 </section>
 
-<!-- ── EPISODES ── -->
+<!-- EPISODES -->
 <section class="episodes-section" id="episodes">
   <div class="section-head">
     <h2>The Story So Far</h2>
@@ -882,21 +683,30 @@ footer a:hover{color:var(--amber-light)}
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- CHARACTERS -->
+<section class="characters-section" id="characters">
+  <div class="section-head">
+    <h2>Meet the Crew</h2>
+    <p>Characters · Click a card to expand</p>
+  </div>
+  <div class="character-grid" id="characterGrid">
+    <div class="ep-empty">No characters revealed yet.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <span>Splash &nbsp;·&nbsp; The Splash of Lives</span><br>
-  <a href="about.html">About the Story</a>
+  <span>Splash &nbsp;·&nbsp; The Splash of Lives &nbsp;·&nbsp; SOUL Productions</span><br><br>
+  <a href="about.html">About</a>
   <span>&nbsp;·&nbsp;</span>
   <a href="characters.html">Characters</a>
   <span>&nbsp;·&nbsp;</span>
   <a href="artwork.html">Artwork</a>
   <span>&nbsp;·&nbsp;</span>
-  <a href="letters.html">Letters to Splash</a>
+  <a href="letters.html">Dormitory Mail</a>
 </footer>
 
-
-
-<!-- ══ PDF READER ══ -->
+<!-- PDF READER -->
 <div class="reader-overlay" id="readerOverlay">
   <div class="reader-topbar">
     <span class="reader-title" id="readerTitle">—</span>
@@ -909,21 +719,26 @@ footer a:hover{color:var(--amber-light)}
     <div class="reader-loading" id="readerLoading">Opening the episode…</div>
     <div class="reader-hint-floating" id="readerHintFloating">Swipe ← → · Arrow keys</div>
   </div>
+  <div class="reader-controls">
+    <button class="reader-btn" onclick="prevPdfPage()">← Prev</button>
+    <span class="reader-page" id="readerPage"></span>
+    <button class="reader-btn" onclick="nextPdfPage()">Next →</button>
+  </div>
 </div>
 
-<!-- ══ STUDIO GATE ══ -->
+<!-- STUDIO GATE -->
 <div class="studio-overlay" id="studioGate">
   <div class="studio-box">
     <h2>Writer's Studio</h2>
     <p>Enter password to continue</p>
     <input class="studio-field" type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')checkPw()"/>
-    <button class="studio-btn" onclick="checkPw()">Enter</button>
+    <button class="studio-btn" onclick="checkPw()">Enter Studio</button>
     <div class="studio-err" id="pwErr"></div>
     <button class="studio-cancel" onclick="closeGate()">cancel</button>
   </div>
 </div>
 
-<!-- ══ STUDIO PANEL ══ -->
+<!-- STUDIO PANEL -->
 <div class="studio-panel" id="studioPanel">
   <div class="studio-header">
     <h1>Writer's Studio</h1>
@@ -933,39 +748,39 @@ footer a:hover{color:var(--amber-light)}
 
     <div id="studioChoice" class="studio-choice">
       <button class="choice-card" onclick="showStudioTab('episodes')">
-        <h2>Episode Management</h2>
+        <h2>Episodes</h2>
         <p>Upload PDFs, publish episodes, and manage the story list.</p>
       </button>
       <button class="choice-card" onclick="showStudioTab('characters')">
-        <h2>Character Management</h2>
+        <h2>Characters</h2>
         <p>Add character art, lore, and edit revealed character cards.</p>
       </button>
       <button class="choice-card" onclick="showStudioTab('artwork')">
-        <h2>Artwork Management</h2>
-        <p>Add episode artwork, café moments, covers, and expandable gallery cards.</p>
+        <h2>Artwork</h2>
+        <p>Add episode artwork, covers, and expandable gallery cards.</p>
       </button>
       <button class="choice-card" onclick="showStudioTab('letters')">
-        <h2>Letters & Replies</h2>
-        <p>Read reader letters and reply as Splash characters.</p>
+        <h2>Dormitory Mail</h2>
+        <p>Read reader letters and reply as characters from the dorm.</p>
       </button>
     </div>
 
     <div id="episodeStudio" class="studio-tab">
-      <button class="back-choice" onclick="backToStudioChoice()">← Back to Studio Options</button>
+      <button class="back-choice" onclick="backToStudioChoice()">← Back</button>
       <p class="studio-section-title">Add an Episode</p>
       <div class="upload-form">
         <div class="form-row">
           <div>
             <label class="s-label">Episode No.</label>
-            <input class="s-input" type="number" id="epNum" min="1" placeholder="e.g. 9"/>
+            <input class="s-input" type="number" id="epNum" min="1" placeholder="e.g. 1"/>
           </div>
           <div>
             <label class="s-label">Title</label>
-            <input class="s-input" type="text" id="epTitle" placeholder="e.g. The Road Back"/>
+            <input class="s-input" type="text" id="epTitle" placeholder="e.g. Arrival"/>
           </div>
         </div>
         <label class="s-label" style="margin-bottom:0.4rem">Part / Subtitle (optional)</label>
-        <input class="s-input" type="text" id="epPart" placeholder="e.g. Part Nine — Monsoon" style="margin-bottom:0.8rem"/>
+        <input class="s-input" type="text" id="epPart" placeholder="e.g. Prologue — The Gate" style="margin-bottom:0.8rem"/>
         <div class="file-drop" id="fileDrop">
           <input type="file" accept="application/pdf" id="pdfInput" onchange="onFileSelect(this)"/>
           <p class="file-drop-text">Click or drag a PDF here</p>
@@ -974,13 +789,12 @@ footer a:hover{color:var(--amber-light)}
         <button class="s-submit" onclick="saveEpisode()">Save Episode</button>
         <div class="form-msg" id="formMsg"></div>
       </div>
-
       <p class="studio-section-title">Manage Episodes</p>
       <div class="manage-list" id="manageList"></div>
     </div>
 
     <div id="characterStudio" class="studio-tab">
-      <button class="back-choice" onclick="backToStudioChoice()">← Back to Studio Options</button>
+      <button class="back-choice" onclick="backToStudioChoice()">← Back</button>
       <p class="studio-section-title" id="charFormTitle">Add a Character</p>
       <div class="upload-form">
         <input type="hidden" id="charId"/>
@@ -991,33 +805,32 @@ footer a:hover{color:var(--amber-light)}
           </div>
           <div>
             <label class="s-label">Character Name</label>
-            <input class="s-input" type="text" id="charName" placeholder="e.g. a fresher Gouda"/>
+            <input class="s-input" type="text" id="charName" placeholder="e.g. Kanishk Ranjan"/>
           </div>
         </div>
-        <label class="s-label">Role / Small Tagline</label>
-        <input class="s-input" type="text" id="charRole" placeholder="e.g. Senior Developer · Old soul" style="margin-bottom:0.8rem"/>
-        <label class="s-label">Writing / Lore</label>
-        <textarea class="s-textarea" id="charLore" placeholder="Write the character background, personality, story role, or revealed lore here..." style="margin-bottom:0.8rem"></textarea>
+        <label class="s-label">Role / Tagline</label>
+        <input class="s-input" type="text" id="charRole" placeholder="e.g. The Silver-Tongued Broke Guy" style="margin-bottom:0.8rem"/>
+        <label class="s-label">Lore / Background</label>
+        <textarea class="s-textarea" id="charLore" placeholder="Character background, personality, story role..." style="margin-bottom:0.8rem"></textarea>
         <div class="file-drop" id="charFileDrop">
           <input type="file" accept="image/png,image/jpeg,image/jpg" id="charImageInput" onchange="onCharacterImageSelect(this)"/>
-          <p class="file-drop-text">Click or drag PNG / JPG / JPEG art here</p>
+          <p class="file-drop-text">Click or drag PNG / JPG character art here</p>
           <p class="file-name" id="charFileName"></p>
         </div>
         <div class="studio-actions">
           <button class="s-submit" onclick="saveCharacter()">Save Character</button>
-          <button class="s-submit ghost" onclick="removeCharacterImage()" type="button">Remove Image Only</button>
-          <button class="s-submit ghost" onclick="clearCharacterWriting()" type="button">Clear Writing</button>
-          <button class="s-submit ghost" onclick="resetCharacterForm()" type="button">New Character</button>
+          <button class="s-submit ghost" onclick="removeCharacterImage()">Remove Image</button>
+          <button class="s-submit ghost" onclick="clearCharacterWriting()">Clear Writing</button>
+          <button class="s-submit ghost" onclick="resetCharacterForm()">New Character</button>
         </div>
         <div class="form-msg" id="charFormMsg"></div>
       </div>
-
       <p class="studio-section-title">Manage Characters</p>
       <div class="manage-list" id="characterManageList"></div>
     </div>
 
     <div id="artworkStudio" class="studio-tab">
-      <button class="back-choice" onclick="backToStudioChoice()">← Back to Studio Options</button>
+      <button class="back-choice" onclick="backToStudioChoice()">← Back</button>
       <p class="studio-section-title" id="artFormTitle">Add Artwork</p>
       <div class="upload-form">
         <input type="hidden" id="artId"/>
@@ -1028,82 +841,73 @@ footer a:hover{color:var(--amber-light)}
           </div>
           <div>
             <label class="s-label">Artwork Title</label>
-            <input class="s-input" type="text" id="artTitle" placeholder="e.g. Venkat Sir's Birthday"/>
+            <input class="s-input" type="text" id="artTitle" placeholder="e.g. The Gate"/>
           </div>
         </div>
         <label class="s-label">Episode / Source Label</label>
-        <input class="s-input" type="text" id="artEpisode" placeholder="e.g. Episode 7 · The Graduation" style="margin-bottom:0.8rem"/>
-        <label class="s-label">Short Description</label>
-        <textarea class="s-textarea" id="artDescription" placeholder="Write a small note about this artwork, scene, or moment..." style="margin-bottom:0.8rem"></textarea>
+        <input class="s-input" type="text" id="artEpisode" placeholder="e.g. Episode 1 · Arrival" style="margin-bottom:0.8rem"/>
+        <label class="s-label">Description</label>
+        <textarea class="s-textarea" id="artDescription" placeholder="Describe this artwork or scene..." style="margin-bottom:0.8rem"></textarea>
         <div class="file-drop" id="artFileDrop" ondragover="handleArtworkDragOver(event)" ondragleave="handleArtworkDragLeave(event)" ondrop="handleArtworkDrop(event)">
           <input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" id="artImageInput" onchange="onArtworkImageSelect(this)"/>
-          <p class="file-drop-text">Click or drag PNG / JPG / JPEG artwork here</p>
+          <p class="file-drop-text">Click or drag artwork here (PNG / JPG)</p>
           <p class="file-name" id="artFileName"></p>
         </div>
         <div class="studio-actions">
           <button class="s-submit" onclick="saveArtwork()">Save Artwork</button>
-          <button class="s-submit ghost" onclick="removeArtworkImage()" type="button">Remove Image Only</button>
-          <button class="s-submit ghost" onclick="clearArtworkDescription()" type="button">Clear Description</button>
-          <button class="s-submit ghost" onclick="resetArtworkForm()" type="button">New Artwork</button>
+          <button class="s-submit ghost" onclick="removeArtworkImage()">Remove Image</button>
+          <button class="s-submit ghost" onclick="clearArtworkDescription()">Clear Description</button>
+          <button class="s-submit ghost" onclick="resetArtworkForm()">New Artwork</button>
         </div>
         <div class="form-msg" id="artFormMsg"></div>
       </div>
-
       <p class="studio-section-title">Manage Artwork</p>
       <div class="manage-list" id="artworkManageList"></div>
     </div>
 
     <div id="lettersStudio" class="studio-tab">
-      <button class="back-choice" onclick="backToStudioChoice()">← Back to Studio Options</button>
+      <button class="back-choice" onclick="backToStudioChoice()">← Back</button>
 
-      <p class="studio-section-title">Letters & Reply Threads</p>
+      <p class="studio-section-title">Dormitory Mail · Reader Letters</p>
       <div class="manage-list" id="lettersManageList">
         <p class="manage-empty">Open this section to load reader letters.</p>
       </div>
 
-      <p class="studio-section-title">Publish Standalone Character Letter</p>
+      <p class="studio-section-title">Post a Standalone Character Letter</p>
       <div class="upload-form">
         <label class="s-label">Character Name</label>
-        <input class="s-input" type="text" id="characterLetterName" placeholder="e.g. a fresher, Venkat Sir, Mrs. Sen" style="margin-bottom:0.8rem"/>
-
+        <input class="s-input" type="text" id="characterLetterName" placeholder="e.g. Kanishk, Joseph, Somyonil" style="margin-bottom:0.8rem"/>
         <label class="s-label">Character Letter</label>
-        <textarea class="s-textarea" id="characterLetterText" placeholder="Write a standalone letter from this character to the Letters to Splash page..." style="margin-bottom:0.8rem"></textarea>
-
+        <textarea class="s-textarea" id="characterLetterText" placeholder="Write a standalone letter from this character..." style="margin-bottom:0.8rem"></textarea>
         <div class="file-drop" id="characterLetterFileDrop">
           <input type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" id="characterLetterFileInput" onchange="onCharacterLetterFileSelect(this)"/>
-          <p class="file-drop-text">Attach PDF / PNG / JPG / JPEG with the character letter (optional)</p>
+          <p class="file-drop-text">Attach PDF / PNG / JPG with the letter (optional)</p>
           <p class="file-name" id="characterLetterFileName"></p>
         </div>
-
         <div class="studio-actions">
-          <button class="s-submit" onclick="publishCharacterLetter()">Publish Character Letter</button>
-          <button class="s-submit ghost" onclick="clearCharacterLetterForm()" type="button">Clear Character Letter</button>
+          <button class="s-submit" onclick="publishCharacterLetter()">Publish Letter</button>
+          <button class="s-submit ghost" onclick="clearCharacterLetterForm()">Clear</button>
         </div>
         <div class="form-msg" id="characterLetterMsg"></div>
       </div>
 
-      <p class="studio-section-title" id="replyFormTitle">Reply as a Character</p>
+      <p class="studio-section-title">Reply to a Reader Letter</p>
       <div class="upload-form">
         <input type="hidden" id="replyLetterId"/>
-
-        <label class="s-label">Selected Letter</label>
-        <input class="s-input" type="text" id="replyTarget" readonly placeholder="Select any top-level reader or character letter above" style="margin-bottom:0.8rem"/>
-
-        <label class="s-label">Character Name</label>
-        <input class="s-input" type="text" id="replyCharacter" placeholder="e.g. Venkat Sir, Mrs. Sen, a fresher" style="margin-bottom:0.8rem"/>
-
-        <label class="s-label">Letter / Reply</label>
-        <textarea class="s-textarea" id="replyText" placeholder="Write the reply as the character here..." style="margin-bottom:0.8rem"></textarea>
-
+        <label class="s-label">Replying To</label>
+        <input class="s-input" type="text" id="replyTarget" placeholder="(Select a letter above first)" readonly style="margin-bottom:.8rem"/>
+        <label class="s-label">Character Replying</label>
+        <input class="s-input" type="text" id="replyCharacter" placeholder="e.g. Kanishk" style="margin-bottom:.8rem"/>
+        <label class="s-label">Reply Text</label>
+        <textarea class="s-textarea" id="replyText" placeholder="Write the character's reply..." style="margin-bottom:.8rem"></textarea>
         <div class="file-drop" id="replyFileDrop">
           <input type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" id="replyFileInput" onchange="onReplyFileSelect(this)"/>
-          <p class="file-drop-text">Attach PDF / PNG / JPG / JPEG with the reply (optional)</p>
+          <p class="file-drop-text">Attach PDF / PNG / JPG (optional)</p>
           <p class="file-name" id="replyFileName"></p>
         </div>
-
         <div class="studio-actions">
-          <button class="s-submit" onclick="saveLetterReply()">Send Reply</button>
-          <button class="s-submit ghost" onclick="clearLetterReplyForm()" type="button">Clear Reply Form</button>
+          <button class="s-submit" onclick="saveLetterReply()">Save Reply</button>
+          <button class="s-submit ghost" onclick="clearLetterReplyForm()">Clear</button>
         </div>
         <div class="form-msg" id="replyMsg"></div>
       </div>
@@ -1112,23 +916,47 @@ footer a:hover{color:var(--amber-light)}
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<!-- CHARACTER MODAL -->
+<div class="character-modal" id="characterModal">
+  <div class="character-modal-card">
+    <div class="character-modal-top">
+      <div>
+        <h2 id="characterModalName">—</h2>
+        <p class="character-modal-role" id="characterModalRole"></p>
+      </div>
+      <button class="character-modal-close" onclick="closeCharacterModal()">✕ Close</button>
+    </div>
+    <div class="character-modal-body">
+      <div class="character-modal-image" id="characterModalImage">Image not available</div>
+      <div class="character-modal-text" id="characterModalText">Nothing written.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTWORK MODAL -->
+<div class="artwork-modal" id="artworkModal">
+  <div class="artwork-modal-card">
+    <div class="artwork-modal-top">
+      <div>
+        <h2 id="artworkModalTitle">Artwork</h2>
+        <div class="artwork-tag" id="artworkModalTag"></div>
+      </div>
+      <button class="artwork-modal-close" onclick="closeArtworkModal()">✕ Close</button>
+    </div>
+    <div class="artwork-modal-body">
+      <div class="artwork-modal-image" id="artworkModalImage">Image not available</div>
+      <div class="artwork-modal-text" id="artworkModalText">No description.</div>
+    </div>
+  </div>
+</div>
+
 <script type="module">
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-// ── PASSWORD (unchanged: this is the same Writer Studio password gate) ──
 const STUDIO_PASS = 'splash2026';
-
-// ── SUPABASE SETTINGS ──
-// STEP 1: Replace these two values with your own Supabase project values.
-// Supabase Dashboard → Project Settings → API
-const SUPABASE_URL = 'https://cpqbukdclkaubkvylzzh.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwcWJ1a2RjbGthdWJrdnlsenpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3Mzg3NjcsImV4cCI6MjA5NDMxNDc2N30.DqEt3DK-ZLrz1S8jcWiGbxjesTpcXBHeuJaiMuAhOlE';
-
-// STEP 2: Keep this bucket name same as the bucket you create in Supabase Storage.
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE';
 const PDF_BUCKET = 'novel-pdfs';
-
-// STEP 3: Keep this table name same as the table you create in Supabase Database.
 const EPISODES_TABLE = 'episodes';
 const CHARACTERS_TABLE = 'characters';
 const CHARACTER_BUCKET = 'character-art';
@@ -1136,29 +964,16 @@ const ARTWORKS_TABLE = 'artworks';
 const ARTWORK_BUCKET = 'artwork-gallery';
 const LETTERS_TABLE = 'reader_letters';
 const LETTER_REPLY_BUCKET = 'letter-replies';
-
 const SUPABASE_READY = SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.length > 40;
 const supabase = SUPABASE_READY ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-
-// ── OLD LOCAL STORAGE KEY, used only for safe fallback / old imported data ──
 const STORE_KEY = 'splash_of_lives_episodes';
 
-// ── Episodes in memory ──
-let episodes = [];
-let characters = [];
-let artworks = [];
-let currentPdfFile = null;
-let currentCharacterImageFile = null;
-let editingCharacterImagePath = null;
-let currentArtworkImageFile = null;
-let editingArtworkImagePath = null;
-let readerLetters = [];
-let currentReplyFile = null;
-let currentCharacterLetterFile = null;
+let episodes=[], characters=[], artworks=[], readerLetters=[];
+let currentPdfFile=null, currentCharacterImageFile=null, editingCharacterImagePath=null;
+let currentArtworkImageFile=null, editingArtworkImagePath=null;
+let currentReplyFile=null, currentCharacterLetterFile=null;
 
-// ──────────────────────────────────────────────
-// LOAD episodes on page start
-// ──────────────────────────────────────────────
+// ── INIT ──
 async function loadEpisodes(){
   if(SUPABASE_READY){
     await loadEpisodesFromSupabase();
@@ -1168,1388 +983,565 @@ async function loadEpisodes(){
     loadEpisodesFromLocalStorage();
     showSetupNotice();
   }
-  renderPublic();
-  renderManage();
-  renderCharactersPublic();
-  renderCharacterManage();
-  renderArtworkManage();
+  renderPublic(); renderManage();
+  renderCharactersPublic(); renderCharacterManage();
+  renderArtworkPublic(); renderArtworkManage();
 }
 
 async function loadEpisodesFromSupabase(){
-  const { data, error } = await supabase
-    .from(EPISODES_TABLE)
-    .select('num,title,part,pdf_path')
-    .order('num', { ascending:true });
-
-  if(error){
-    console.error(error);
-    loadEpisodesFromLocalStorage();
-    return;
-  }
+  const { data, error } = await supabase.from(EPISODES_TABLE).select('num,title,part,pdf_path').order('num',{ascending:true});
+  if(error){ console.error(error); loadEpisodesFromLocalStorage(); return; }
   episodes = data || [];
 }
-
 function loadEpisodesFromLocalStorage(){
-  try{
-    const raw = localStorage.getItem(STORE_KEY);
-    if(raw) episodes = JSON.parse(raw);
-  }catch(e){ episodes = []; }
+  try{ const raw=localStorage.getItem(STORE_KEY); if(raw) episodes=JSON.parse(raw); }catch(e){ episodes=[]; }
 }
-
 function showSetupNotice(){
-  const msg = document.getElementById('formMsg');
-  if(msg){
-    msg.style.color='#FFD34E';
-    msg.textContent='Supabase is not configured yet. Add your URL and anon key in this file.';
-  }
+  const msg=document.getElementById('formMsg');
+  if(msg){ msg.style.color='#FFE03D'; msg.textContent='Supabase not configured yet.'; }
 }
 
-// ──────────────────────────────────────────────
-// PUBLIC EPISODE LIST
-// ──────────────────────────────────────────────
-function renderPublic(){
-  const list = document.getElementById('epList');
-  if(!episodes.length){
-    list.innerHTML = '<div class="ep-empty">No episodes published yet.</div>';
-    return;
-  }
-  const sorted = [...episodes].sort((a,b)=>a.num-b.num);
-  list.innerHTML = sorted.map(ep=>`
-    <div class="ep-item" onclick="openReader(${ep.num})">
-      <span class="ep-num">Ep ${ep.num}</span>
-      <div class="ep-meta">
-        <div class="ep-title">${esc(ep.title)}</div>
-        ${ep.part ? `<div class="ep-part">${esc(ep.part)}</div>` : ''}
-      </div>
-      <span class="ep-arrow">→</span>
-    </div>
-  `).join('');
-}
-
-
-
-// ──────────────────────────────────────────────
-// PUBLIC CHARACTER CARDS
-// ──────────────────────────────────────────────
 async function loadCharactersFromSupabase(){
-  const { data, error } = await supabase
-    .from(CHARACTERS_TABLE)
-    .select('id,name,role,lore,image_path,sort_order,is_visible')
-    .eq('is_visible', true)
-    .order('sort_order', { ascending:true })
-    .order('created_at', { ascending:true });
-
-  if(error){
-    console.error(error);
-    characters = [];
-    return;
-  }
+  const { data, error } = await supabase.from(CHARACTERS_TABLE).select('id,name,role,lore,image_path,sort_order,is_visible').eq('is_visible',true).order('sort_order',{ascending:true}).order('created_at',{ascending:true});
+  if(error){ console.error(error); characters=[]; return; }
   characters = data || [];
 }
-
-function getCharacterImageUrl(character){
-  if(!character || !character.image_path || !SUPABASE_READY) return '';
-  const { data } = supabase.storage.from(CHARACTER_BUCKET).getPublicUrl(character.image_path);
-  return data.publicUrl;
-}
-
-function renderCharactersPublic(){
-  const grid = document.getElementById('characterGrid');
-  if(!grid) return;
-  const visible = characters.filter(c => (c.image_path && c.image_path.trim()) || (c.lore && c.lore.trim()));
-  if(!visible.length){
-    grid.innerHTML = '<div class="ep-empty">No characters revealed yet.</div>';
-    return;
-  }
-  grid.innerHTML = visible.map(c=>{
-    const imgUrl = getCharacterImageUrl(c);
-    const lore = (c.lore || '').trim();
-    return `
-      <div class="character-card" onclick="openCharacterModal('${escAttr(c.id)}')">
-        <div class="character-thumb">${imgUrl ? `<img src="${escAttr(imgUrl)}" alt="${escAttr(c.name || 'Character art')}">` : 'Image not available'}</div>
-        <h3 class="character-name">${esc(c.name || 'Unnamed Character')}</h3>
-        ${c.role ? `<div class="character-role">${esc(c.role)}</div>` : ''}
-        <p class="character-preview">${lore ? esc(lore) : 'Nothing written.'}</p>
-      </div>
-    `;
-  }).join('');
-}
-
-function openCharacterModal(id){
-  const c = characters.find(x=>x.id===id);
-  if(!c) return;
-  const imgUrl = getCharacterImageUrl(c);
-  document.getElementById('characterModalName').textContent = c.name || 'Unnamed Character';
-  document.getElementById('characterModalRole').textContent = c.role || '';
-  document.getElementById('characterModalImage').innerHTML = imgUrl ? `<img src="${escAttr(imgUrl)}" alt="${escAttr(c.name || 'Character art')}">` : 'Image not available';
-  document.getElementById('characterModalText').textContent = (c.lore && c.lore.trim()) ? c.lore : 'Nothing written.';
-  document.getElementById('characterModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function closeCharacterModal(){
-  document.getElementById('characterModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-function scrollToCharacters(){
-  window.location.href = 'characters.html';
-}
-
-
-// ──────────────────────────────────────────────
-// CUSTOM PDF.JS READER — Supabase URLs + local fallback
-// ──────────────────────────────────────────────
-let pdfDoc = null;
-let pdfPageNum = 1;
-let pdfRendering = false;
-let pdfPendingPage = null;
-let pdfScale = 1;
-let touchStartX = 0;
-let touchStartY = 0;
-
-if(window.pdfjsLib){
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-}
-
-function dataUrlToUint8Array(dataUrl){
-  const base64 = dataUrl.split(',')[1];
-  const byteStr = atob(base64);
-  const bytes = new Uint8Array(byteStr.length);
-  for(let i=0;i<byteStr.length;i++) bytes[i]=byteStr.charCodeAt(i);
-  return bytes;
-}
-
-async function getEpisodePdfSource(ep){
-  if(ep.pdf_path && SUPABASE_READY){
-    const { data } = supabase.storage.from(PDF_BUCKET).getPublicUrl(ep.pdf_path);
-    return { url:data.publicUrl };
-  }
-
-  // Fallback for older localStorage episodes.
-  if(ep.pdfData){
-    return { data:dataUrlToUint8Array(ep.pdfData) };
-  }
-
-  return null;
-}
-
-async function openReader(num){
-  const ep = episodes.find(e=>e.num===num);
-  if(!ep){ alert('Episode not found.'); return; }
-  if(!window.pdfjsLib){ alert('Reader could not load. Please check your internet connection.'); return; }
-
-  const source = await getEpisodePdfSource(ep);
-  if(!source){ alert('PDF not found.'); return; }
-
-  document.getElementById('readerTitle').textContent = `Ep ${ep.num} — ${ep.title}`;
-  document.getElementById('readerOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-
-  const loading = document.getElementById('readerLoading');
-  loading.textContent='Opening the episode…';
-  loading.style.display='block';
-
-  const floatingHint = document.getElementById('readerHintFloating');
-  if(floatingHint){
-    floatingHint.style.opacity = '0.9';
-    clearTimeout(window.readerHintTimer);
-    window.readerHintTimer = setTimeout(()=>{ floatingHint.style.opacity = '0'; }, 3500);
-  }
-
-  try{
-    pdfDoc = await pdfjsLib.getDocument(source).promise;
-    pdfPageNum = 1;
-    fitPdfToScreen();
-  }catch(e){
-    console.error(e);
-    loading.textContent='Could not open this PDF. Check Supabase bucket public access / policies.';
-  }
-}
-
-function renderPdfPage(num){
-  if(!pdfDoc) return;
-  pdfRendering = true;
-  document.getElementById('readerLoading').style.display='block';
-
-  pdfDoc.getPage(num).then(page=>{
-    const canvas = document.getElementById('pdfCanvas');
-    const ctx = canvas.getContext('2d');
-    const viewport = page.getViewport({scale:pdfScale});
-    const outputScale = window.devicePixelRatio || 1;
-
-    canvas.width = Math.floor(viewport.width * outputScale);
-    canvas.height = Math.floor(viewport.height * outputScale);
-    canvas.style.width = Math.floor(viewport.width) + 'px';
-    canvas.style.height = Math.floor(viewport.height) + 'px';
-
-    const transform = outputScale !== 1 ? [outputScale,0,0,outputScale,0,0] : null;
-    return page.render({canvasContext:ctx, viewport, transform}).promise;
-  }).then(()=>{
-    pdfRendering = false;
-    document.getElementById('readerLoading').style.display='none';
-    document.getElementById('readerStage').scrollTo({top:0,left:0,behavior:'smooth'});
-    if(pdfPendingPage !== null){
-      const pending = pdfPendingPage;
-      pdfPendingPage = null;
-      renderPdfPage(pending);
-    }
-  }).catch(e=>{
-    console.error(e);
-    pdfRendering = false;
-    document.getElementById('readerLoading').textContent='Could not render this page.';
-  });
-}
-
-function queuePdfPage(num){
-  if(pdfRendering){ pdfPendingPage = num; return; }
-  renderPdfPage(num);
-}
-
-function prevPdfPage(){
-  if(!pdfDoc || pdfPageNum <= 1) return;
-  pdfPageNum--;
-  queuePdfPage(pdfPageNum);
-}
-
-function nextPdfPage(){
-  if(!pdfDoc || pdfPageNum >= pdfDoc.numPages) return;
-  pdfPageNum++;
-  queuePdfPage(pdfPageNum);
-}
-
-function fitPdfToScreen(){
-  if(!pdfDoc) return;
-  pdfDoc.getPage(pdfPageNum).then(page=>{
-    const readerStage = document.getElementById('readerStage');
-    const baseViewport = page.getViewport({scale:1});
-    const availableWidth = Math.min(readerStage.clientWidth * 0.94, 920);
-    pdfScale = Math.max(0.45, Math.min(2.2, availableWidth / baseViewport.width));
-    queuePdfPage(pdfPageNum);
-  });
-}
-
-function closeReader(){
-  document.getElementById('readerOverlay').classList.remove('open');
-  document.body.style.overflow='';
-  const canvas = document.getElementById('pdfCanvas');
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  pdfDoc = null;
-  pdfPageNum = 1;
-  pdfPendingPage = null;
-}
-
-const readerStage = document.getElementById('readerStage');
-readerStage.addEventListener('touchstart',e=>{
-  if(!e.touches.length) return;
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-},{passive:true});
-
-readerStage.addEventListener('touchend',e=>{
-  if(!e.changedTouches.length) return;
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  const dy = e.changedTouches[0].clientY - touchStartY;
-  if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4){
-    dx < 0 ? nextPdfPage() : prevPdfPage();
-  }
-},{passive:true});
-
-document.addEventListener('keydown',e=>{
-  if(!document.getElementById('readerOverlay').classList.contains('open')) return;
-  if(e.key === 'ArrowRight'){
-    e.preventDefault();
-    nextPdfPage();
-  }
-  if(e.key === 'ArrowLeft'){
-    e.preventDefault();
-    prevPdfPage();
-  }
-});
-
-window.addEventListener('resize',()=>{
-  if(document.getElementById('readerOverlay').classList.contains('open')) fitPdfToScreen();
-});
-
-
-// ──────────────────────────────────────────────
-// STUDIO GATE — unchanged behavior: click logo 5 times, then password
-// ──────────────────────────────────────────────
-let logoClicks = 0, logoTimer;
-document.getElementById('logoClick').addEventListener('click',()=>{
-  logoClicks++;
-  clearTimeout(logoTimer);
-  logoTimer = setTimeout(()=>{ logoClicks=0; }, 1800);
-  if(logoClicks>=5){ logoClicks=0; openGate(); }
-});
-
-function openGate(){
-  document.getElementById('studioGate').classList.add('open');
-  document.getElementById('pwInput').value='';
-  document.getElementById('pwErr').textContent='';
-  setTimeout(()=>document.getElementById('pwInput').focus(),80);
-}
-
-function closeGate(){
-  document.getElementById('studioGate').classList.remove('open');
-}
-
-function checkPw(){
-  const val = document.getElementById('pwInput').value;
-  if(val === STUDIO_PASS){
-    closeGate();
-    openStudio();
-  } else {
-    document.getElementById('pwErr').textContent = 'Wrong password.';
-    document.getElementById('pwInput').value='';
-    document.getElementById('pwInput').focus();
-  }
-}
-
-// ──────────────────────────────────────────────
-// STUDIO PANEL
-// ──────────────────────────────────────────────
-function openStudio(){
-  backToStudioChoice();
-  renderManage();
-  renderCharacterManage();
-  renderArtworkManage();
-  renderLettersManage();
-  document.getElementById('studioPanel').classList.add('open');
-  document.body.style.overflow='hidden';
-  if(!SUPABASE_READY) showSetupNotice();
-}
-
-function exitStudio(){
-  document.getElementById('studioPanel').classList.remove('open');
-  document.body.style.overflow='';
-  document.getElementById('epNum').value='';
-  document.getElementById('epTitle').value='';
-  document.getElementById('epPart').value='';
-  document.getElementById('fileName').textContent='';
-  document.getElementById('formMsg').textContent='';
-  document.getElementById('pdfInput').value='';
-  currentPdfFile = null;
-  resetCharacterForm();
-  resetArtworkForm();
-  clearLetterReplyForm();
-}
-
-function showStudioTab(tab){
-  document.getElementById('studioChoice').style.display='none';
-  document.getElementById('episodeStudio').classList.toggle('active', tab === 'episodes');
-  document.getElementById('characterStudio').classList.toggle('active', tab === 'characters');
-  document.getElementById('artworkStudio')?.classList.toggle('active', tab === 'artwork');
-  document.getElementById('lettersStudio')?.classList.toggle('active', tab === 'letters');
-  if(tab === 'artwork') renderArtworkManage();
-  if(tab === 'characters') renderCharacterManage();
-  if(tab === 'episodes') renderManage();
-  if(tab === 'letters') renderLettersManage();
-}
-
-function backToStudioChoice(){
-  const choice = document.getElementById('studioChoice');
-  if(choice) choice.style.display='grid';
-  document.getElementById('episodeStudio')?.classList.remove('active');
-  document.getElementById('characterStudio')?.classList.remove('active');
-  document.getElementById('artworkStudio')?.classList.remove('active');
-  document.getElementById('lettersStudio')?.classList.remove('active');
-}
-
-function onFileSelect(input){
-  const file = input.files[0];
-  if(!file) return;
-  if(file.type !== 'application/pdf'){
-    document.getElementById('formMsg').style.color='#c0614a';
-    document.getElementById('formMsg').textContent='Please select a PDF file only.';
-    input.value='';
-    currentPdfFile=null;
-    return;
-  }
-  currentPdfFile = file;
-  document.getElementById('fileName').textContent = file.name;
-}
-
-// drag styling
-const drop = document.getElementById('fileDrop');
-drop.addEventListener('dragenter',()=>drop.classList.add('drag'));
-drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
-drop.addEventListener('drop',()=>drop.classList.remove('drag'));
-const charDrop = document.getElementById('charFileDrop');
-charDrop.addEventListener('dragenter',()=>charDrop.classList.add('drag'));
-charDrop.addEventListener('dragleave',()=>charDrop.classList.remove('drag'));
-charDrop.addEventListener('drop',()=>charDrop.classList.remove('drag'));
-const artDrop = document.getElementById('artFileDrop');
-artDrop?.addEventListener('dragenter',()=>artDrop.classList.add('drag'));
-artDrop?.addEventListener('dragleave',()=>artDrop.classList.remove('drag'));
-artDrop?.addEventListener('drop',()=>artDrop.classList.remove('drag'));
-const replyDrop = document.getElementById('replyFileDrop');
-replyDrop?.addEventListener('dragenter',()=>replyDrop.classList.add('drag'));
-replyDrop?.addEventListener('dragleave',()=>replyDrop.classList.remove('drag'));
-replyDrop?.addEventListener('drop',()=>replyDrop.classList.remove('drag'));
-const characterLetterDrop = document.getElementById('characterLetterFileDrop');
-characterLetterDrop?.addEventListener('dragenter',()=>characterLetterDrop.classList.add('drag'));
-characterLetterDrop?.addEventListener('dragleave',()=>characterLetterDrop.classList.remove('drag'));
-characterLetterDrop?.addEventListener('drop',()=>characterLetterDrop.classList.remove('drag'));
-
-async function saveEpisode(){
-  const num = parseInt(document.getElementById('epNum').value);
-  const title = document.getElementById('epTitle').value.trim();
-  const part = document.getElementById('epPart').value.trim();
-  const msg = document.getElementById('formMsg');
-
-  if(!SUPABASE_READY){ msg.style.color='#c0614a'; msg.textContent='Add your Supabase URL and anon key in the HTML first.'; return; }
-  if(!num||num<1){ msg.style.color='#c0614a'; msg.textContent='Please enter a valid episode number.'; return; }
-  if(!title){ msg.style.color='#c0614a'; msg.textContent='Please enter a title.'; return; }
-  if(!currentPdfFile){ msg.style.color='#c0614a'; msg.textContent='Please select a PDF file.'; return; }
-
-  msg.style.color='#FFD34E';
-  msg.textContent='Uploading episode...';
-
-  const safeName = currentPdfFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-  const pdfPath = `splash/episode-${String(num).padStart(2,'0')}-${Date.now()}-${safeName}`;
-
-  const { error: uploadError } = await supabase.storage
-    .from(PDF_BUCKET)
-    .upload(pdfPath, currentPdfFile, {
-      contentType:'application/pdf',
-      upsert:true
-    });
-
-  if(uploadError){
-    console.error(uploadError);
-    msg.style.color='#c0614a';
-    msg.textContent='Upload failed. Check bucket name and storage policy.';
-    return;
-  }
-
-  const { error: dbError } = await supabase
-    .from(EPISODES_TABLE)
-    .upsert({ num, title, part, pdf_path: pdfPath }, { onConflict:'num' });
-
-  if(dbError){
-    console.error(dbError);
-    msg.style.color='#c0614a';
-    msg.textContent='PDF uploaded, but episode details were not saved. Check table policy.';
-    return;
-  }
-
-  msg.style.color='#FFD34E';
-  msg.textContent = `Episode ${num} uploaded.`;
-
-  await loadEpisodesFromSupabase();
-  renderPublic();
-  renderManage();
-
-  document.getElementById('epNum').value='';
-  document.getElementById('epTitle').value='';
-  document.getElementById('epPart').value='';
-  document.getElementById('fileName').textContent='';
-  document.getElementById('pdfInput').value='';
-  currentPdfFile = null;
-}
-
-async function deleteEpisode(num){
-  const episodeNum = Number(num);
-  if(!Number.isFinite(episodeNum)){
-    alert('Invalid episode number.');
-    return;
-  }
-
-  if(!confirm(`Delete Episode ${episodeNum}?`)) return;
-
-  const msg = document.getElementById('formMsg');
-  const ep = episodes.find(e => Number(e.num) === episodeNum);
-
-  if(msg){
-    msg.style.color = '#FFD34E';
-    msg.textContent = `Deleting Episode ${episodeNum}...`;
-  }
-
-  if(SUPABASE_READY){
-    // Delete the database row first. If this fails, the episode will keep showing in the list.
-    // IMPORTANT: your Supabase episodes table must have a DELETE policy for this to work.
-    const { data: deletedRows, error: dbError } = await supabase
-      .from(EPISODES_TABLE)
-      .delete()
-      .eq('num', episodeNum)
-      .select('num,pdf_path');
-
-    if(dbError){
-      console.error('Episode delete database error:', dbError);
-      if(msg){
-        msg.style.color = '#c0614a';
-        msg.textContent = 'Could not delete episode. Check DELETE policy on the episodes table.';
-      }
-      alert('Could not delete episode. Check Supabase DELETE policy on the episodes table.');
-      return;
-    }
-
-    if(!deletedRows || deletedRows.length === 0){
-      console.warn('No episode row was deleted. This usually means the episode number did not match or RLS blocked DELETE.');
-      if(msg){
-        msg.style.color = '#c0614a';
-        msg.textContent = 'No episode was deleted. Check the episode number and Supabase DELETE policy.';
-      }
-      alert('No episode was deleted. Most likely Supabase RLS is blocking DELETE.');
-      await loadEpisodesFromSupabase();
-      renderPublic();
-      renderManage();
-      return;
-    }
-
-    // Remove the PDF from storage after the row is deleted. If storage deletion fails, the episode still disappears from the site.
-    const pdfPath = deletedRows[0]?.pdf_path || ep?.pdf_path;
-    if(pdfPath){
-      const { error: fileError } = await supabase.storage.from(PDF_BUCKET).remove([pdfPath]);
-      if(fileError){
-        console.warn('Episode row deleted, but PDF file removal failed:', fileError);
-      }
-    }
-
-    await loadEpisodesFromSupabase();
-  } else {
-    episodes = episodes.filter(e => Number(e.num) !== episodeNum);
-    localStorage.setItem(STORE_KEY, JSON.stringify(episodes));
-  }
-
-  renderPublic();
-  renderManage();
-
-  if(msg){
-    msg.style.color = '#FFD34E';
-    msg.textContent = `Episode ${episodeNum} deleted.`;
-  }
-}
-
-
-function renderManage(){
-  const list = document.getElementById('manageList');
-  if(!list) return;
-  if(!episodes.length){
-    list.innerHTML='<p class="manage-empty">No episodes yet.</p>';
-    return;
-  }
-  const sorted = [...episodes].sort((a,b)=>a.num-b.num);
-  list.innerHTML = sorted.map(ep=>`
-    <div class="manage-item">
-      <span class="manage-num">Ep ${ep.num}</span>
-      <span class="manage-name">${esc(ep.title)}</span>
-      <button class="manage-del" onclick="deleteEpisode(${ep.num})">Delete</button>
-    </div>
-  `).join('');
-}
-
-
-// ──────────────────────────────────────────────
-// CHARACTER MANAGEMENT
-// ──────────────────────────────────────────────
-function onCharacterImageSelect(input){
-  const file = input.files[0];
-  const msg = document.getElementById('charFormMsg');
-  if(!file) return;
-  const okTypes = ['image/png','image/jpeg','image/jpg'];
-  const okExt = /\.(png|jpe?g)$/i.test(file.name);
-  if(!okTypes.includes(file.type) && !okExt){
-    msg.style.color='#c0614a';
-    msg.textContent='Please select PNG, JPG, or JPEG image only.';
-    input.value='';
-    currentCharacterImageFile = null;
-    return;
-  }
-  currentCharacterImageFile = file;
-  document.getElementById('charFileName').textContent = file.name;
-  msg.textContent='';
-}
-
-async function saveCharacter(){
-  const id = document.getElementById('charId').value.trim();
-  const name = document.getElementById('charName').value.trim();
-  const role = document.getElementById('charRole').value.trim();
-  const lore = document.getElementById('charLore').value.trim();
-  const sort_order = parseInt(document.getElementById('charOrder').value) || 0;
-  const msg = document.getElementById('charFormMsg');
-
-  if(!SUPABASE_READY){ msg.style.color='#c0614a'; msg.textContent='Supabase is not configured.'; return; }
-  if(!name){ msg.style.color='#c0614a'; msg.textContent='Please enter a character name.'; return; }
-
-  msg.style.color='#FFD34E';
-  msg.textContent='Saving character...';
-
-  let image_path = editingCharacterImagePath || null;
-  if(currentCharacterImageFile){
-    const safeName = currentCharacterImageFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-    image_path = `splash/${name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase()}-${Date.now()}-${safeName}`;
-    const { error: uploadError } = await supabase.storage
-      .from(CHARACTER_BUCKET)
-      .upload(image_path, currentCharacterImageFile, { contentType: currentCharacterImageFile.type || 'image/jpeg', upsert:true });
-    if(uploadError){
-      console.error(uploadError);
-      msg.style.color='#c0614a';
-      msg.textContent='Image upload failed. Check character-art bucket policy.';
-      return;
-    }
-    if(editingCharacterImagePath && editingCharacterImagePath !== image_path){
-      await supabase.storage.from(CHARACTER_BUCKET).remove([editingCharacterImagePath]);
-    }
-  }
-
-  const payload = { name, role, lore, image_path, sort_order, is_visible:true };
-  const query = id
-    ? supabase.from(CHARACTERS_TABLE).update(payload).eq('id', id)
-    : supabase.from(CHARACTERS_TABLE).insert(payload);
-  const { error } = await query;
-  if(error){
-    console.error(error);
-    msg.style.color='#c0614a';
-    msg.textContent='Character details were not saved. Check table policies.';
-    return;
-  }
-
-  msg.style.color='#FFD34E';
-  msg.textContent = id ? 'Character updated.' : 'Character added.';
-  await loadCharactersFromSupabase();
-    await loadArtworkFromSupabase();
-  renderCharactersPublic();
-  renderCharacterManage();
-  resetCharacterForm(false);
-}
-
-function editCharacter(id){
-  const c = characters.find(x=>x.id===id);
-  if(!c) return;
-  document.getElementById('charFormTitle').textContent = `Edit ${c.name || 'Character'}`;
-  document.getElementById('charId').value = c.id;
-  document.getElementById('charOrder').value = c.sort_order || 0;
-  document.getElementById('charName').value = c.name || '';
-  document.getElementById('charRole').value = c.role || '';
-  document.getElementById('charLore').value = c.lore || '';
-  editingCharacterImagePath = c.image_path || null;
-  currentCharacterImageFile = null;
-  document.getElementById('charImageInput').value='';
-  document.getElementById('charFileName').textContent = c.image_path ? 'Existing image attached' : 'Image not available';
-  document.getElementById('charFormMsg').textContent='Editing existing character.';
-  document.getElementById('charFormMsg').style.color='#FFD34E';
-  document.getElementById('characterStudio').scrollTo?.({top:0,behavior:'smooth'});
-}
-
-function resetCharacterForm(clearMsg=true){
-  const ids = ['charId','charOrder','charName','charRole','charLore','charFileName'];
-  ids.forEach(id=>{ const el=document.getElementById(id); if(el) el.value !== undefined ? el.value='' : el.textContent=''; });
-  const title = document.getElementById('charFormTitle');
-  if(title) title.textContent='Add a Character';
-  const input = document.getElementById('charImageInput');
-  if(input) input.value='';
-  currentCharacterImageFile = null;
-  editingCharacterImagePath = null;
-  if(clearMsg){ const msg=document.getElementById('charFormMsg'); if(msg) msg.textContent=''; }
-}
-
-async function removeCharacterImage(){
-  const id = document.getElementById('charId').value.trim();
-  const lore = document.getElementById('charLore').value.trim();
-  const msg = document.getElementById('charFormMsg');
-  currentCharacterImageFile = null;
-  document.getElementById('charImageInput').value='';
-  document.getElementById('charFileName').textContent='Image not available';
-  if(!id){
-    editingCharacterImagePath = null;
-    msg.style.color='#FFD34E';
-    msg.textContent='Image removed from this unsaved form.';
-    return;
-  }
-  const oldPath = editingCharacterImagePath;
-  const c = characters.find(x=>x.id===id);
-  if(!lore && c && !(c.lore || '').trim()){
-    await deleteCharacter(id, true);
-    return;
-  }
-  const { error } = await supabase.from(CHARACTERS_TABLE).update({ image_path:null }).eq('id', id);
-  if(error){ msg.style.color='#c0614a'; msg.textContent='Could not remove image.'; console.error(error); return; }
-  if(oldPath) await supabase.storage.from(CHARACTER_BUCKET).remove([oldPath]);
-  editingCharacterImagePath = null;
-  await loadCharactersFromSupabase();
-    await loadArtworkFromSupabase();
-  renderCharactersPublic();
-  renderCharacterManage();
-  msg.style.color='#FFD34E';
-  msg.textContent='Image removed. Card will show “Image not available”.';
-}
-
-async function clearCharacterWriting(){
-  const id = document.getElementById('charId').value.trim();
-  const msg = document.getElementById('charFormMsg');
-  document.getElementById('charLore').value='';
-  if(!id){ msg.style.color='#FFD34E'; msg.textContent='Writing cleared from this unsaved form.'; return; }
-  const c = characters.find(x=>x.id===id);
-  if(c && !(c.image_path || '').trim() && !editingCharacterImagePath && !currentCharacterImageFile){
-    await deleteCharacter(id, true);
-    return;
-  }
-  const { error } = await supabase.from(CHARACTERS_TABLE).update({ lore:'' }).eq('id', id);
-  if(error){ msg.style.color='#c0614a'; msg.textContent='Could not clear writing.'; console.error(error); return; }
-  await loadCharactersFromSupabase();
-    await loadArtworkFromSupabase();
-  renderCharactersPublic();
-  renderCharacterManage();
-  msg.style.color='#FFD34E';
-  msg.textContent='Writing cleared. Card will show “Nothing written.”';
-}
-
-async function deleteCharacter(id, silent=false){
-  const c = characters.find(x=>x.id===id);
-  if(!c) return;
-  if(!silent && !confirm(`Delete ${c.name || 'this character'}?`)) return;
-  const { error } = await supabase.from(CHARACTERS_TABLE).delete().eq('id', id);
-  if(error){ alert('Could not delete character.'); console.error(error); return; }
-  if(c.image_path) await supabase.storage.from(CHARACTER_BUCKET).remove([c.image_path]);
-  await loadCharactersFromSupabase();
-    await loadArtworkFromSupabase();
-  renderCharactersPublic();
-  renderCharacterManage();
-  resetCharacterForm(false);
-  const msg = document.getElementById('charFormMsg');
-  if(msg){ msg.style.color='#FFD34E'; msg.textContent='Character card deleted.'; }
-}
-
-function renderCharacterManage(){
-  const list = document.getElementById('characterManageList');
-  if(!list) return;
-  if(!characters.length){
-    list.innerHTML='<p class="manage-empty">No characters yet.</p>';
-    return;
-  }
-  list.innerHTML = [...characters].sort((a,b)=>(a.sort_order||0)-(b.sort_order||0)).map(c=>`
-    <div class="manage-item">
-      <span class="manage-num">${c.sort_order || 0}</span>
-      <span class="manage-name">${esc(c.name || 'Unnamed Character')}</span>
-      <div class="manage-actions">
-        <button class="manage-edit" onclick="editCharacter('${escAttr(c.id)}')">Edit</button>
-        <button class="manage-del" onclick="deleteCharacter('${escAttr(c.id)}')">Delete</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-
-// ──────────────────────────────────────────────
-// ARTWORK MANAGEMENT
-// ──────────────────────────────────────────────
 async function loadArtworkFromSupabase(){
-  const { data, error } = await supabase
-    .from(ARTWORKS_TABLE)
-    .select('id,title,description,episode_label,image_path,sort_order,is_visible,created_at')
-    .eq('is_visible', true)
-    .order('sort_order', { ascending:true })
-    .order('created_at', { ascending:true });
-
-  if(error){
-    console.error(error);
-    artworks = [];
-    return;
-  }
+  const { data, error } = await supabase.from(ARTWORKS_TABLE).select('id,title,description,episode_label,image_path,sort_order,is_visible,created_at').eq('is_visible',true).order('sort_order',{ascending:true}).order('created_at',{ascending:true});
+  if(error){ console.error(error); artworks=[]; return; }
   artworks = data || [];
 }
 
-function validateArtworkImage(file){
-  if(!file) return 'Please select an artwork image.';
-  const okExt = /\.(png|jpe?g)$/i.test(file.name || '');
-  const okType = ['image/png','image/jpeg','image/jpg',''].includes(file.type || '');
-  if(!okExt || !okType){
-    return 'Please select PNG, JPG, or JPEG image only.';
-  }
-  return '';
-}
-
-function onArtworkImageSelect(input){
-  const file = input.files && input.files[0];
-  const msg = document.getElementById('artFormMsg');
-  if(!file) return;
-  const validationError = validateArtworkImage(file);
-  if(validationError){
-    msg.style.color='#c0614a';
-    msg.textContent=validationError;
-    input.value='';
-    currentArtworkImageFile = null;
-    document.getElementById('artFileName').textContent='';
-    return;
-  }
-  currentArtworkImageFile = file;
-  document.getElementById('artFileName').textContent = `${file.name} selected`;
-  msg.style.color='#FFD34E';
-  msg.textContent='Artwork ready to upload. Click Save Artwork.';
-}
-
-function handleArtworkDragOver(event){
-  event.preventDefault();
-  document.getElementById('artFileDrop')?.classList.add('drag');
-}
-
-function handleArtworkDragLeave(event){
-  event.preventDefault();
-  document.getElementById('artFileDrop')?.classList.remove('drag');
-}
-
-function handleArtworkDrop(event){
-  event.preventDefault();
-  const dropZone = document.getElementById('artFileDrop');
-  dropZone?.classList.remove('drag');
-  const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
-  const msg = document.getElementById('artFormMsg');
-  const validationError = validateArtworkImage(file);
-  if(validationError){
-    msg.style.color='#c0614a';
-    msg.textContent=validationError;
-    currentArtworkImageFile = null;
-    document.getElementById('artImageInput').value='';
-    document.getElementById('artFileName').textContent='';
-    return;
-  }
-  currentArtworkImageFile = file;
-  document.getElementById('artFileName').textContent = `${file.name} selected`;
-  msg.style.color='#FFD34E';
-  msg.textContent='Artwork ready to upload. Click Save Artwork.';
-}
-
-async function saveArtwork(){
-  const id = document.getElementById('artId').value.trim();
-  const title = document.getElementById('artTitle').value.trim();
-  const episode_label = document.getElementById('artEpisode').value.trim();
-  const description = document.getElementById('artDescription').value.trim();
-  const sort_order = parseInt(document.getElementById('artOrder').value) || 0;
-  const msg = document.getElementById('artFormMsg');
-
-  if(!SUPABASE_READY){ msg.style.color='#c0614a'; msg.textContent='Supabase is not configured.'; return; }
-  if(!title){ msg.style.color='#c0614a'; msg.textContent='Please enter an artwork title.'; return; }
-  if(!id && !currentArtworkImageFile){ msg.style.color='#c0614a'; msg.textContent='Please select a PNG, JPG, or JPEG artwork image.'; return; }
-  if(currentArtworkImageFile){
-    const validationError = validateArtworkImage(currentArtworkImageFile);
-    if(validationError){ msg.style.color='#c0614a'; msg.textContent=validationError; return; }
-  }
-
-  msg.style.color='#FFD34E';
-  msg.textContent='Saving artwork...';
-
-  let image_path = editingArtworkImagePath || null;
-  if(currentArtworkImageFile){
-    const safeName = currentArtworkImageFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-    image_path = `splash/${title.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase()}-${Date.now()}-${safeName}`;
-    const { error: uploadError } = await supabase.storage
-      .from(ARTWORK_BUCKET)
-      .upload(image_path, currentArtworkImageFile, { contentType: currentArtworkImageFile.type || 'image/jpeg', upsert:true });
-    if(uploadError){
-      console.error(uploadError);
-      msg.style.color='#c0614a';
-      msg.textContent=`Artwork upload failed: ${uploadError.message || 'Check artwork-gallery bucket policy.'}`;
-      return;
-    }
-    if(editingArtworkImagePath && editingArtworkImagePath !== image_path){
-      await supabase.storage.from(ARTWORK_BUCKET).remove([editingArtworkImagePath]);
-    }
-  }
-
-  const payload = { title, description, episode_label, image_path, sort_order, is_visible:true };
-  const query = id
-    ? supabase.from(ARTWORKS_TABLE).update(payload).eq('id', id)
-    : supabase.from(ARTWORKS_TABLE).insert(payload);
-  const { error } = await query;
-  if(error){
-    console.error(error);
-    msg.style.color='#c0614a';
-    msg.textContent=`Artwork details were not saved: ${error.message || 'Check table policies.'}`;
-    return;
-  }
-
-  msg.style.color='#FFD34E';
-  msg.textContent = id ? 'Artwork updated.' : 'Artwork added.';
-  await loadArtworkFromSupabase();
-  renderArtworkManage();
-  resetArtworkForm(false);
-}
-
-function editArtwork(id){
-  const art = artworks.find(x=>x.id===id);
-  if(!art) return;
-  document.getElementById('artFormTitle').textContent = `Edit ${art.title || 'Artwork'}`;
-  document.getElementById('artId').value = art.id;
-  document.getElementById('artOrder').value = art.sort_order || 0;
-  document.getElementById('artTitle').value = art.title || '';
-  document.getElementById('artEpisode').value = art.episode_label || '';
-  document.getElementById('artDescription').value = art.description || '';
-  editingArtworkImagePath = art.image_path || null;
-  currentArtworkImageFile = null;
-  document.getElementById('artImageInput').value='';
-  document.getElementById('artFileName').textContent = art.image_path ? 'Existing artwork attached' : 'Image not available';
-  document.getElementById('artFormMsg').textContent='Editing existing artwork.';
-  document.getElementById('artFormMsg').style.color='#FFD34E';
-}
-
-function resetArtworkForm(clearMsg=true){
-  const ids = ['artId','artOrder','artTitle','artEpisode','artDescription','artFileName'];
-  ids.forEach(id=>{ const el=document.getElementById(id); if(el) el.value !== undefined ? el.value='' : el.textContent=''; });
-  const title = document.getElementById('artFormTitle');
-  if(title) title.textContent='Add Artwork';
-  const input = document.getElementById('artImageInput');
-  if(input) input.value='';
-  currentArtworkImageFile = null;
-  editingArtworkImagePath = null;
-  if(clearMsg){ const msg=document.getElementById('artFormMsg'); if(msg) msg.textContent=''; }
-}
-
-async function removeArtworkImage(){
-  const id = document.getElementById('artId').value.trim();
-  const msg = document.getElementById('artFormMsg');
-  currentArtworkImageFile = null;
-  document.getElementById('artImageInput').value='';
-  document.getElementById('artFileName').textContent='Image not available';
-  if(!id){
-    editingArtworkImagePath = null;
-    msg.style.color='#FFD34E';
-    msg.textContent='Image removed from this unsaved form.';
-    return;
-  }
-  const oldPath = editingArtworkImagePath;
-  const { error } = await supabase.from(ARTWORKS_TABLE).update({ image_path:null }).eq('id', id);
-  if(error){ msg.style.color='#c0614a'; msg.textContent='Could not remove artwork image.'; console.error(error); return; }
-  if(oldPath) await supabase.storage.from(ARTWORK_BUCKET).remove([oldPath]);
-  editingArtworkImagePath = null;
-  await loadArtworkFromSupabase();
-  renderArtworkManage();
-  msg.style.color='#FFD34E';
-  msg.textContent='Artwork image removed.';
-}
-
-async function clearArtworkDescription(){
-  const id = document.getElementById('artId').value.trim();
-  const msg = document.getElementById('artFormMsg');
-  document.getElementById('artDescription').value='';
-  if(!id){ msg.style.color='#FFD34E'; msg.textContent='Description cleared from this unsaved form.'; return; }
-  const { error } = await supabase.from(ARTWORKS_TABLE).update({ description:'' }).eq('id', id);
-  if(error){ msg.style.color='#c0614a'; msg.textContent='Could not clear description.'; console.error(error); return; }
-  await loadArtworkFromSupabase();
-  renderArtworkManage();
-  msg.style.color='#FFD34E';
-  msg.textContent='Description cleared.';
-}
-
-async function deleteArtwork(id){
-  const art = artworks.find(x=>x.id===id);
-  if(!art) return;
-  if(!confirm(`Delete ${art.title || 'this artwork'}?`)) return;
-  const { error } = await supabase.from(ARTWORKS_TABLE).delete().eq('id', id);
-  if(error){ alert('Could not delete artwork.'); console.error(error); return; }
-  if(art.image_path) await supabase.storage.from(ARTWORK_BUCKET).remove([art.image_path]);
-  await loadArtworkFromSupabase();
-  renderArtworkManage();
-  resetArtworkForm(false);
-  const msg = document.getElementById('artFormMsg');
-  if(msg){ msg.style.color='#FFD34E'; msg.textContent='Artwork deleted.'; }
-}
-
-function renderArtworkManage(){
-  const list = document.getElementById('artworkManageList');
-  if(!list) return;
-  if(!artworks.length){
-    list.innerHTML='<p class="manage-empty">No artwork yet.</p>';
-    return;
-  }
-  list.innerHTML = [...artworks].sort((a,b)=>(a.sort_order||0)-(b.sort_order||0)).map(art=>`
-    <div class="manage-item">
-      <span class="manage-num">${art.sort_order || 0}</span>
-      <span class="manage-name">${esc(art.title || 'Untitled Artwork')}</span>
-      <div class="manage-actions">
-        <button class="manage-edit" onclick="editArtwork('${escAttr(art.id)}')">Edit</button>
-        <button class="manage-del" onclick="deleteArtwork('${escAttr(art.id)}')">Delete</button>
+// ── RENDER PUBLIC EPISODES ──
+function renderPublic(){
+  const list=document.getElementById('epList');
+  if(!episodes.length){ list.innerHTML='<div class="ep-empty">No episodes published yet.</div>'; return; }
+  const sorted=[...episodes].sort((a,b)=>a.num-b.num);
+  list.innerHTML=sorted.map(ep=>`
+    <div class="ep-item" onclick="openReader(${ep.num})">
+      <span class="ep-num">EP ${ep.num}</span>
+      <div class="ep-meta">
+        <div class="ep-title">${esc(ep.title)}</div>
+        ${ep.part?`<div class="ep-part">${esc(ep.part)}</div>`:''}
       </div>
+      <span class="ep-arrow">→</span>
+    </div>`).join('');
+}
+
+// ── RENDER CHARACTERS ──
+function getCharacterImageUrl(c){
+  if(!c||!c.image_path||!SUPABASE_READY) return '';
+  const { data } = supabase.storage.from(CHARACTER_BUCKET).getPublicUrl(c.image_path);
+  return data.publicUrl;
+}
+function renderCharactersPublic(){
+  const grid=document.getElementById('characterGrid');
+  if(!grid) return;
+  const visible=characters.filter(c=>(c.image_path&&c.image_path.trim())||(c.lore&&c.lore.trim()));
+  if(!visible.length){ grid.innerHTML='<div class="ep-empty">No characters revealed yet.</div>'; return; }
+  grid.innerHTML=visible.map(c=>{
+    const imgUrl=getCharacterImageUrl(c);
+    const lore=(c.lore||'').trim();
+    return `<div class="character-card" onclick="openCharacterModal('${escAttr(c.id)}')">
+      <div class="character-thumb">${imgUrl?`<img src="${escAttr(imgUrl)}" alt="${escAttr(c.name||'Character art')}">`:''}</div>
+      <h3 class="character-name">${esc(c.name||'Unknown')}</h3>
+      ${c.role?`<div class="character-role">${esc(c.role)}</div>`:''}
+      <p class="character-preview">${lore?esc(lore):'Nothing written.'}</p>
+    </div>`;
+  }).join('');
+}
+function openCharacterModal(id){
+  const c=characters.find(x=>x.id===id); if(!c) return;
+  const imgUrl=getCharacterImageUrl(c);
+  document.getElementById('characterModalName').textContent=c.name||'Unknown';
+  document.getElementById('characterModalRole').textContent=c.role||'';
+  document.getElementById('characterModalImage').innerHTML=imgUrl?`<img src="${escAttr(imgUrl)}" alt="${escAttr(c.name||'')}">`:'';;
+  document.getElementById('characterModalText').textContent=(c.lore&&c.lore.trim())?c.lore:'Nothing written.';
+  document.getElementById('characterModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCharacterModal(){ document.getElementById('characterModal').classList.remove('open'); document.body.style.overflow=''; }
+
+// ── RENDER ARTWORK ──
+function getArtworkImageUrl(art){
+  if(!art||!art.image_path||!SUPABASE_READY) return '';
+  const { data } = supabase.storage.from(ARTWORK_BUCKET).getPublicUrl(art.image_path);
+  return data.publicUrl;
+}
+function renderArtworkPublic(){
+  // Artwork lives on artwork.html — no inline render on index
+}
+function openArtworkPage(){ window.location.href='artwork.html'; }
+function closeArtworkModal(){ document.getElementById('artworkModal').classList.remove('open'); document.body.style.overflow=''; }
+
+// ── RENDER MANAGE LISTS ──
+function renderManage(){
+  const list=document.getElementById('manageList'); if(!list) return;
+  if(!episodes.length){ list.innerHTML='<p class="manage-empty">No episodes yet.</p>'; return; }
+  const sorted=[...episodes].sort((a,b)=>a.num-b.num);
+  list.innerHTML=sorted.map(ep=>`<div class="manage-item">
+    <span class="manage-num">EP ${ep.num}</span>
+    <span class="manage-name">${esc(ep.title)}</span>
+    <button class="manage-del" onclick="deleteEpisode(${ep.num})">Delete</button>
+  </div>`).join('');
+}
+function renderCharacterManage(){
+  const list=document.getElementById('characterManageList'); if(!list) return;
+  if(!characters.length){ list.innerHTML='<p class="manage-empty">No characters yet.</p>'; return; }
+  list.innerHTML=[...characters].sort((a,b)=>a.sort_order-b.sort_order).map(c=>`<div class="manage-item">
+    <span class="manage-name">${esc(c.name)}</span>
+    <div class="manage-actions">
+      <button class="manage-edit" onclick="editCharacter('${escAttr(c.id)}')">Edit</button>
+      <button class="manage-del" onclick="deleteCharacter('${escAttr(c.id)}')">Delete</button>
     </div>
-  `).join('');
+  </div>`).join('');
+}
+function renderArtworkManage(){
+  const list=document.getElementById('artworkManageList'); if(!list) return;
+  if(!artworks.length){ list.innerHTML='<p class="manage-empty">No artwork yet.</p>'; return; }
+  list.innerHTML=[...artworks].sort((a,b)=>a.sort_order-b.sort_order).map(art=>`<div class="manage-item">
+    <span class="manage-name">${esc(art.title)}</span>
+    <div class="manage-actions">
+      <button class="manage-edit" onclick="editArtwork('${escAttr(art.id)}')">Edit</button>
+      <button class="manage-del" onclick="deleteArtwork('${escAttr(art.id)}')">Delete</button>
+    </div>
+  </div>`).join('');
+}
+async function renderLettersManage(){
+  if(!SUPABASE_READY) return;
+  const { data, error } = await supabase.from(LETTERS_TABLE).select('*').order('created_at',{ascending:false});
+  if(error){ console.error(error); return; }
+  readerLetters = data||[];
+  const list=document.getElementById('lettersManageList'); if(!list) return;
+  if(!readerLetters.length){ list.innerHTML='<p class="manage-empty">No letters yet.</p>'; return; }
+  list.innerHTML=readerLetters.filter(l=>!l.parent_letter_id).map(l=>`<div class="studio-card">
+    <div class="studio-meta">
+      <span>${esc(l.sender_name||'Anonymous')}</span>
+      <span>${esc(l.addressed_to||'')}</span>
+      <span>${formatLetterDate(l.created_at)}</span>
+    </div>
+    <div class="studio-letter">${esc((l.letter_content||'').slice(0,200))}${(l.letter_content||'').length>200?'…':''}</div>
+    <div class="mini-actions">
+      <button class="mini-btn" onclick="selectLetterForReply('${escAttr(l.id)}')">Reply as Character</button>
+      <button class="mini-btn danger" onclick="deleteLetter('${escAttr(l.id)}')">Delete</button>
+    </div>
+  </div>`).join('');
 }
 
-function openArtworkPage(){
-  window.location.href = 'artwork.html';
+// ── PDF READER ──
+let pdfDoc=null, pdfPageNum=1, pdfRendering=false, pdfPendingPage=null, pdfScale=1;
+let touchStartX=0, touchStartY=0;
+if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+function dataUrlToUint8Array(dataUrl){ const b64=dataUrl.split(',')[1]; const bs=atob(b64); const bytes=new Uint8Array(bs.length); for(let i=0;i<bs.length;i++) bytes[i]=bs.charCodeAt(i); return bytes; }
+async function getEpisodePdfSource(ep){
+  if(ep.pdf_path&&SUPABASE_READY){ const { data }=supabase.storage.from(PDF_BUCKET).getPublicUrl(ep.pdf_path); return {url:data.publicUrl}; }
+  if(ep.pdfData) return {data:dataUrlToUint8Array(ep.pdfData)};
+  return null;
 }
-
-function openLettersPage(){
-  window.location.href = 'letters.html';
+async function openReader(num){
+  const ep=episodes.find(e=>e.num===num);
+  if(!ep){ alert('Episode not found.'); return; }
+  if(!window.pdfjsLib){ alert('Reader could not load.'); return; }
+  const source=await getEpisodePdfSource(ep);
+  if(!source){ alert('PDF not found.'); return; }
+  document.getElementById('readerTitle').textContent=`EP ${ep.num} — ${ep.title}`;
+  document.getElementById('readerOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  const loading=document.getElementById('readerLoading');
+  loading.textContent='Opening the episode…'; loading.style.display='block';
+  const hint=document.getElementById('readerHintFloating');
+  if(hint){ hint.style.opacity='0.9'; clearTimeout(window.readerHintTimer); window.readerHintTimer=setTimeout(()=>{ hint.style.opacity='0'; },3500); }
+  try{ pdfDoc=await pdfjsLib.getDocument(source).promise; pdfPageNum=1; fitPdfToScreen(); }
+  catch(e){ console.error(e); loading.textContent='Could not open this PDF.'; }
 }
-
-
-
-
-// ──────────────────────────────────────────────
-// LETTERS & CHARACTER REPLIES MANAGEMENT
-// ──────────────────────────────────────────────
-async function loadLettersFromSupabase(){
-  if(!SUPABASE_READY){ readerLetters = []; return; }
-  const { data, error } = await supabase
-    .from(LETTERS_TABLE)
-    .select('*')
-    .order('created_at', { ascending:false });
-
-  if(error){
-    console.error(error);
-    readerLetters = [];
-    const list = document.getElementById('lettersManageList');
-    if(list) list.innerHTML = '<p class="manage-empty">Could not load letters. Check reader_letters table and policies.</p>';
-    return;
-  }
-  readerLetters = data || [];
+function updatePageIndicator(){ const el=document.getElementById('readerPage'); if(el&&pdfDoc) el.textContent=`${pdfPageNum} / ${pdfDoc.numPages}`; }
+function renderPdfPage(num){
+  if(!pdfDoc) return; pdfRendering=true;
+  document.getElementById('readerLoading').style.display='block';
+  pdfDoc.getPage(num).then(page=>{
+    const canvas=document.getElementById('pdfCanvas');
+    const ctx=canvas.getContext('2d');
+    const viewport=page.getViewport({scale:pdfScale});
+    const outputScale=window.devicePixelRatio||1;
+    canvas.width=Math.floor(viewport.width*outputScale);
+    canvas.height=Math.floor(viewport.height*outputScale);
+    canvas.style.width=Math.floor(viewport.width)+'px';
+    canvas.style.height=Math.floor(viewport.height)+'px';
+    const transform=outputScale!==1?[outputScale,0,0,outputScale,0,0]:null;
+    return page.render({canvasContext:ctx,viewport,transform}).promise;
+  }).then(()=>{
+    pdfRendering=false;
+    document.getElementById('readerLoading').style.display='none';
+    document.getElementById('readerStage').scrollTo({top:0,left:0,behavior:'smooth'});
+    updatePageIndicator();
+    if(pdfPendingPage!==null){ const pending=pdfPendingPage; pdfPendingPage=null; renderPdfPage(pending); }
+  }).catch(e=>{ console.error(e); pdfRendering=false; document.getElementById('readerLoading').textContent='Could not render this page.'; });
 }
-
-function renderLettersManage(){
-  const list = document.getElementById('lettersManageList');
-  if(!list) return;
-  if(!SUPABASE_READY){
-    list.innerHTML = '<p class="manage-empty">Supabase is not configured yet.</p>';
-    return;
-  }
-  list.innerHTML = '<p class="manage-empty">Loading letters…</p>';
-  loadLettersFromSupabase().then(()=>{
-    const topLevel = readerLetters.filter(l => !l.parent_letter_id);
-    if(!topLevel.length){
-      list.innerHTML = '<p class="manage-empty">No letters yet.</p>';
-      return;
-    }
-    list.innerHTML = topLevel.map(letter=>{
-      const shortText = (letter.letter_content || '').trim();
-      const isCharacterLetter = letter.letter_type === 'character' || letter.is_author_post === true;
-      const sender = isCharacterLetter ? (letter.character_name || letter.sender_name || 'Character') : (letter.sender_name || 'Unnamed reader');
-      const target = isCharacterLetter ? 'Standalone character letter' : `To ${esc(letter.addressed_to || letter.target_character || 'Splash\'s Café')}`;
-      const childCount = readerLetters.filter(r => String(r.parent_letter_id || '') === String(letter.id)).length;
-      const legacyReply = letter.reply && !isCharacterLetter ? `<div style="margin-top:.45rem;font-size:.86rem;color:rgba(255,211,78,.82)">↳ ${esc(letter.reply_character || 'Splash')} replied: ${esc(String(letter.reply).slice(0,90))}${String(letter.reply).length>90 ? '…' : ''}</div>` : '';
-      return `
-        <div class="manage-item" style="align-items:flex-start">
-          <div style="flex:1;min-width:0">
-            <div class="manage-name" style="white-space:normal;overflow:visible;text-overflow:clip">${esc(sender)}</div>
-            <div style="font-size:.82rem;color:rgba(20,107,255,.72);margin:.12rem 0 .35rem">${target} · ${formatLetterDate(letter.created_at)} · ${childCount} thread ${childCount===1?'reply':'replies'}</div>
-            <div style="font-size:.9rem;color:rgba(247,251,255,.55);line-height:1.45">${esc(shortText.slice(0,150))}${shortText.length>150 ? '…' : ''}</div>
-            ${legacyReply}
-          </div>
-          <div class="manage-actions">
-            <button class="manage-edit" onclick="selectLetterForReply('${escAttr(letter.id)}')">Reply</button>
-          </div>
-        </div>
-      `;
-    }).join('');
+function queuePdfPage(num){ if(pdfRendering){ pdfPendingPage=num; return; } renderPdfPage(num); }
+function prevPdfPage(){ if(!pdfDoc||pdfPageNum<=1) return; pdfPageNum--; queuePdfPage(pdfPageNum); }
+function nextPdfPage(){ if(!pdfDoc||pdfPageNum>=pdfDoc.numPages) return; pdfPageNum++; queuePdfPage(pdfPageNum); }
+function fitPdfToScreen(){
+  if(!pdfDoc) return;
+  pdfDoc.getPage(pdfPageNum).then(page=>{
+    const stage=document.getElementById('readerStage');
+    const baseVP=page.getViewport({scale:1});
+    const aw=Math.min(stage.clientWidth*0.94,920);
+    pdfScale=Math.max(0.45,Math.min(2.2,aw/baseVP.width));
+    queuePdfPage(pdfPageNum);
   });
 }
-
-
-function onCharacterLetterFileSelect(input){
-  const file = input.files[0];
-  const msg = document.getElementById('characterLetterMsg');
-  if(!file){ currentCharacterLetterFile = null; document.getElementById('characterLetterFileName').textContent=''; return; }
-  const okTypes = ['application/pdf','image/png','image/jpeg','image/jpg'];
-  const okExt = /\.(pdf|png|jpe?g)$/i.test(file.name);
-  if(!okTypes.includes(file.type) && !okExt){
-    msg.style.color = '#c0614a';
-    msg.textContent = 'Attach only PDF, PNG, JPG, or JPEG.';
-    input.value = '';
-    currentCharacterLetterFile = null;
-    document.getElementById('characterLetterFileName').textContent = '';
-    return;
-  }
-  currentCharacterLetterFile = file;
-  document.getElementById('characterLetterFileName').textContent = file.name;
+function closeReader(){
+  document.getElementById('readerOverlay').classList.remove('open');
+  document.body.style.overflow='';
+  const canvas=document.getElementById('pdfCanvas');
+  canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+  pdfDoc=null; pdfPageNum=1; pdfPendingPage=null;
 }
 
-async function publishCharacterLetter(){
-  const character = document.getElementById('characterLetterName').value.trim();
-  const text = document.getElementById('characterLetterText').value.trim();
-  const msg = document.getElementById('characterLetterMsg');
+const readerStage=document.getElementById('readerStage');
+readerStage.addEventListener('touchstart',e=>{ if(!e.touches.length) return; touchStartX=e.touches[0].clientX; touchStartY=e.touches[0].clientY; },{passive:true});
+readerStage.addEventListener('touchend',e=>{ if(!e.changedTouches.length) return; const dx=e.changedTouches[0].clientX-touchStartX; const dy=e.changedTouches[0].clientY-touchStartY; if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4){ dx<0?nextPdfPage():prevPdfPage(); } },{passive:true});
+document.addEventListener('keydown',e=>{ if(!document.getElementById('readerOverlay').classList.contains('open')) return; if(e.key==='ArrowRight'){ e.preventDefault(); nextPdfPage(); } if(e.key==='ArrowLeft'){ e.preventDefault(); prevPdfPage(); } if(e.key==='Escape') closeReader(); });
+window.addEventListener('resize',()=>{ if(document.getElementById('readerOverlay').classList.contains('open')) fitPdfToScreen(); });
 
-  if(!SUPABASE_READY){ msg.style.color='#c0614a'; msg.textContent='Supabase is not configured.'; return; }
-  if(!character){ msg.style.color='#c0614a'; msg.textContent='Type the character name.'; return; }
-  if(!text && !currentCharacterLetterFile){ msg.style.color='#c0614a'; msg.textContent='Write a letter or attach a file.'; return; }
-
-  msg.style.color = '#FFD34E';
-  msg.textContent = 'Publishing character letter…';
-
-  let image_url = null;
-  let image_path = null;
-  let reply_file_url = null;
-  let reply_file_path = null;
-  let reply_file_type = null;
-
-  if(currentCharacterLetterFile){
-    const safeName = currentCharacterLetterFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-    const isImage = (currentCharacterLetterFile.type || '').startsWith('image/') || /\.(png|jpe?g)$/i.test(safeName);
-    const bucket = isImage ? 'letter-images' : LETTER_REPLY_BUCKET;
-    const path = `${isImage ? 'character-letters' : 'character-letter-files'}/${Date.now()}-${safeName}`;
-    const fileType = currentCharacterLetterFile.type || (safeName.endsWith('.pdf') ? 'application/pdf' : 'image/jpeg');
-
-    const { error: uploadError } = await supabase.storage
-      .from(bucket)
-      .upload(path, currentCharacterLetterFile, { contentType:fileType, upsert:true });
-
-    if(uploadError){
-      console.error(uploadError);
-      msg.style.color = '#c0614a';
-      msg.textContent = `Attachment upload failed. Check ${bucket} bucket and policies.`;
-      return;
-    }
-
-    const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-    if(isImage){
-      image_url = data.publicUrl;
-      image_path = path;
-    } else {
-      reply_file_url = data.publicUrl;
-      reply_file_path = path;
-      reply_file_type = fileType;
-    }
-  }
-
-  const { error } = await supabase
-    .from(LETTERS_TABLE)
-    .insert([{
-      letter_type:'character',
-      parent_letter_id:null,
-      is_author_post:true,
-      sender_name: character,
-      sender_name_normalized: character.toLowerCase().replace(/\s+/g,' ').trim(),
-      character_name: character,
-      addressed_to: 'Letters to Splash',
-      letter_content: text,
-      image_url,
-      image_path,
-      reply_file_url,
-      reply_file_path,
-      reply_file_type,
-      is_approved:true,
-      is_pinned:false
-    }]);
-
-  if(error){
-    console.error(error);
-    msg.style.color = '#c0614a';
-    msg.textContent = 'Character letter could not be published. Check columns: letter_type, is_author_post, character_name, and policies.';
-    return;
-  }
-
-  msg.style.color = '#FFD34E';
-  msg.textContent = 'Character letter published.';
-  clearCharacterLetterForm(false);
-  await loadLettersFromSupabase();
-  renderLettersManage();
+// ── STUDIO ──
+let logoClicks=0, logoTimer;
+document.getElementById('logoClick').addEventListener('click',()=>{ logoClicks++; clearTimeout(logoTimer); logoTimer=setTimeout(()=>{ logoClicks=0; },1800); if(logoClicks>=5){ logoClicks=0; openGate(); } });
+function openGate(){ document.getElementById('studioGate').classList.add('open'); document.getElementById('pwInput').value=''; document.getElementById('pwErr').textContent=''; setTimeout(()=>document.getElementById('pwInput').focus(),80); }
+function closeGate(){ document.getElementById('studioGate').classList.remove('open'); }
+function checkPw(){ const val=document.getElementById('pwInput').value; if(val===STUDIO_PASS){ closeGate(); openStudio(); } else { document.getElementById('pwErr').textContent='Wrong password.'; document.getElementById('pwInput').value=''; document.getElementById('pwInput').focus(); } }
+function openStudio(){ backToStudioChoice(); renderManage(); renderCharacterManage(); renderArtworkManage(); renderLettersManage(); document.getElementById('studioPanel').classList.add('open'); document.body.style.overflow='hidden'; if(!SUPABASE_READY) showSetupNotice(); }
+function exitStudio(){ document.getElementById('studioPanel').classList.remove('open'); document.body.style.overflow=''; }
+function showStudioTab(tab){
+  document.getElementById('studioChoice').style.display='none';
+  ['episodeStudio','characterStudio','artworkStudio','lettersStudio'].forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); });
+  const map={episodes:'episodeStudio',characters:'characterStudio',artwork:'artworkStudio',letters:'lettersStudio'};
+  const el=document.getElementById(map[tab]); if(el) el.classList.add('active');
+  if(tab==='letters') renderLettersManage();
+}
+function backToStudioChoice(){
+  document.getElementById('studioChoice').style.display='';
+  ['episodeStudio','characterStudio','artworkStudio','lettersStudio'].forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); });
 }
 
-function clearCharacterLetterForm(clearMsg=true){
-  ['characterLetterName','characterLetterText','characterLetterFileName'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.value !== undefined ? el.value = '' : el.textContent = '';
-  });
-  const fileInput = document.getElementById('characterLetterFileInput');
-  if(fileInput) fileInput.value = '';
-  currentCharacterLetterFile = null;
-  if(clearMsg){ const msg = document.getElementById('characterLetterMsg'); if(msg) msg.textContent = ''; }
+// ── FILE SELECTS ──
+function onFileSelect(input){ const file=input.files[0]; if(!file) return; currentPdfFile=file; document.getElementById('fileName').textContent=file.name; }
+function onCharacterImageSelect(input){
+  const file=input.files[0]; const msg=document.getElementById('charFormMsg'); if(!file) return;
+  const ok=['image/png','image/jpeg','image/jpg']; const okExt=/\.(png|jpe?g)$/i.test(file.name);
+  if(!ok.includes(file.type)&&!okExt){ msg.style.color='#FF5733'; msg.textContent='PNG, JPG, JPEG only.'; input.value=''; return; }
+  currentCharacterImageFile=file; document.getElementById('charFileName').textContent=file.name; msg.textContent='';
 }
-
-function selectLetterForReply(id){
-  const letter = readerLetters.find(l=>String(l.id)===String(id));
-  if(!letter) return;
-  const isCharacterLetter = letter.letter_type === 'character' || letter.is_author_post === true;
-  const fromName = isCharacterLetter ? (letter.character_name || letter.sender_name || 'Character') : (letter.sender_name || 'Unnamed reader');
-  document.getElementById('replyLetterId').value = id;
-  document.getElementById('replyTarget').value = `${fromName} — ${(letter.letter_content || '').slice(0,70)}${(letter.letter_content || '').length>70 ? '…' : ''}`;
-  document.getElementById('replyCharacter').value = '';
-  document.getElementById('replyText').value = '';
-  document.getElementById('replyFileName').textContent = '';
-  document.getElementById('replyMsg').style.color = '#FFD34E';
-  document.getElementById('replyMsg').textContent = `Selected ${isCharacterLetter ? 'character letter' : 'reader letter'} from ${fromName}.`;
+function onArtworkImageSelect(input){
+  const file=input.files[0]; const msg=document.getElementById('artFormMsg'); if(!file) return;
+  const ok=['image/png','image/jpeg','image/jpg']; const okExt=/\.(png|jpe?g)$/i.test(file.name);
+  if(!ok.includes(file.type)&&!okExt){ msg.style.color='#FF5733'; msg.textContent='PNG, JPG, JPEG only.'; input.value=''; return; }
+  currentArtworkImageFile=file; document.getElementById('artFileName').textContent=file.name; msg.textContent='';
 }
-
+function handleArtworkDragOver(e){ e.preventDefault(); document.getElementById('artFileDrop').classList.add('drag'); }
+function handleArtworkDragLeave(e){ document.getElementById('artFileDrop').classList.remove('drag'); }
+function handleArtworkDrop(e){ e.preventDefault(); document.getElementById('artFileDrop').classList.remove('drag'); const file=e.dataTransfer.files[0]; if(file){ const dt=new DataTransfer(); dt.items.add(file); const input=document.getElementById('artImageInput'); input.files=dt.files; onArtworkImageSelect(input); } }
 function onReplyFileSelect(input){
-  const file = input.files[0];
-  const msg = document.getElementById('replyMsg');
-  if(!file){ currentReplyFile = null; document.getElementById('replyFileName').textContent=''; return; }
-  const okTypes = ['application/pdf','image/png','image/jpeg','image/jpg'];
-  const okExt = /\.(pdf|png|jpe?g)$/i.test(file.name);
-  if(!okTypes.includes(file.type) && !okExt){
-    msg.style.color = '#c0614a';
-    msg.textContent = 'Attach only PDF, PNG, JPG, or JPEG.';
-    input.value = '';
-    currentReplyFile = null;
-    document.getElementById('replyFileName').textContent = '';
-    return;
-  }
-  currentReplyFile = file;
-  document.getElementById('replyFileName').textContent = file.name;
+  const file=input.files[0]; const msg=document.getElementById('replyMsg'); if(!file){ currentReplyFile=null; document.getElementById('replyFileName').textContent=''; return; }
+  const ok=['application/pdf','image/png','image/jpeg','image/jpg']; const okExt=/\.(pdf|png|jpe?g)$/i.test(file.name);
+  if(!ok.includes(file.type)&&!okExt){ msg.style.color='#FF5733'; msg.textContent='Attach PDF, PNG, or JPG only.'; input.value=''; currentReplyFile=null; return; }
+  currentReplyFile=file; document.getElementById('replyFileName').textContent=file.name;
+}
+function onCharacterLetterFileSelect(input){
+  const file=input.files[0]; if(!file) return; currentCharacterLetterFile=file; document.getElementById('characterLetterFileName').textContent=file.name;
 }
 
+// ── SAVE EPISODE ──
+async function saveEpisode(){
+  const num=parseInt(document.getElementById('epNum').value);
+  const title=document.getElementById('epTitle').value.trim();
+  const part=document.getElementById('epPart').value.trim();
+  const msg=document.getElementById('formMsg');
+  if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Add your Supabase URL and anon key first.'; return; }
+  if(!num||num<1){ msg.style.color='#FF5733'; msg.textContent='Enter a valid episode number.'; return; }
+  if(!title){ msg.style.color='#FF5733'; msg.textContent='Enter a title.'; return; }
+  if(!currentPdfFile){ msg.style.color='#FF5733'; msg.textContent='Select a PDF file.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Uploading…';
+  const safeName=currentPdfFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
+  const pdfPath=`splash/episode-${String(num).padStart(2,'0')}-${Date.now()}-${safeName}`;
+  const { error: uploadError }=await supabase.storage.from(PDF_BUCKET).upload(pdfPath,currentPdfFile,{contentType:'application/pdf',upsert:true});
+  if(uploadError){ console.error(uploadError); msg.style.color='#FF5733'; msg.textContent='Upload failed. Check bucket policy.'; return; }
+  const { error: dbError }=await supabase.from(EPISODES_TABLE).upsert({num,title,part,pdf_path:pdfPath},{onConflict:'num'});
+  if(dbError){ console.error(dbError); msg.style.color='#FF5733'; msg.textContent='PDF uploaded but not saved to DB.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent=`Episode ${num} uploaded.`;
+  await loadEpisodesFromSupabase(); renderPublic(); renderManage();
+  ['epNum','epTitle','epPart'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fileName').textContent=''; document.getElementById('pdfInput').value=''; currentPdfFile=null;
+}
+
+// ── DELETE EPISODE ──
+async function deleteEpisode(num){
+  const episodeNum=Number(num); if(!Number.isFinite(episodeNum)) return;
+  if(!confirm(`Delete Episode ${episodeNum}?`)) return;
+  const msg=document.getElementById('formMsg');
+  msg.style.color='#FFE03D'; msg.textContent=`Deleting Episode ${episodeNum}…`;
+  if(SUPABASE_READY){
+    const { data: rows, error }=await supabase.from(EPISODES_TABLE).delete().eq('num',episodeNum).select('num,pdf_path');
+    if(error){ msg.style.color='#FF5733'; msg.textContent='Delete failed. Check Supabase DELETE policy.'; return; }
+    if(!rows||!rows.length){ msg.style.color='#FF5733'; msg.textContent='No row deleted. Check RLS policy.'; await loadEpisodesFromSupabase(); renderPublic(); renderManage(); return; }
+    const pdfPath=rows[0]?.pdf_path;
+    if(pdfPath) await supabase.storage.from(PDF_BUCKET).remove([pdfPath]);
+    await loadEpisodesFromSupabase();
+  } else { episodes=episodes.filter(e=>Number(e.num)!==episodeNum); localStorage.setItem(STORE_KEY,JSON.stringify(episodes)); }
+  renderPublic(); renderManage();
+  msg.style.color='#FFE03D'; msg.textContent=`Episode ${episodeNum} deleted.`;
+}
+
+// ── SAVE CHARACTER ──
+async function saveCharacter(){
+  const id=document.getElementById('charId').value.trim();
+  const name=document.getElementById('charName').value.trim();
+  const role=document.getElementById('charRole').value.trim();
+  const lore=document.getElementById('charLore').value.trim();
+  const sort_order=parseInt(document.getElementById('charOrder').value)||0;
+  const msg=document.getElementById('charFormMsg');
+  if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Supabase not configured.'; return; }
+  if(!name){ msg.style.color='#FF5733'; msg.textContent='Enter a character name.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Saving…';
+  let image_path=editingCharacterImagePath||null;
+  if(currentCharacterImageFile){
+    const safeName=currentCharacterImageFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
+    image_path=`splash/${name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase()}-${Date.now()}-${safeName}`;
+    const { error: uploadError }=await supabase.storage.from(CHARACTER_BUCKET).upload(image_path,currentCharacterImageFile,{contentType:currentCharacterImageFile.type||'image/jpeg',upsert:true});
+    if(uploadError){ msg.style.color='#FF5733'; msg.textContent='Image upload failed.'; return; }
+    if(editingCharacterImagePath&&editingCharacterImagePath!==image_path) await supabase.storage.from(CHARACTER_BUCKET).remove([editingCharacterImagePath]);
+  }
+  const payload={name,role,lore,image_path,sort_order,is_visible:true};
+  const query=id?supabase.from(CHARACTERS_TABLE).update(payload).eq('id',id):supabase.from(CHARACTERS_TABLE).insert([payload]);
+  const { error }=await query;
+  if(error){ msg.style.color='#FF5733'; msg.textContent='Save failed. Check Supabase policy.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent=id?'Character updated.':'Character added.';
+  await loadCharactersFromSupabase(); renderCharactersPublic(); renderCharacterManage();
+  resetCharacterForm(); msg.textContent='Saved.';
+}
+function editCharacter(id){
+  const c=characters.find(x=>x.id===id); if(!c) return;
+  document.getElementById('charId').value=c.id;
+  document.getElementById('charName').value=c.name||'';
+  document.getElementById('charRole').value=c.role||'';
+  document.getElementById('charLore').value=c.lore||'';
+  document.getElementById('charOrder').value=c.sort_order||0;
+  document.getElementById('charFormTitle').textContent='Edit Character';
+  editingCharacterImagePath=c.image_path||null;
+  showStudioTab('characters');
+}
+async function deleteCharacter(id){
+  if(!confirm('Delete this character?')) return;
+  const c=characters.find(x=>x.id===id);
+  await supabase.from(CHARACTERS_TABLE).delete().eq('id',id);
+  if(c?.image_path) await supabase.storage.from(CHARACTER_BUCKET).remove([c.image_path]);
+  await loadCharactersFromSupabase(); renderCharactersPublic(); renderCharacterManage();
+}
+async function removeCharacterImage(){
+  const id=document.getElementById('charId').value.trim();
+  if(!id||!editingCharacterImagePath){ currentCharacterImageFile=null; document.getElementById('charFileName').textContent=''; return; }
+  await supabase.from(CHARACTERS_TABLE).update({image_path:null}).eq('id',id);
+  await supabase.storage.from(CHARACTER_BUCKET).remove([editingCharacterImagePath]);
+  editingCharacterImagePath=null; currentCharacterImageFile=null; document.getElementById('charFileName').textContent='';
+  await loadCharactersFromSupabase(); renderCharactersPublic();
+}
+function clearCharacterWriting(){ document.getElementById('charLore').value=''; }
+function resetCharacterForm(){
+  ['charId','charName','charRole','charLore','charOrder'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+  document.getElementById('charFileName').textContent=''; document.getElementById('charImageInput').value='';
+  document.getElementById('charFormTitle').textContent='Add a Character';
+  editingCharacterImagePath=null; currentCharacterImageFile=null;
+}
+
+// ── SAVE ARTWORK ──
+async function saveArtwork(){
+  const id=document.getElementById('artId').value.trim();
+  const title=document.getElementById('artTitle').value.trim();
+  const description=document.getElementById('artDescription').value.trim();
+  const episode_label=document.getElementById('artEpisode').value.trim();
+  const sort_order=parseInt(document.getElementById('artOrder').value)||0;
+  const msg=document.getElementById('artFormMsg');
+  if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Supabase not configured.'; return; }
+  if(!title){ msg.style.color='#FF5733'; msg.textContent='Enter a title.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Saving…';
+  let image_path=editingArtworkImagePath||null;
+  if(currentArtworkImageFile){
+    const safeName=currentArtworkImageFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
+    image_path=`splash/${title.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase()}-${Date.now()}-${safeName}`;
+    const { error: uploadError }=await supabase.storage.from(ARTWORK_BUCKET).upload(image_path,currentArtworkImageFile,{contentType:currentArtworkImageFile.type||'image/jpeg',upsert:true});
+    if(uploadError){ msg.style.color='#FF5733'; msg.textContent='Image upload failed.'; return; }
+    if(editingArtworkImagePath&&editingArtworkImagePath!==image_path) await supabase.storage.from(ARTWORK_BUCKET).remove([editingArtworkImagePath]);
+  }
+  const payload={title,description,episode_label,image_path,sort_order,is_visible:true};
+  const query=id?supabase.from(ARTWORKS_TABLE).update(payload).eq('id',id):supabase.from(ARTWORKS_TABLE).insert([payload]);
+  const { error }=await query;
+  if(error){ msg.style.color='#FF5733'; msg.textContent='Save failed.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent=id?'Artwork updated.':'Artwork added.';
+  await loadArtworkFromSupabase(); renderArtworkManage(); resetArtworkForm();
+}
+function editArtwork(id){
+  const art=artworks.find(x=>x.id===id); if(!art) return;
+  document.getElementById('artId').value=art.id;
+  document.getElementById('artTitle').value=art.title||'';
+  document.getElementById('artDescription').value=art.description||'';
+  document.getElementById('artEpisode').value=art.episode_label||'';
+  document.getElementById('artOrder').value=art.sort_order||0;
+  document.getElementById('artFormTitle').textContent='Edit Artwork';
+  editingArtworkImagePath=art.image_path||null;
+  showStudioTab('artwork');
+}
+async function deleteArtwork(id){
+  if(!confirm('Delete this artwork?')) return;
+  const art=artworks.find(x=>x.id===id);
+  await supabase.from(ARTWORKS_TABLE).delete().eq('id',id);
+  if(art?.image_path) await supabase.storage.from(ARTWORK_BUCKET).remove([art.image_path]);
+  await loadArtworkFromSupabase(); renderArtworkManage();
+}
+async function removeArtworkImage(){
+  const id=document.getElementById('artId').value.trim();
+  if(!id||!editingArtworkImagePath){ currentArtworkImageFile=null; document.getElementById('artFileName').textContent=''; return; }
+  await supabase.from(ARTWORKS_TABLE).update({image_path:null}).eq('id',id);
+  await supabase.storage.from(ARTWORK_BUCKET).remove([editingArtworkImagePath]);
+  editingArtworkImagePath=null; currentArtworkImageFile=null; document.getElementById('artFileName').textContent='';
+  await loadArtworkFromSupabase(); renderArtworkManage();
+}
+function clearArtworkDescription(){ document.getElementById('artDescription').value=''; }
+function resetArtworkForm(){
+  ['artId','artTitle','artDescription','artEpisode','artOrder'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+  document.getElementById('artFileName').textContent=''; document.getElementById('artImageInput').value='';
+  document.getElementById('artFormTitle').textContent='Add Artwork';
+  editingArtworkImagePath=null; currentArtworkImageFile=null;
+}
+
+// ── LETTERS ──
+async function deleteLetter(id){
+  if(!confirm('Delete this letter?')) return;
+  await supabase.from(LETTERS_TABLE).delete().eq('id',id);
+  await renderLettersManage();
+}
+async function publishCharacterLetter(){
+  const character=document.getElementById('characterLetterName').value.trim();
+  const text=document.getElementById('characterLetterText').value.trim();
+  const msg=document.getElementById('characterLetterMsg');
+  if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Supabase not configured.'; return; }
+  if(!character){ msg.style.color='#FF5733'; msg.textContent='Enter character name.'; return; }
+  if(!text&&!currentCharacterLetterFile){ msg.style.color='#FF5733'; msg.textContent='Write a letter or attach a file.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Publishing…';
+  let image_url=null, image_path=null, reply_file_url=null, reply_file_path=null, reply_file_type=null;
+  if(currentCharacterLetterFile){
+    const isImg=['image/png','image/jpeg','image/jpg'].includes(currentCharacterLetterFile.type)||/\.(png|jpe?g)$/i.test(currentCharacterLetterFile.name);
+    const bucket=isImg?'letter-images':LETTER_REPLY_BUCKET;
+    const safeName=currentCharacterLetterFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
+    const path=`splash/${Date.now()}-${safeName}`;
+    const fileType=currentCharacterLetterFile.type;
+    const { error: uploadError }=await supabase.storage.from(bucket).upload(path,currentCharacterLetterFile,{contentType:fileType,upsert:true});
+    if(uploadError){ msg.style.color='#FF5733'; msg.textContent='File upload failed.'; return; }
+    const { data }=supabase.storage.from(bucket).getPublicUrl(path);
+    if(isImg){ image_url=data.publicUrl; image_path=path; }
+    else { reply_file_url=data.publicUrl; reply_file_path=path; reply_file_type=fileType; }
+  }
+  const { error }=await supabase.from(LETTERS_TABLE).insert([{
+    letter_type:'character', parent_letter_id:null, is_author_post:true,
+    sender_name:character, sender_name_normalized:character.toLowerCase().replace(/\s+/g,' ').trim(),
+    character_name:character, addressed_to:'Dormitory Mail',
+    letter_content:text, image_url, image_path, reply_file_url, reply_file_path, reply_file_type,
+    is_approved:true, is_pinned:false
+  }]);
+  if(error){ msg.style.color='#FF5733'; msg.textContent='Publish failed.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Character letter published.';
+  clearCharacterLetterForm(false); await renderLettersManage();
+}
+function clearCharacterLetterForm(clearMsg=true){
+  ['characterLetterName','characterLetterText','characterLetterFileName'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value!==undefined?el.value='':el.textContent=''; });
+  const fileInput=document.getElementById('characterLetterFileInput'); if(fileInput) fileInput.value='';
+  currentCharacterLetterFile=null;
+  if(clearMsg){ const msg=document.getElementById('characterLetterMsg'); if(msg) msg.textContent=''; }
+}
+function selectLetterForReply(id){
+  const letter=readerLetters.find(l=>String(l.id)===String(id)); if(!letter) return;
+  const fromName=letter.is_author_post?(letter.character_name||letter.sender_name||'Character'):(letter.sender_name||'Reader');
+  document.getElementById('replyLetterId').value=id;
+  document.getElementById('replyTarget').value=`${fromName} — ${(letter.letter_content||'').slice(0,70)}${(letter.letter_content||'').length>70?'…':''}`;
+  document.getElementById('replyCharacter').value='';
+  document.getElementById('replyText').value='';
+  document.getElementById('replyFileName').textContent='';
+  document.getElementById('replyMsg').style.color='#FFE03D';
+  document.getElementById('replyMsg').textContent=`Selected letter from ${fromName}.`;
+}
 async function saveLetterReply(){
-  const id = document.getElementById('replyLetterId').value;
-  const character = document.getElementById('replyCharacter').value.trim();
-  const text = document.getElementById('replyText').value.trim();
-  const msg = document.getElementById('replyMsg');
-
-  if(!SUPABASE_READY){ msg.style.color='#c0614a'; msg.textContent='Supabase is not configured.'; return; }
-  if(!id){ msg.style.color='#c0614a'; msg.textContent='Select a letter first.'; return; }
-  if(!character){ msg.style.color='#c0614a'; msg.textContent='Type the character name replying.'; return; }
-  if(!text && !currentReplyFile){ msg.style.color='#c0614a'; msg.textContent='Write a reply or attach a file.'; return; }
-
-  msg.style.color = '#FFD34E';
-  msg.textContent = 'Saving threaded character reply…';
-
-  let reply_file_url = null;
-  let reply_file_path = null;
-  let reply_file_type = null;
-
+  const id=document.getElementById('replyLetterId').value;
+  const character=document.getElementById('replyCharacter').value.trim();
+  const text=document.getElementById('replyText').value.trim();
+  const msg=document.getElementById('replyMsg');
+  if(!SUPABASE_READY){ msg.style.color='#FF5733'; msg.textContent='Supabase not configured.'; return; }
+  if(!id){ msg.style.color='#FF5733'; msg.textContent='Select a letter first.'; return; }
+  if(!character){ msg.style.color='#FF5733'; msg.textContent='Enter the character name.'; return; }
+  if(!text&&!currentReplyFile){ msg.style.color='#FF5733'; msg.textContent='Write a reply or attach a file.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Saving reply…';
+  let reply_file_url=null, reply_file_path=null, reply_file_type=null;
   if(currentReplyFile){
-    const safeName = currentReplyFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
-    reply_file_path = `splash-replies/${id}-${Date.now()}-${safeName}`;
-    reply_file_type = currentReplyFile.type || (safeName.endsWith('.pdf') ? 'application/pdf' : 'image');
-
-    const { error: uploadError } = await supabase.storage
-      .from(LETTER_REPLY_BUCKET)
-      .upload(reply_file_path, currentReplyFile, { contentType: reply_file_type, upsert: true });
-
-    if(uploadError){
-      console.error(uploadError);
-      msg.style.color = '#c0614a';
-      msg.textContent = 'Reply file upload failed. Check letter-replies bucket and policies.';
-      return;
-    }
-
-    const { data } = supabase.storage.from(LETTER_REPLY_BUCKET).getPublicUrl(reply_file_path);
-    reply_file_url = data.publicUrl;
+    const safeName=currentReplyFile.name.replace(/[^a-zA-Z0-9._-]/g,'-').toLowerCase();
+    reply_file_path=`splash-replies/${id}-${Date.now()}-${safeName}`;
+    reply_file_type=currentReplyFile.type||(safeName.endsWith('.pdf')?'application/pdf':'image');
+    const { error: uploadError }=await supabase.storage.from(LETTER_REPLY_BUCKET).upload(reply_file_path,currentReplyFile,{contentType:reply_file_type,upsert:true});
+    if(uploadError){ msg.style.color='#FF5733'; msg.textContent='File upload failed.'; return; }
+    const { data }=supabase.storage.from(LETTER_REPLY_BUCKET).getPublicUrl(reply_file_path);
+    reply_file_url=data.publicUrl;
   }
-
-  const { error } = await supabase
-    .from(LETTERS_TABLE)
-    .insert([{
-      parent_letter_id: id,
-      letter_type:'character_reply',
-      is_author_post:true,
-      sender_name: character,
-      sender_name_normalized: character.toLowerCase().replace(/\s+/g,' ').trim(),
-      character_name: character,
-      addressed_to: 'Reply',
-      letter_content: text,
-      image_url:null,
-      image_path:null,
-      reply_file_url,
-      reply_file_path,
-      reply_file_type,
-      is_approved:true,
-      is_pinned:false
-    }]);
-
-  if(error){
-    console.error(error);
-    msg.style.color = '#c0614a';
-    msg.textContent = 'Reply could not be saved. Check parent_letter_id column and insert policy.';
-    return;
-  }
-
-  msg.style.color = '#FFD34E';
-  msg.textContent = 'Threaded reply saved.';
-  currentReplyFile = null;
-  document.getElementById('replyFileInput').value = '';
-  document.getElementById('replyFileName').textContent = '';
-  document.getElementById('replyText').value = '';
-  await loadLettersFromSupabase();
-  renderLettersManage();
+  const { error }=await supabase.from(LETTERS_TABLE).insert([{
+    parent_letter_id:id, letter_type:'character_reply', is_author_post:true,
+    sender_name:character, sender_name_normalized:character.toLowerCase().replace(/\s+/g,' ').trim(),
+    character_name:character, addressed_to:'Reply', letter_content:text,
+    image_url:null, image_path:null, reply_file_url, reply_file_path, reply_file_type,
+    is_approved:true, is_pinned:false
+  }]);
+  if(error){ msg.style.color='#FF5733'; msg.textContent='Reply failed.'; return; }
+  msg.style.color='#FFE03D'; msg.textContent='Reply saved.';
+  currentReplyFile=null; document.getElementById('replyFileInput').value=''; document.getElementById('replyFileName').textContent=''; document.getElementById('replyText').value='';
+  await renderLettersManage();
 }
-
 function clearLetterReplyForm(){
-  const ids = ['replyLetterId','replyTarget','replyCharacter','replyText','replyFileName','replyMsg'];
-  ids.forEach(id=>{ const el = document.getElementById(id); if(el) el.value !== undefined ? el.value = '' : el.textContent = ''; });
-  const fileInput = document.getElementById('replyFileInput');
-  if(fileInput) fileInput.value = '';
-  currentReplyFile = null;
+  ['replyLetterId','replyTarget','replyCharacter','replyText','replyFileName','replyMsg'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value!==undefined?el.value='':el.textContent=''; });
+  const fi=document.getElementById('replyFileInput'); if(fi) fi.value=''; currentReplyFile=null;
 }
 
-function formatLetterDate(value){
-  if(!value) return '';
-  try{ return new Date(value).toLocaleDateString(); }catch(e){ return ''; }
-}
+// ── DRAG events ──
+const drop=document.getElementById('fileDrop');
+drop.addEventListener('dragenter',()=>drop.classList.add('drag'));
+drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+drop.addEventListener('drop',()=>drop.classList.remove('drag'));
+const charDrop=document.getElementById('charFileDrop');
+charDrop.addEventListener('dragenter',()=>charDrop.classList.add('drag'));
+charDrop.addEventListener('dragleave',()=>charDrop.classList.remove('drag'));
+charDrop.addEventListener('drop',()=>charDrop.classList.remove('drag'));
 
-// ──────────────────────────────────────────────
-// HELPERS
-// ──────────────────────────────────────────────
-function scrollToEpisodes(){
-  document.getElementById('episodes').scrollIntoView({behavior:'smooth'});
-}
+// ── HELPERS ──
+function scrollToEpisodes(){ document.getElementById('episodes').scrollIntoView({behavior:'smooth'}); }
+function scrollToCharacters(){ window.location.href='characters.html'; }
+function openLettersPage(){ window.location.href='letters.html'; }
+function formatLetterDate(value){ if(!value) return ''; try{ return new Date(value).toLocaleDateString(); }catch(e){ return ''; } }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escAttr(s){ return esc(s).replace(/'/g,'&#39;'); }
 
-function esc(s){
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function escAttr(s){
-  return esc(s).replace(/'/g,'&#39;');
-}
-
-// Make functions available to existing inline onclick/onchange HTML.
-window.scrollToEpisodes = scrollToEpisodes;
-window.openReader = openReader;
-window.closeReader = closeReader;
-window.checkPw = checkPw;
-window.closeGate = closeGate;
-window.exitStudio = exitStudio;
-window.onFileSelect = onFileSelect;
-window.saveEpisode = saveEpisode;
-window.deleteEpisode = deleteEpisode;
-window.scrollToCharacters = scrollToCharacters;
-window.openArtworkPage = openArtworkPage;
-window.closeCharacterModal = closeCharacterModal;
-
-
-// ──────────────────────────────────────────────
-// Expose module functions for inline onclick handlers
-// ──────────────────────────────────────────────
-Object.assign(window, {
-  scrollToEpisodes,
-  openReader,
-  closeReader,
-  openGate,
-  closeGate,
-  checkPw,
-  openStudio,
-  exitStudio,
-  onFileSelect,
-  saveEpisode,
-  deleteEpisode,
-  scrollToCharacters,
-  openCharacterModal,
-  closeCharacterModal,
-  showStudioTab,
-  backToStudioChoice,
-  onCharacterImageSelect,
-  saveCharacter,
-  editCharacter,
-  deleteCharacter,
-  removeCharacterImage,
-  clearCharacterWriting,
-  resetCharacterForm,
-  openArtworkPage,
-  onArtworkImageSelect,
-  handleArtworkDragOver,
-  handleArtworkDragLeave,
-  handleArtworkDrop,
-  saveArtwork,
-  editArtwork,
-  deleteArtwork,
-  removeArtworkImage,
-  clearArtworkDescription,
-  resetArtworkForm,
-  openLettersPage,
-  renderLettersManage,
-  selectLetterForReply,
-  onReplyFileSelect,
-  saveLetterReply,
-  clearLetterReplyForm,
-  onCharacterLetterFileSelect,
-  publishCharacterLetter,
-  clearCharacterLetterForm
+Object.assign(window,{
+  scrollToEpisodes,scrollToCharacters,openArtworkPage,openLettersPage,
+  openReader,closeReader,prevPdfPage,nextPdfPage,
+  openGate,closeGate,checkPw,openStudio,exitStudio,
+  showStudioTab,backToStudioChoice,
+  onFileSelect,saveEpisode,deleteEpisode,
+  onCharacterImageSelect,saveCharacter,editCharacter,deleteCharacter,removeCharacterImage,clearCharacterWriting,resetCharacterForm,
+  openCharacterModal,closeCharacterModal,
+  onArtworkImageSelect,handleArtworkDragOver,handleArtworkDragLeave,handleArtworkDrop,saveArtwork,editArtwork,deleteArtwork,removeArtworkImage,clearArtworkDescription,resetArtworkForm,
+  closeArtworkModal,
+  onReplyFileSelect,saveLetterReply,clearLetterReplyForm,
+  onCharacterLetterFileSelect,publishCharacterLetter,clearCharacterLetterForm,
+  selectLetterForReply,deleteLetter,renderLettersManage
 });
 
-// ── INIT ──
 loadEpisodes();
 </script>
 
-<!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>

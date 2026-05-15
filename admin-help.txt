@@ -1,2 +1,4 @@
 Writer mode: click the main hero title 5 times quickly. Password: splash2026
 Replace Supabase URL and anon key in index.html and letters.html before deployment.
+"Letters to Splash" has been renamed to "Dormitory Mail" (letters.html).
+The about section reflects the new story: Kanishk, Joseph, Somyonil at St. Cross College.
