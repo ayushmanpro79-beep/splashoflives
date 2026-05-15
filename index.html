@@ -87,20 +87,23 @@ body::before{
   position:absolute;
   inset:0;
   background:url('cover.png') center/cover no-repeat;
-  filter:brightness(0.85) saturate(1.1);
+  filter:brightness(0.55) saturate(1.1);
+  transform:scale(1.04);
+  animation:slowzoom 25s ease-in-out infinite alternate;
 }
 
 @keyframes slowzoom{
-  from{transform:scale(1)}
-  to{transform:scale(1)}
+  from{transform:scale(1.04)}
+  to{transform:scale(1.1)}
 }
 
 .hero-vignette{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(ellipse 80% 55% at 50% 110%, rgba(10,12,20,0.82) 0%, transparent 65%),
-    radial-gradient(ellipse 100% 30% at 50% 0%, rgba(10,12,20,0.3) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(10,12,20,0.96) 0%, transparent 65%),
+    radial-gradient(ellipse 100% 35% at 50% 0%, rgba(10,12,20,0.5) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 40%, rgba(10,12,20,0.7) 100%);
   pointer-events:none;
 }
 
@@ -138,26 +141,23 @@ body::before{
   animation:fadeup 0.7s 0.2s ease forwards;
 }
 
-.logo-title{
+.site-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,14vw,11rem);
+  color:var(--cream);
+  line-height:0.88;
+  letter-spacing:0.03em;
   opacity:0;
   animation:fadeup 0.8s 0.4s ease forwards;
+  text-shadow: 4px 4px 0 rgba(255,87,51,0.35), 0 0 60px rgba(255,224,61,0.15);
   cursor:pointer;
   user-select:none;
-  display:inline-block;
 }
 
-.logo-img{
-  width:clamp(220px, 38vw, 480px);
-  height:auto;
-  display:block;
-  mix-blend-mode:screen;
-  filter:drop-shadow(0 0 30px rgba(59,130,246,0.5)) drop-shadow(0 0 12px rgba(255,224,61,0.2));
-  transition:filter 0.3s ease, transform 0.3s ease;
-}
-
-.logo-title:hover .logo-img{
-  filter:drop-shadow(0 0 45px rgba(59,130,246,0.7)) drop-shadow(0 0 18px rgba(255,224,61,0.35));
-  transform:scale(1.03);
+.site-title .splash-accent{
+  color:var(--yellow);
+  -webkit-text-stroke:2px var(--yellow);
+  text-shadow: 4px 4px 0 rgba(10,12,20,0.8), 0 0 40px rgba(255,224,61,0.4);
 }
 
 .site-sub{
@@ -627,9 +627,7 @@ footer a:hover{color:#fff}
   <div class="hero-accent"></div>
   <div class="hero-content">
     <p class="tagline">St. Cross College of Technology · Maharashtra · Prologue</p>
-    <div class="logo-title" id="logoClick">
-      <img src="splash-logo.png" alt="The Splash of Lives" class="logo-img"/>
-    </div>
+    <h1 class="site-title" id="logoClick">THE <span class="splash-accent">SPLASH</span><br>OF LIVES</h1>
     <p class="site-sub">A serialised campus novel · SOUL Productions · Ayushman Gouda</p>
     <div class="hero-actions">
       <button class="hero-btn primary" onclick="scrollToEpisodes()">Read the Story ↓</button>
