@@ -87,23 +87,20 @@ body::before{
   position:absolute;
   inset:0;
   background:url('cover.png') center/cover no-repeat;
-  filter:brightness(0.55) saturate(1.1);
-  transform:scale(1.04);
-  animation:slowzoom 25s ease-in-out infinite alternate;
+  filter:brightness(0.85) saturate(1.1);
 }
 
 @keyframes slowzoom{
-  from{transform:scale(1.04)}
-  to{transform:scale(1.1)}
+  from{transform:scale(1)}
+  to{transform:scale(1)}
 }
 
 .hero-vignette{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(10,12,20,0.96) 0%, transparent 65%),
-    radial-gradient(ellipse 100% 35% at 50% 0%, rgba(10,12,20,0.5) 0%, transparent 70%),
-    linear-gradient(180deg, transparent 40%, rgba(10,12,20,0.7) 100%);
+    radial-gradient(ellipse 80% 55% at 50% 110%, rgba(10,12,20,0.82) 0%, transparent 65%),
+    radial-gradient(ellipse 100% 30% at 50% 0%, rgba(10,12,20,0.3) 0%, transparent 70%);
   pointer-events:none;
 }
 
@@ -150,16 +147,17 @@ body::before{
 }
 
 .logo-img{
-  width:clamp(280px, 65vw, 720px);
+  width:clamp(220px, 38vw, 480px);
   height:auto;
   display:block;
-  filter:drop-shadow(0 0 40px rgba(59,130,246,0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+  mix-blend-mode:screen;
+  filter:drop-shadow(0 0 30px rgba(59,130,246,0.5)) drop-shadow(0 0 12px rgba(255,224,61,0.2));
   transition:filter 0.3s ease, transform 0.3s ease;
 }
 
 .logo-title:hover .logo-img{
-  filter:drop-shadow(0 0 55px rgba(59,130,246,0.55)) drop-shadow(0 0 20px rgba(255,224,61,0.25)) drop-shadow(0 8px 24px rgba(0,0,0,0.7));
-  transform:scale(1.02);
+  filter:drop-shadow(0 0 45px rgba(59,130,246,0.7)) drop-shadow(0 0 18px rgba(255,224,61,0.35));
+  transform:scale(1.03);
 }
 
 .site-sub{
